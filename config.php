@@ -1,7 +1,8 @@
 <?php
 	ini_set( "display_errors", true ); // Causes error messages to be displayed in the browser; turn off on live site
 	date_default_timezone_set( "America/Los_Angeles" );  // http://www.php.net/manual/en/timezones.php
-	define( "DB_DSN", "mysql:host=localhost;dbname=cms" ); // Constant that tells PHP where to find MySQL database
+	// TODO: Replace name with actual database name
+	define( "DB_DSN", "mysql:host=localhost;dbname=name" ); // Constant that tells PHP where to find MySQL database
 	define( "DB_USERNAME", "root" );
 	define( "DB_PASSWORD", "" );
 	define( "CLASS_PATH", "classes" ); // Path in relation to top-level folder, cms
