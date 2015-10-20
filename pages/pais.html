@@ -85,6 +85,14 @@
 
 	<link rel='canonical' href='http://assessor.lacounty.gov/decline-in-value/' />
 	<link rel='shortlink' href='http://assessor.lacounty.gov/?p=2760' />
+
+    <script type="text/javascript">
+        function showMap(sAIN)
+        {
+            return ("http://assessormap.co.la.ca.us/mapping/ShowMap.asp?ain=" + sAIN);
+        }
+    </script>
+
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-0000000-0']);
@@ -1028,7 +1036,7 @@
                             </a>
                         </div>
                         <div style="width:100%; float:right; text-align:center">
-                            <a style="font-size: 12px" href="http://assessormap.co.la.ca.us/GVH_2_2/Index.html?configBase=http://assessormap.co.la.ca.us/Geocortex/Essentials/REST/sites/PAIS/viewers/PAIS_hv/virtualdirectory/Resources/Config/Default&AIN=2005020045">
+                            <a style="font-size: 12px" href="javascript:document.location.href=showMap(2005020045)">
                                 <p>Click here to view recent sales information around your property</p>
                             </a>
                         </div>
