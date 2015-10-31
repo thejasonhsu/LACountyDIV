@@ -94,6 +94,41 @@
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	</script>
+
+
+
+
+	<script src="../resources/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../resources/jquery.maskedinput.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    jQuery(function($){
+        $.mask.definitions['~'] = "[+-]";
+        $("#AIN").mask("9999-999-999", {placeholder:" "});
+       
+    });
+</script>
+<script type="text/javascript">
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
 	<script>var ms_grabbing_curosr='http://assessor.lacounty.gov/wp-content/plugins/masterslider/public/assets/css/common/grabbing.cur',ms_grab_curosr='http://assessor.lacounty.gov/wp-content/plugins/masterslider/public/assets/css/common/grab.cur';function msCli(f){f=f||'pause';var m=masterslider_instances;for(var i in m){m[i].api[f]();}}</script>
 	<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
 	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://assessor.lacounty.gov/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]--><style type='text/css'>.ac-container label{ color: #000000;
@@ -993,7 +1028,7 @@
                 </div>
             </div> 
 <form action ='login.php' method='post'>		
-		<div style="width:35%; float:left; height:50px; "> AIN: <input name="AIN" type="text" maxlength="20" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " />
+		<div style="width:35%; float:left; height:50px; "> AIN: <input name="AIN" type="text" maxlength="20" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   "/>
 		<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
 		 </div> 
     <div style="width:30%; float:right; height:50px;"></div>
