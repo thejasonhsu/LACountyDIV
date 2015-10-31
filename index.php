@@ -23,9 +23,6 @@
 	}
 
 	function login() {
-		// Check for valid AIN and PIN match
-
-		$validMatch = true;
 
 		// Check captcha response
 		$captcha = false;
@@ -33,7 +30,9 @@
 			$captcha = $_POST['g-recaptcha-response'];
 		}
 		if ( !$captcha ) {
-			// Show error; they did not respond to captcha
+			// Error: User did not respond to captcha
+
+			// DEBUG
 			echo "Captcha not entered. ";
 			exit;
 		}
@@ -42,21 +41,49 @@
 		$response = json_decode($response);
 
 		if($response->success == false) {
-			// Show error;
-			echo "Error. ";
+			// Error: Captcha was not successful
+
+			// DEBUG
+			echo "Unsucessful; not a human. ";
+			exit;
 		}
-		else
-		{
+		else {
+			// DEBUG
 			echo "Captcha response was a success. ";
 		}
 
+		// Check that valid AIN and PIN were given
+		$validMatch = false;
+		$ain; $pin;
+
+		if ( isset( $_POST['AIN'] ) && isset( $_POST['PIN'] ) ) {
+
+				$ain = $_POST['AIN'];
+				$pin = $_POST['PIN'];
+
+				// DEBUG
+				echo '<p></p>';
+				echo "AIN: " . $ain . " " . "PIN: " . $pin;
+
+				// TODO: Pass ain and pin to rest service
+
+				// DEBUG
+				$validMatch = true;				
+		}
+		else {
+			// Error: User did not enter both an AIN and PIN
+			echo "Please enter both AIN and PIN. ";
+		}
+
 		if ($validMatch && $response->success) {
-			// Get info from database
+			// DEBUG
+			echo '<p></p>';
 			echo "Valid match and successful captcha response. ";
+
 			form();
 		}
 		else {
-			// Show that it was an invalid combination
+			// Error: Show that it was an invalid combination
 		}
 	}
 
