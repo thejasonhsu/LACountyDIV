@@ -8,6 +8,7 @@
 	define( "CLASS_PATH", "classes/" ); // Path in relation to top-level folder, cms
 	define( "TEMPLATE_PATH", "pages/" ); // Path in relation to top-level folder, cms
 	define( "RESOURCE_PATH", "resources/");
+	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
 	require( CLASS_PATH . "PropertyInfo.php" );
 
 	function handleException( $exception ) {

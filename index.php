@@ -5,8 +5,6 @@
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 	$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-	echo $action;
-
 	switch ( $action ) {
 		case 'login':
 			login();
@@ -26,38 +24,40 @@
 
 	function login() {
 		// Check for valid AIN and PIN match
-		
-		form();
 
-		/*$validMatch = true;
+		$validMatch = true;
 
 		// Check captcha response
-		$captcha
+		$captcha = false;
 		if ( isset( $_POST['g-recaptcha-response'] ) ) {
 			$captcha = $_POST['g-recaptcha-response'];
 		}
 		if ( !$captcha ) {
 			// Show error; they did not respond to captcha
+			echo "Captcha not entered. ";
 			exit;
 		}
 
-		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=YOUR SECRET KEY&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
-		if($response.success==false) {
-			// Show error; 
+		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+		$response = json_decode($response);
+
+		if($response->success == false) {
+			// Show error;
+			echo "Error. ";
 		}
 		else
 		{
-			echo '<h2>Thanks for posting comment.</h2>';
+			echo "Captcha response was a success. ";
 		}
 
-		if ($validMatch && $response) {
+		if ($validMatch && $response->success) {
 			// Get info from database
-
+			echo "Valid match and successful captcha response. ";
 			form();
 		}
 		else {
 			// Show that it was an invalid combination
-		}*/
+		}
 	}
 
 	function logout() {
