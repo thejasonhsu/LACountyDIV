@@ -7,8 +7,8 @@
 	define( "DB_PASSWORD", "btbtbt@9" );
 	define( "CLASS_PATH", "classes/" ); // Path in relation to top-level folder, cms
 	define( "TEMPLATE_PATH", "pages/" ); // Path in relation to top-level folder, cms
-	define( "RESOURCE_PATH", "resources/")
-	require( CLASS_PATH . "/PropertyInfo.php" );
+	define( "RESOURCE_PATH", "resources/");
+	require( CLASS_PATH . "PropertyInfo.php" );
 
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";

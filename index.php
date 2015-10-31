@@ -13,27 +13,51 @@
 			break;
 		case 'form':
 			form();
+			break;
 		case 'confirm':
 			confirm();
+			break;
 		case 'submit':
 			submit();
+			break;
 		default:
 			landingpage();
 	}
 
 	function login() {
 		// Check for valid AIN and PIN match
-		$validMatch = true;
-		$captchaResponse = true;
+		
+		form();
 
-		if ($validMatch && $captchaResponse) {
+		/*$validMatch = true;
+
+		// Check captcha response
+		$captcha
+		if ( isset( $_POST['g-recaptcha-response'] ) ) {
+			$captcha = $_POST['g-recaptcha-response'];
+		}
+		if ( !$captcha ) {
+			// Show error; they did not respond to captcha
+			exit;
+		}
+
+		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=YOUR SECRET KEY&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+		if($response.success==false) {
+			// Show error; 
+		}
+		else
+		{
+			echo '<h2>Thanks for posting comment.</h2>';
+		}
+
+		if ($validMatch && $response) {
 			// Get info from database
 
 			form();
 		}
 		else {
 			// Show that it was an invalid combination
-		}
+		}*/
 	}
 
 	function logout() {
@@ -42,7 +66,7 @@
 	}
 
 	function form() {
-		require( TEMPLATE_PATH . "form.html" );
+		require( TEMPLATE_PATH . "appform.html" );
 	}
 
 	function confirm() {
