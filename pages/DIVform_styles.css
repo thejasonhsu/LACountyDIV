@@ -1,0 +1,167 @@
+/* Page styling for USC DIV project 
+ * DO NOT alter any existing styling, as it may break other parts of the site
+ */
+
+.DIVform-form-content {
+}
+
+.DIVform-header {
+    margin-top: -70px;
+}
+
+.DIVform-content-box {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    margin: 10px 0px 10px 0px;
+}
+
+.DIVform-content-box-header {
+    height: 44px;
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #003b5b;
+    border-radius: 2px 2px 0px 0px;
+    padding: 2px 0px 0px 15px;
+}
+
+.DIVform-content-box-header p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.DIVform-content-box-body {
+    padding: 15px 15px 15px 15px;
+}
+
+#DIVform-pais-icon {
+    float: right;
+    margin: 0px 0px 0px 20px;
+    width: 80px;
+    height: 80px;
+    background-image: url('http://www-scf.usc.edu/~yangkevi/pics/map-icon.png');
+    background-size: cover;
+}
+
+.DIVform-form-field {
+    text-transform: none !important;
+    margin-bottom: 10px !important;
+    border: 1px solid #dddddd !important;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,.075);
+    width: auto !important;
+    padding: 4px 4px !important;
+    letter-spacing: normal !important;
+}
+
+.DIVform-float-left-text {
+    display: inline-block;
+    line-height: 2em;
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+    width: 40%;
+}
+
+.DIVform-float-left-result {
+    width: auto;
+    text-align: left;
+}
+
+#accordion {
+    margin: 10px 0px 20px 0px;
+}
+
+#accordion .ui-accordion-header {
+    line-height: 44px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #003b5b;
+    margin: 0px;
+    padding: 0px 0px 0px 15px;
+    border: 1px solid #dddddd;
+    outline: none;
+}
+
+#accordion .ui-accordion-header:hover {
+    background-color: #104b6b !important;
+    cursor: pointer;
+}
+
+#accordion .ui-accordion-header:active {
+    background-color: #205b7b !important;
+}
+
+#accordion .ui-accordion-header a {
+    color: #fafafa;
+}
+
+#accordion .ui-accordion-header a {
+    text-decoration: none;
+}
+
+#accordion .ui-accordion-content {
+    border: 1px solid #dddddd;
+    border-radius: 0px 0px 4px 4px;
+    padding: 20px;
+    margin: 0;
+    background-color: #f0f0f0;
+    height: auto !important;
+}
+
+#confirm-checkbox {
+    height: auto !important;
+    width: auto !important;
+    -webkit-appearance: checkbox !important;
+}
+
+.DIVform-button {
+    text-transform: none !important;
+    width: 15% !important;
+    min-width: 80px !important;
+    padding: 10px !important;
+    background-color: #003b5b !important;
+    border-radius: 2px !important;
+    border: none !important;
+    line-height: 1em !important;
+    letter-spacing: normal !important;
+    float: left;
+    font-weight: bold;
+}
+
+.DIVform-button:hover {
+    background-color: #104b6b !important;
+}
+
+.DIVform-button:active {
+    background-color: #205b7b !important;
+}
+
+.DIVform-comparable-box {
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+    padding: 15px;
+    padding-bottom: 0px;
+    overflow: hidden;
+}
+
+.DIVform-comparable-content {
+    float: left;
+    margin: 2px;
+}
+
+#DIVform-submit-confirmation-box {
+    
+}
+
+#DIVform-submit-confirmation-note {
+    color: red;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 1em;
+    font-weight: bold;
+    font-size: 16px;
+}
