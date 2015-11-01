@@ -117,28 +117,35 @@
             background: linear-gradient(top, #F4F4F4 1%,#D7D7D7 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F4F4F4', endColorstr='#D7D7D7',GradientType=0 );
         }
+
             .ac-container label:hover {
                 background: #F4F4F4;
                 color: #CCB86F;
             }
+
         .ac-container input:checked + label,
         .ac-container input:checked + label:hover {
             background: #CCB86F;
             color: #000000;
             text-shadow: 0px 0px 1px rgba(255,255,255,0.8);
         }
+
         .ac-container input:checked + label {
         }
+
         .ac-container label:before, .ac-container label:after {
             color: #000000;
         }
+
         #baf_page_navigation .active_page {
             background: #F4F4F4;
             color: #000000 !important;
         }
+
         .bwl-faq-wrapper ul.bwl-faq-tabs li.active {
             border-color: #F4F4F4;
         }
+
         .ac-container label {
             font-weight: normal;
             text-shadow: none;
@@ -153,6 +160,7 @@
                                                    text_faq = 'FAQ',
                                                    second_color = '#D7D7D7'</script>
     <script type="text/javascript">
+
                                                    var ajaxurl = 'http://assessor.lacounty.gov/wp-admin/admin-ajax.php',
                                                          err_faq_question = 'Question Title Required Minimum 3 Characters!',
                                                          err_faq_category = 'Select FAQ Category!',
@@ -160,161 +168,152 @@
                                                          string_total = "Total",
                                                          string_singular_page = "Page !",
                                                          string_plural_page = "Pages !";
+
                                                    var $noting_found_text = "Nothing Found!";
+
                                                    var $found_text = "Found";
                                                    var $singular_faq = "FAQ !";
+
                                                    var $plural_faq = "FAQs !";
+
     </script>
-
-
-
-<!-- code snippet for masking input -->
-<script src="../resources/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../resources/jquery.maskedinput.js" type="text/javascript"></script>
-<script type="text/javascript">
-
-    jQuery(function($){
-        $.mask.definitions['~'] = "[+-]";
-        $("#zip1").mask("99999" , {placeholder:" "});
-        $("#zip2").mask("99999" , {placeholder:" "});
-        $("#ain1").mask("9999-999-999", {placeholder:" "});
-        $("#ain2").mask("9999-999-999", {placeholder:" "});
-        $("#Comp1SaleDate").mask("99/99/9999",{placeholder:"  /  /    "});
-        $("#Comp2SaleDate").mask("99/99/9999",{placeholder:"  /  /    "});
-        $("#phone").mask("(999) 999-9999", {placeholder:" "});
-       
-    });
-</script>
-<script type="text/javascript">
-function validate(evt) {
-  var theEvent = evt || window.event;
-  var key = theEvent.keyCode || theEvent.which;
-  key = String.fromCharCode( key );
-  var regex = /[0-9]|\./;
-  if( !regex.test(key) ) {
-    theEvent.returnValue = false;
-    if(theEvent.preventDefault) theEvent.preventDefault();
-  }
-}
-</script>
-<!-- end of code snippet for masking input -->
-
-
-
-
-
-
-
-
-
-
     <style type="text/css">
         @media only screen and (min-width: 1212px) {
             .container {
                 padding: 0;
                 width: 1212px;
             }
+
             #content {
                 width: 792px;
             }
+
             #sidebar {
                 width: 312px;
             }
         }
+
+
+
         /* Body Background Styling
                 /*-----------------------------------------------------------------------------------*/
         body {
             background-color: #ffffff;
             background-repeat: inherit;
         }
+
         /* Layout and Layout Styling
                 /*-----------------------------------------------------------------------------------*/
         #main,
         .main-bg-color {
             background-color: rgba(255,255,255,1);
         }
+
             #main.header-slider-active > .container,
             #main.footer-slider-active > .container {
                 margin-top: 0px;
             }
+
         .ozy-header-slider {
             margin-top: px;
         }
+
         #footer .container > div,
         #footer .container,
         #footer {
             height: 56px;
             min-height: 56px;
         }
+
             #footer, #footer > footer .container {
                 line-height: 56px;
             }
+
                 #footer .top-social-icons > a > span {
                     line-height: 56px;
                 }
+
         @-moz-document url-prefix() {
             #footer .top-social-icons > a > span {
                 line-height: 56px;
             }
         }
+
         #footer-wrapper {
             background-color: rgba(0,59,91,1);
         }
+
         #footer *,
         #footer-widget-bar * {
             color: #ffffff !important;
         }
+
         #footer a:hover,
         #footer-widget-bar a:hover {
             color: #ccb86f !important;
         }
+
         #footer,
         #footer-widget-bar,
         #footer .top-social-icons > a {
             border-color: #2f323c;
         }
+
             #footer-widget-bar > .container > section > div.widget > span.line {
                 border-color: #ccb86f;
             }
+
             #footer a,
             #footer-widget-bar a {
                 color: #ccb86f;
             }
+
             #footer-widget-bar input {
                 background-color: rgba(0,59,91,1) !important;
             }
+
             #footer-widget-bar input,
             #footer-widget-bar .opening-time {
                 border-color: #ffffff !important;
             }
+
         @media only screen and (max-width: 479px) {
             #footer {
                 height: 112px;
             }
+
             #main > .container {
                 margin-top: px;
             }
         }
+
         @media only screen and (max-width: 1024px) and (min-width: 480px) {
             #header #title {
                 padding-right: 20px;
             }
+
                 #header #title > a {
                     line-height: px;
                 }
+
             #main > .container {
                 margin-top: px;
             }
+
             #footer {
                 height: 56px;
             }
         }
+
+
         /* Primary Menu Styling
                 /*-----------------------------------------------------------------------------------*/
+
         #top-menu .logo > h1 > a,
         #top-menu .logo2 > h1 > a {
             color: rgba(255,255,255,1) !important;
         }
+
         #top-menu,
         #top-menu .logo,
         #top-menu > ul,
@@ -331,6 +330,7 @@ function validate(evt) {
             font-size: 12px;
             color: rgba(255,255,255,1);
         }
+
             #top-menu,
             #top-menu .logo {
                 line-height: 160px;
@@ -341,9 +341,11 @@ function validate(evt) {
                 font-size: 12px;
                 color: rgba(255,255,255,1);
             }
+
                 #top-menu ul ul li a {
                     color: rgba(255,255,255,1);
                 }
+
                 #top-menu ul li > a:before,
                 #top-menu ul li > a:after,
                 #top-menu span.submenu-button:before,
@@ -352,19 +354,23 @@ function validate(evt) {
                 #top-menu .menu-button.menu-opened:after {
                     background-color: rgba(255,255,255,1) !important;
                 }
+
                 #top-menu .menu-button:after,
                 #top-menu .menu-item-search > a > span,
                 #top-menu .menu-item-wpml > a > span {
                     border-color: rgba(255,255,255,1) !important;
                 }
+
         @media screen and (max-width:1280px) {
             #top-menu #head-mobile {
                 line-height: 72px;
                 min-height: 72px;
             }
+
             #top-menu > ul > li {
                 height: auto !important;
             }
+
             #top-menu,
             #top-menu ul li {
                 background-color: rgba(0,59,91,1);
@@ -375,18 +381,22 @@ function validate(evt) {
             #header {
                 position: relative !important;
             }
+
             #top-menu > ul > li.sub-active {
                 background-color: rgba(32,32,32,1);
             }
         }
+
         #header,
         #top-menu ul ul li {
             background-color: rgba(0,59,91,1);
         }
+
             #top-menu ul ul li:hover {
                 background-color: rgba(32,32,32,1);
                 color: rgba(204,184,111,1);
             }
+
                 #top-menu > ul > li:hover > a,
                 #top-menu ul ul li:hover > a,
                 #top-menu > ul > li.active > a,
@@ -395,6 +405,7 @@ function validate(evt) {
                 #top-menu ul li.sub-active > a {
                     color: rgba(204,184,111,1);
                 }
+
                     #top-menu ul > li.current-menu-parent > a:before,
                     #top-menu ul > li.current-menu-parent > a:after,
                     #top-menu ul > li.current-menu-item > a:before,
@@ -411,6 +422,7 @@ function validate(evt) {
                     #top-menu > ul ul > li:hover > a:after {
                         background-color: rgba(204,184,111,1) !important;
                     }
+
             #header,
             #top-menu ul ul li a {
                 border-color: rgba(0,0,0,0.3);
@@ -420,23 +432,28 @@ function validate(evt) {
         .widget li > a {
             color: #000000 !important;
         }
+
             .widget li > a:hover {
                 color: #b3a15f !important;
             }
+
         .ozy-latest-posts > a > span {
             background-color: rgba(179,161,95,.8);
             color: rgba(255,255,255,1);
         }
+
         /* Page Styling and Typography
                 /*-----------------------------------------------------------------------------------*/
         ul.menu li.current_page_item > a,
         .content-color-alternate {
             color: #b3a15f !important;
         }
+
         .content-color,
         h1.content-color > a, h2.content-color > a, h3.content-color > a, h4.content-color > a, h5.content-color > a, h6.content-color > a {
             color: #000000 !important;
         }
+
         .ozy-footer-slider,
         .content-font,
         .ozy-header-slider,
@@ -457,6 +474,7 @@ function validate(evt) {
             line-height: 1.5em;
             color: #000000;
         }
+
             #content a:not(.ms-btn),
             #sidebar a, #footer a,
             .alternate-text-color,
@@ -465,6 +483,7 @@ function validate(evt) {
             #woocommerce-lightbox-cart a {
                 color: #b3a15f;
             }
+
             #footer #social-icons a,
             #ozy-share-div > a > span,
             .a-page-title,
@@ -473,12 +492,15 @@ function validate(evt) {
             #woocommerce-lightbox-cart {
                 color: #000000 !important;
             }
+
         .page-pagination > .current {
             background-color: rgba(215,215,215,1);
         }
+
         .a-page-title:hover {
             border-color: #000000 !important;
         }
+
         .nav-box a,
         #page-title-wrapper h1,
         #page-title-wrapper h3,
@@ -521,6 +543,7 @@ function validate(evt) {
             font-family: "Source Sans Pro";
             color: #000000;
         }
+
         #page-title-wrapper h1,
         #content h1,
         #footer-widget-bar h1,
@@ -532,6 +555,7 @@ function validate(evt) {
             font-size: 60px;
             line-height: 1.5em;
         }
+
         #footer-widget-bar .widget-area h4,
         #sidebar .widget > h4 {
             font-weight: 400;
@@ -539,6 +563,7 @@ function validate(evt) {
             font-size: 18px;
             line-height: 1.5em;
         }
+
         #content h2,
         #footer-widget-bar h2,
         #sidebar h2,
@@ -550,6 +575,7 @@ function validate(evt) {
             line-height: 1.5em;
             ;
         }
+
         #page-title-wrapper h3,
         #content h3,
         #footer-widget-bar h3,
@@ -562,6 +588,7 @@ function validate(evt) {
             line-height: 1.5em;
             ;
         }
+
         #content h4,
         #footer-widget-bar h4,
         #sidebar h4,
@@ -573,6 +600,7 @@ function validate(evt) {
             line-height: 1.5em;
             ;
         }
+
         #content h5,
         #footer-widget-bar h5,
         #sidebar h5,
@@ -584,6 +612,7 @@ function validate(evt) {
             line-height: 1.5em;
             ;
         }
+
         #content h6,
         #footer-widget-bar h6,
         #sidebar h6,
@@ -595,13 +624,17 @@ function validate(evt) {
             line-height: 1.5em;
             ;
         }
+
         #footer-widget-bar .widget a:hover,
         #sidebar .widget a:hover {
             color: #000000;
         }
+
         span.plus-icon > span {
             background-color: #000000;
         }
+
+
         /* Forms
                 /*-----------------------------------------------------------------------------------*/
         input:not([type=submit]):not([type=file]),
@@ -610,6 +643,7 @@ function validate(evt) {
             background-color: rgba(255,255,255,1);
             border-color: rgba(35,35,35,1);
         }
+
         #request-a-rate input:not([type=submit]):not([type=file]):hover,
         #request-a-rate textarea:hover,
         #request-a-rate select:hover,
@@ -622,9 +656,11 @@ function validate(evt) {
         #content textarea:focus {
             border-color: #b3a15f !important;
         }
+
         .rsMinW .rsBullet span {
             background-color: rgb(35,35,35);
         }
+
         .generic-button,
         .woocommerce-page .button,
         input[type=button],
@@ -637,6 +673,7 @@ function validate(evt) {
             background-color: rgba(0,0,0,1);
             border: 1px solid rgba(0,0,0,1);
         }
+
             .post-submeta > a.button:hover,
             .woocommerce-page .button:hover,
             input[type=button]:hover,
@@ -648,58 +685,72 @@ function validate(evt) {
                 color: rgb(255,255,255) !important;
                 border: 1px solid rgba(52,204,255,1);
             }
+
         /* Blog Comments & Blog Stuff
                 /*-----------------------------------------------------------------------------------*/
         .comment-body,
         #ozy-share-div > a {
             background-color: rgba(240,240,240,1);
         }
+
         .post-submeta > div > div.button {
             background-color: #000000;
         }
+
         .post-submeta > div > div.arrow {
             border-color: transparent #000000 transparent transparent;
         }
+
         .post-title > span,
         .post-submeta > a > span,
         .simple-post-format > div > span {
             background-color: #b3a15f !important;
         }
+
         .featured-thumbnail-header p,
         .featured-thumbnail-header a,
         .featured-thumbnail-header h1 {
             color: #ffffff !important;
         }
+
         .featured-thumbnail-header > div {
             background-color: rgba(179,161,95,.4);
         }
+
         .featured-thumbnail > a,
         .ozy-related-posts .related-post-item > a {
             background-color: rgba(179,161,95,.8);
         }
+
         .post-submeta > div > div.button > a > span {
             color: rgba(240,240,240,1);
         }
+
         .post-meta p.g {
             color: #ededed;
         }
+
         #single-blog-tags > a,
         .ozy-related-posts .caption,
         .ozy-related-posts .caption > h4 > a {
             color: rgba(255,255,255,1) !important;
             background-color: #000000;
         }
+
             #single-blog-tags > a:hover {
                 color: rgba(255,255,255,1);
                 background-color: #b3a15f;
             }
+
         /*post formats*/
         .simple-post-format.post-excerpt-aside > div {
             background-color: rgba(0,0,0,.8);
         }
+
         .simple-post-format > div {
             background-color: #000000;
         }
+
             .simple-post-format > div > span,
             .simple-post-format > div > h2,
             .simple-post-format > div > p,
@@ -708,6 +759,7 @@ function validate(evt) {
             .post-excerpt-audio > div > div {
                 color: rgb(255,255,255) !important;
             }
+
         div.sticky.post-single {
             background-color: rgba(215,215,215,1);
             border-color: rgba(215,215,215,1);
@@ -717,95 +769,118 @@ function validate(evt) {
         .ozy-postlistwithtitle-feed > a:hover {
             background-color: rgb(52,204,255);
         }
+
             .ozy-postlistwithtitle-feed > a:hover * {
                 color: rgb(255,255,255) !important;
             }
+
         .ozy-accordion > h6.ui-accordion-header > span,
         .ozy-tabs .ozy-nav .ui-tabs-selected a,
         .ozy-tabs .ozy-nav .ui-tabs-active a,
         .ozy-toggle span.ui-icon {
             background-color: #b3a15f;
         }
+
         .ozy-tabs .ozy-nav .ui-tabs-selected a,
         .ozy-tabs .ozy-nav .ui-tabs-active a {
             border-color: #b3a15f !important;
         }
+
         .ozy-tabs .ozy-nav li a {
             color: #000000 !important;
         }
+
         /*owl carousel*/
         .ozy-owlcarousel .item.item-extended > a .overlay-one *,
         .ozy-owlcarousel .item.item-extended > a .overlay-two * {
             color: #ffffff !important;
         }
+
         .ozy-owlcarousel .item.item-extended > a .overlay-one-bg {
             background-color: #b3a15f;
             background-color: rgba(179,161,95,0.5);
         }
+
         .ozy-owlcarousel .item.item-extended > a .overlay-two {
             background-color: #b3a15f;
             background-color: rgba(179,161,95,0.85);
         }
+
         .owl-theme .owl-controls .owl-page.active span {
             background-color: #b3a15f;
         }
+
         .ozy-button.auto, .wpb_button.wpb_ozy_auto {
             background-color: rgba(0,0,0,1);
             color: rgba(255,255,255,1);
         }
+
             .ozy-button.auto:hover,
             .wpb_button.wpb_ozy_auto:hover {
                 border-color: rgba(52,204,255,1);
                 color: rgba(255,255,255,1) !important;
                 background-color: rgba(52,204,255,1);
             }
+
         .ozy-icon.circle {
             background-color: #000000;
         }
+
         .ozy-icon.circle2 {
             color: #000000;
             border-color: #000000;
         }
+
         a:hover > .ozy-icon.square,
         a:hover > .ozy-icon.circle {
             background-color: transparent !important;
             color: #000000;
         }
+
         a:hover > .ozy-icon.circle2 {
             color: #000000;
             border-color: transparent !important;
         }
+
         .wpb_content_element .wpb_tabs_nav li.ui-tabs-active {
             background-color: #b3a15f !important;
             border-color: #b3a15f !important;
         }
+
         .wpb_content_element .wpb_tabs_nav li,
         .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header {
             border-color: rgba(215,215,215,1) !important;
         }
+
             .wpb_content_element .wpb_tabs_nav li.ui-tabs-active > a {
                 color: rgba(255,255,255,1) !important;
             }
+
         .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav a,
         .wpb_content_element .wpb_accordion_header a {
             color: #000000 !important;
         }
+
         .wpb_content_element .wpb_accordion_wrapper .wpb_accordion_header {
             font-size: 15px !important;
             line-height: 1.5em !important;
         }
+
         .pricing-table .pricing-table-column + .pricetable-featured .pricing-price {
             color: #b3a15f !important;
         }
+
         .pricing-table li,
         .pricing-table .pricing-table-column:first-child,
         .pricing-table .pricing-table-column {
             border-color: rgba(215,215,215,1) !important;
         }
+
             .pricing-table .pricing-table-column + .pricetable-featured,
             .pricing-table .pricing-table-column.pricetable-featured:first-child {
                 border: 4px solid #b3a15f !important;
             }
+
         /* Shared Border Color
                 /*-----------------------------------------------------------------------------------*/
         .post .pagination > a,
@@ -839,6 +914,7 @@ function validate(evt) {
         .widget .testimonial-box {
             border-color: rgba(215,215,215,1);
         }
+
             #content table tr.featured {
                 border: 2px solid #b3a15f !important;
             }
@@ -847,9 +923,11 @@ function validate(evt) {
         #page-title-wrapper {
             height: 100px;
         }
+
         #main {
             margin-top: 160px;
         }
+
         /* Conditional Page Template Styles
                 /*-----------------------------------------------------------------------------------*/
     </style>
@@ -871,9 +949,11 @@ jQuery(document).ready(function () {
             padding-bottom: 30px !important;
             background-color: #f4f4f4 !important;
         }
+
         .vc_custom_1435728956004 {
             background-color: #f4f4f4 !important;
         }
+
         .vc_custom_1435728330092 {
             margin-bottom: 0px !important;
         }
@@ -886,27 +966,34 @@ jQuery(document).ready(function () {
             padding-left: 36px;
             padding-right: 36px;
         }
+
         body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container {
             border: 1px #ffffff;
             padding: 10px;
             background-color: #f0f0f0;
         }
+
         body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
             border: 1px #f0f0f0;
             background-color: #f8f8f8;
         }
+
         body #gform_wrapper_1 .gform_body .gform_fields .gsection .gsection_title {
             font-size: 20px;
         }
+
         body #gform_wrapper_2 .gform_body .gform_fields .gsection .gsection_title {
             font-size: 20px;
         }
+
         body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
             color: #898989;
         }
+
         .lsicon {
             font-size: 150%;
         }
+
         #top-menu > ul {
             background-color: #003b5b;
             width: 100%;
@@ -920,6 +1007,7 @@ jQuery(document).ready(function () {
             -webkit-transform: translate(0, -50%);
             -ms-transform: translate(0, -50%);
         }
+
             #top-menu > ul > li.has-sub > a:before {
                 position: absolute;
                 /*top:19px;*/
@@ -935,10 +1023,13 @@ jQuery(document).ready(function () {
                 -ms-transition: all .25s ease;
                 transition: all .25s ease;
             }
+
         }
+
         #top-menu > ul > li.has-sub > a {
             padding-right: 30px;
         }
+
             #top-menu > ul > li.has-sub > a:after {
                 position: absolute;
                 top: 00%;
@@ -950,6 +1041,7 @@ jQuery(document).ready(function () {
                 background: #ddd;
                 content: '';
             }
+
         #top-menu > ul > li > a {
             line-height: 44px;
             padding: 0 17px;
@@ -959,8 +1051,10 @@ jQuery(document).ready(function () {
             color: #ddd;
             font-weight: 700;
         }
+
         .hehelink {
         }
+
         .lanLine {
             margin-bottom: 20px !important;
             margin-top: -10px;
@@ -972,6 +1066,7 @@ jQuery(document).ready(function () {
         .icon-set-lsi_widget-2 {
             text-align: left !important;
         }
+
             .icon-set-lsi_widget-2 a,
             .icon-set-lsi_widget-2 a:visited,
             .icon-set-lsi_widget-2 a:focus {
@@ -980,6 +1075,7 @@ jQuery(document).ready(function () {
                 color: #FFFFFF !important;
                 font-size: 20px !important;
             }
+
                 .icon-set-lsi_widget-2 a:hover {
                     background: #777777 !important;
                     color: #FFFFFF !important;
@@ -1015,130 +1111,9 @@ jQuery(document).ready(function () {
     <script type='text/javascript' src='http://assessor.lacounty.gov/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://assessor.lacounty.gov/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='http://assessor.lacounty.gov/wp-content/plugins/js_composer/assets/lib/jquery-ui-tabs-rotate/jquery-ui-tabs-rotate.js?ver=4.3.5'></script>
-    <style type="text/css">
-        /* TODO Custom page styling */
-        .cs401-form-content {
-        }
-        .cs401-header {
-            margin-top: -70px;
-        }
-        .cs401-content-box {
-            border: 1px solid #dddddd;
-            border-radius: 4px;
-        }
-        .cs401-content-box-header {
-            height: 44px;
-            color: #fafafa;
-            font-size: 18px;
-            font-weight: bold;
-            background-color: #003b5b;
-            border-radius: 2px 2px 0px 0px;
-            padding: 2px 0px 0px 15px;
-        }
-            .cs401-content-box-header p {
-                display: table-cell;
-                vertical-align: middle;
-            }
-        .cs401-content-box-body {
-            padding: 15px 15px 15px 15px;
-        }
-        #cs401-pais-icon {
-            float: right;
-            margin: 0px 0px 0px 20px;
-            width: 80px;
-            height: 80px;
-            background-image: url('http://www-scf.usc.edu/~yangkevi/pics/map-icon.png');
-            background-size: cover;
-        }
-        .cs401-form-field {
-            text-transform: none !important;
-            margin-bottom: 10px !important;
-            border: 1px solid #dddddd !important;
-            border-radius: 2px;
-            -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,.075);
-            box-shadow: inset 0px 1px 1px rgba(0,0,0,.075);
-            width: auto !important;
-            padding: 4px 4px !important;
-            letter-spacing: normal !important;
-        }
-        .cs401-float-left-text {
-            display: inline-block;
-            line-height: 2em;
-            float: left;
-            text-align: right;
-            margin-right: 20px;
-            width: 40%;
-        }
-        #accordion {
-            margin: 10px 0px 20px 0px;
-        }
-            #accordion .ui-accordion-header {
-                line-height: 44px;
-                font-size: 18px;
-                font-weight: bold;
-                background-color: #003b5b;
-                margin: 0px;
-                padding: 0px 0px 0px 15px;
-                border: 1px solid #dddddd;
-                outline: none;
-            }
-                #accordion .ui-accordion-header:hover {
-                    background-color: #104b6b !important;
-                    cursor: pointer;
-                }
-                #accordion .ui-accordion-header:active {
-                    background-color: #205b7b !important;
-                }
-                #accordion .ui-accordion-header a {
-                    color: #fafafa;
-                }
-                #accordion .ui-accordion-header a {
-                    text-decoration: none;
-                }
-            #accordion .ui-accordion-content {
-                border: 1px solid #dddddd;
-                border-radius: 0px 0px 4px 4px;
-                padding: 20px;
-                margin: 0;
-                background-color: #f0f0f0;
-                height: auto !important;
-            }
-        #confirm-checkbox {
-            height: auto !important;
-            width: auto !important;
-            -webkit-appearance: checkbox !important;
-        }
-        .cs401-button {
-            text-transform: none !important;
-            width: 15% !important;
-            min-width: 80px !important;
-            padding: 10px !important;
-            background-color: #003b5b !important;
-            border-radius: 2px !important;
-            border: none !important;
-            line-height: 1em !important;
-            letter-spacing: normal !important;
-            float: left;
-            font-weight: bold;
-        }
-            .cs401-button:hover {
-                background-color: #104b6b !important;
-            }
-            .cs401-button:active {
-                background-color: #205b7b !important;
-            }
-        .cs401-comparable-box {
-            border: 1px solid #dddddd;
-            border-radius: 2px;
-            padding: 10px;
-            padding-bottom: 0px;
-            overflow: hidden;
-        }
-        .cs401-comparable-content {
-            float: left;
-            margin: 2px;
-        }
-    </style>
+    
+    <!-- USC DIV project styles -->
+    <link rel="stylesheet" id="DIVform_styles" href="DIVform_styles.css">
 
     <!-- JQuery and JQuery UI scripts for Accordion -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -1355,8 +1330,8 @@ jQuery(document).ready(function () {
                                 </div>
                             </div>
                             <!-- TODO -->
-                            <div class="cs401-form-content">
-                                <div class="cs401-header">
+                            <div class="DIVform-form-content">
+                                <div class="DIVform-header">
                                     <h2 class="ozy-divider-cap-left wpb_content_element">Decline-in-Value Request for Review</h2>
                                     <h3 class="ozy-divider-cap-left wpb_content_element">Online Form</h3>
                                     <div class="ozy-content-divider" style="border-top-style:solid;border-top-width:2px;border-top-color:#34ccff;width:80px;max-width:80px;float:left;"></div>
@@ -1366,11 +1341,11 @@ jQuery(document).ready(function () {
                                     The California Revenue and Taxation Code allows for a temporary reduction in assessed value when property suffers a "decline-in-value."
                                     A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span>2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
                                 </div>
-                                <div class="cs401-content-box">
-                                    <div class="cs401-content-box-header">
+                                <div class="DIVform-content-box">
+                                    <div class="DIVform-content-box-header">
                                         <p>Your Property</p>
                                     </div>
-                                    <div class="cs401-content-box-body">
+                                    <div class="DIVform-content-box-body">
                                         <div style="font-size:18px;">
                                             <strong>Property Address:</strong>
                                             <span id="PropertyInfo_lblPropertyAddress">23656  COMMUNITY ST  LOS ANGELES CA 91304-3001</span>
@@ -1389,42 +1364,43 @@ jQuery(document).ready(function () {
                                             <div style="width:85%; float:left">
                                                 The Assessor has developed the Property Assessment Information System(PAIS) to enhance Internet services to the public. Currently you may research assessment information for individual parcels, print Assessor maps, and search for sales within the past two years. <strong>Click the button on the right to view recent sales information around your property using PAIS.</strong>
                                             </div>
-                                        <div style="width:15%; float:right">
-                                            <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
-                                                <a id="cs401-pais-icon" href="javascript:document.location.href=showMap(2005020045)">
-                                                    &nbsp;
-                                                </a>
-                                            </div>
-                                            <div style="width:100%; float:right; text-align:center">
-                                                <a style="font-size: 12px" href="javascript:document.location.href=showMap(2005020045)">
-                                                    <p>Click here to view recent sales information around your property</p>
-                                                </a>
+                                            <div style="width:15%; float:right">
+                                                <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
+                                                    <a id="DIVform-pais-icon" href="javascript:document.location.href=showMap(2005020045)">
+                                                        &nbsp;
+                                                    </a>
+                                                </div>
+                                                <div style="width:100%; float:right; text-align:center">
+                                                    <a style="font-size: 12px; line-height:1" href="javascript:document.location.href=showMap(2005020045)">
+                                                        <p>Click here to view recent sales information around your property</p>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                         <div style="margin-top:40px">
                                             Begin the application by filling out the fields in the "Owner Information" section below. Then, complete each remaining section by clicking on the section name.
                                         </div>
-                                </div>
                                 <form action = "index.php?action=confirm" method="post">
                                     <div id="accordion">
                                         <h3><a href="#">Owner Information</a></h3>
                                         <div>
-                                            <div class="cs401-float-left-text"> Owner Name: </div>
-                                            <input type="text" name="OwnerName" class="cs401-form-field" />
+                                            <div class="DIVform-float-left-text"> Owner Name: </div>
+                                            <input type="text" name="OwnerName" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
-                                            <div class="cs401-float-left-text"> Daytime Telephone: </div>
-                                            <input type="text" name="Telephone" class="cs401-form-field" id="phone" placeholder="(  )   -    "/>
+                                            <div class="DIVform-float-left-text"> Daytime Telephone: </div>
+                                            <input type="text" name="Telephone" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
                                             <br /><br />
                                             <strong>To be notified of results by email, please enter your email address:</strong>
                                             <br />
                                             <div style="clear:both"></div>
-                                            <div class="cs401-float-left-text"> Email address: </div>
-                                            <input type="text" name="Email" class="cs401-form-field" />
+                                            <div class="DIVform-float-left-text"> Email address: </div>
+                                            <input type="text" name="Email" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
-                                            <div class="cs401-float-left-text"> Confirm email address: </div>
-                                            <input type="text" name="ConfirmEmail" class="cs401-form-field" />
+                                            <div class="DIVform-float-left-text"> Confirm email address: </div>
+                                            <input type="text" name="ConfirmEmail" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
                                         </div>
                                         <h3><a href="#">Mailing Address on File</a></h3>
@@ -1435,7 +1411,7 @@ jQuery(document).ready(function () {
                                                     Click here for a change of mailing address form.
                                                 </a>
                                             </div>
-                                            <div class="cs401-float-left-text" style="line-height:1.5">
+                                            <div class="DIVform-float-left-text" style="line-height:1.5">
                                                 <strong>
                                                     Street:<br />
                                                     City:<br />
@@ -1443,7 +1419,7 @@ jQuery(document).ready(function () {
                                                     Zip Code:<br />
                                                 </strong>
                                             </div>
-                                            <div class="cs401-float-left-text" style="text-align:left; line-height:1.5">
+                                            <div class="DIVform-float-left-text" style="text-align:left; line-height:1.5">
                                                 <span id="lblMailStreet">23656 Community Street</span><br />
                                                 <span id="lblMailCity">West Hills</span><br />
                                                 <span id="lblMailState">CA</span><br />
@@ -1453,14 +1429,14 @@ jQuery(document).ready(function () {
                                         </div>
                                         <h3><a href="#">Your Property Information</a></h3>
                                         <div>
-                                            <div class="cs401-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
-                                            <input type="text" name="ProjectedAssessedValue" class="cs401-form-field" />
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
+                                            <input type="text" name="ProjectedAssessedValue" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
-                                            <div class="cs401-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-                                            <input type="text" name="OpinionOfValue" class="cs401-form-field"  maxlength ="9" onkeypress='validate(event)'/>
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
+                                            <input type="text" name="OpinionOfValue" class="DIVform-form-field" />
                                             <div style="clear:both"></div>
-                                            <div class="cs401-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
-                                            <select name="PropertyType" class="cs401-form-field">
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
+                                            <select name="PropertyType" class="DIVform-form-field">
                                                 <option selected="selected" value="SFR">House/Condo/Townhome</option>
                                                 <option value="R-I">Apartment/Multi-Units</option>
                                                 <option value="C/I">Commercial/Industrial</option>
@@ -1502,13 +1478,13 @@ jQuery(document).ready(function () {
                                                         Please make any necessary corrections in the corresponding boxes:
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="ApproxSqFootage" class="cs401-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="ApproxSqFootage" class="DIVform-form-field" style="margin-bottom:0px">
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="NumBedrooms" class="cs401-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="NumBedrooms" class="DIVform-form-field" style="margin-bottom:0px">
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="NumBathrooms" class="cs401-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="NumBathrooms" class="DIVform-form-field" style="margin-bottom:0px">
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1522,66 +1498,66 @@ jQuery(document).ready(function () {
                                             <div style="margin-bottom: 20px">
                                                 For Single Family/Multi-Res properties: Include building size, year built, number of bedrooms & baths, proximity, number of units and income (if Multi-Res). For Commercial/Industrial properties: Include income, building and land size, use, zoning, year built, and proximity.
                                             </div>
-                                            <div class="cs401-comparable-box" style="margin-bottom:20px">
+                                            <div class="DIVform-comparable-box" style="margin-bottom:20px">
                                                 <strong>Comparable 1:</strong><br />
-                                                <div class="cs401-comparable-content" style="width:35%">
+                                                <div class="DIVform-comparable-content" style="width:35%">
                                                     Address:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp1Address" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1Address" style="width:100% !important" />
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:20%">
+                                                <div class="DIVform-comparable-content" style="width:20%">
                                                     City:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp1City" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1City" style="width:100% !important" />
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:15%">
+                                                <div class="DIVform-comparable-content" style="width:15%">
                                                     Zip:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp1Zip" style="width:100% !important"  id="zip1" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1Zip" style="width:100% !important" />
                                                 </div>
 
-                                                <div class="cs401-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
+                                                <div class="DIVform-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
                                                     <strong>Or, enter an AIN:</strong><br />
-                                                    <input class="cs401-form-field" type="text" name="Comp1AIN" style="width:100% !important" placeholder="    -   -   " id="ain1" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1AIN" style="width:100% !important" />
                                                 </div>
                                                 <div style="clear:both"></div>
-                                                <div class="cs401-comparable-content" style="width:40%">
+                                                <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span>2015</span>)</span><br />Sale Price:<br /></div>
-                                                    <input class="cs401-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" id="Comp1SaleDate"  placeholder="mm/dd/yyyy"/>
-                                                    <input class="cs401-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" />
                                                     <div style="clear:both"></div>
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:55%">
+                                                <div class="DIVform-comparable-content" style="width:55%">
                                                     Property Description:
-                                                    <textarea name="Comp1Description" class="cs401-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
+                                                    <textarea name="Comp1Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
                                                 </div>
                                             </div>
-                                            <div class="cs401-comparable-box">
+                                            <div class="DIVform-comparable-box">
                                                 <strong>Comparable 2:</strong><br />
-                                                <div class="cs401-comparable-content" style="width:35%">
+                                                <div class="DIVform-comparable-content" style="width:35%">
                                                     Address:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp2Address" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2Address" style="width:100% !important" />
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:20%">
+                                                <div class="DIVform-comparable-content" style="width:20%">
                                                     City:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp2City" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2City" style="width:100% !important" />
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:15%">
+                                                <div class="DIVform-comparable-content" style="width:15%">
                                                     Zip:<br />
-                                                    <input class="cs401-form-field" type="text" name="Comp2Zip" style="width:100% !important" id="zip2"/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2Zip" style="width:100% !important" />
                                                 </div>
 
-                                                <div class="cs401-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
+                                                <div class="DIVform-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
                                                     <strong>Or, enter an AIN:</strong><br />
-                                                    <input class="cs401-form-field" type="text" name="Comp2AIN" style="width:100% !important" id="ain2" placeholder="    -   -   "/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2AIN" style="width:100% !important" />
                                                 </div>
                                                 <div style="clear:both"></div>
-                                                <div class="cs401-comparable-content" style="width:40%">
+                                                <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span>2015</span>)</span><br />Sale Price:<br /></div>
-                                                    <input class="cs401-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" id="Comp2SaleDate" placeholder="mm/dd/yyyy"/>
-                                                    <input class="cs401-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)' />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" />
                                                     <div style="clear:both"></div>
                                                 </div>
-                                                <div class="cs401-comparable-content" style="width:55%">
+                                                <div class="DIVform-comparable-content" style="width:55%">
                                                     Property Description:
-                                                    <textarea name="Comp2Description" class="cs401-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
+                                                    <textarea name="Comp2Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1590,19 +1566,19 @@ jQuery(document).ready(function () {
                                             <div>
                                                 Please provide any additional information you would like us to consider in valuing your property. If your property consists of more than one parcel, list the other associated parcel numbers here.
                                             </div>
-                                            <textarea class="cs401-form-field" style="width:100% !important; margin-top:20px"></textarea>
+                                            <textarea class="DIVform-form-field" style="width:100% !important; margin-top:20px"></textarea>
                                         </div>
                                     </div>
-                                    <div id="cs401-end-of-form" style="margin: 0 auto; text-align:center">
+                                    <div id="DIVform-end-of-form" style="margin: 0 auto; text-align:center">
                                         <input type="checkbox" id="confirm-checkbox" />
                                         &nbsp;&nbsp;I confirm that I am the owner of this property and the above information is true.
                                         <br />
                                         <div style="float:left; width:32%; height:1px"></div>
-                                        <input class="cs401-button" type="submit" value="Next">
+                                        <input class="DIVform-button" type="submit" value="Next">
                                 </form>
                                 <form action="http://assessor.lacounty.gov/decline-in-value">
                                     <div style="float:left; width: 4%; height:1px;display:inline-block"></div>
-                                    <input class="cs401-button" type="submit" value="Cancel" onclick="window.location.href='http://assessor.lacounty.gov/decline-in-value'">
+                                    <input class="DIVform-button" type="submit" value="Cancel" onclick="window.location.href='http://assessor.lacounty.gov/decline-in-value'">
                                 </form>
                                 <div style="clear:both"></div>
                             </div>
