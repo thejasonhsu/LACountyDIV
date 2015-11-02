@@ -126,7 +126,6 @@
 		// TODO: Add name to additional information textarea
 		// TODO: Add name to checkbox confirmation
 
-		// DEBUG
 		echo '<p></p>';
 		echo "OwnerName: " . $ownerName;
 		echo '<p></p>';
