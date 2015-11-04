@@ -84,13 +84,6 @@
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://assessor.lacounty.gov/wp-includes/wlwmanifest.xml" />
     <link rel='canonical' href='http://assessor.lacounty.gov/decline-in-value/' />
     <link rel='shortlink' href='http://assessor.lacounty.gov/?p=2760' />
-
-    <script type="text/javascript">
-        function showMap(sAIN) {
-            return ("http://assessormap.co.la.ca.us/mapping/ShowMap.asp?ain=" + sAIN);
-        }
-    </script>
-    
     
     <!-- code snippet for masking input -->
 <script src="resources/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
@@ -1401,12 +1394,13 @@ jQuery(document).ready(function () {
                                             </div>
                                             <div style="width:15%; float:right">
                                                 <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
-                                                    <a id="DIVform-pais-icon" href="javascript:document.location.href=showMap(2005020045)">
+                                                    <script type="text/javascript" src="../pages/js/pais.js"></script>
+                                                    <a id="DIVform-pais-icon" href="javascript:window.location.href=showMap(2005020045)">
                                                         &nbsp;
                                                     </a>
                                                 </div>
                                                 <div style="width:100%; float:right; text-align:center">
-                                                    <a style="font-size: 12px; line-height:1" href="javascript:document.location.href=showMap(2005020045)">
+                                                    <a style="font-size: 12px; line-height:1" href="javascript:window.location.href=showMap(2005020045)">
                                                         <p>Click here to view recent sales information around your property</p>
                                                     </a>
                                                 </div>
