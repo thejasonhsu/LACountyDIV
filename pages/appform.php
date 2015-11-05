@@ -85,9 +85,9 @@
     <link rel='canonical' href='http://assessor.lacounty.gov/decline-in-value/' />
     <link rel='shortlink' href='http://assessor.lacounty.gov/?p=2760' />
     
-    <script src="../resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../resources/library/jquery.maskedinput.js" type="text/javascript"></script>
-    <script src="../pages/js/mask.js" type="text/javascript"></script>
+    <script src="resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="resources/library/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="pages/js/mask.js" type="text/javascript"></script>
 
 
 
@@ -1113,7 +1113,7 @@ jQuery(document).ready(function () {
     <script type='text/javascript' src='http://assessor.lacounty.gov/wp-content/plugins/js_composer/assets/lib/jquery-ui-tabs-rotate/jquery-ui-tabs-rotate.js?ver=4.3.5'></script>
     
     <!-- USC DIV project styles -->
-    <link rel="stylesheet" id="DIVform_styles" href="css/DIVform_styles.css">
+    <link rel="stylesheet" id="DIVform_styles" href="pages/css/DIVform_styles.css">
 
     <!-- JQuery and JQuery UI scripts for Accordion -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -1366,7 +1366,7 @@ jQuery(document).ready(function () {
                                             </div>
                                             <div style="width:15%; float:right">
                                                 <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
-                                                    <script type="text/javascript" src="../pages/js/pais.js"></script>
+                                                    <script type="text/javascript" src="pages/js/pais.js"></script>
                                                     <a id="DIVform-pais-icon" href="javascript:window.location.href=showMap(2005020045)">
                                                         &nbsp;
                                                     </a>

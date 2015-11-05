@@ -1,5 +1,5 @@
 <?php
-	require( "config.php" );
+	require( "resources/config.php" );
 
 	session_start();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
@@ -80,9 +80,7 @@
 			echo '<p></p>';
 			echo "Valid match and successful captcha response. ";
 
-			// TODO: Get information from database for form
-
-			form();
+			form($ain);
 		}
 		else {
 			// Error: Show that it was an invalid combination
@@ -94,8 +92,24 @@
 		// Is there a formal logout? Where do we redirect them?
 	}
 
-	function form() {
-		require( TEMPLATE_PATH . "appform.html" );
+	function form($ain) {
+		// Connect to the database using the login details from the config file
+		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		// Text for the SQL statement; retrieves all the fields for the given id
+		$sql = "SELECT * FROM " . PARCEL_DATA_REPOSITORY_TABLE . " WHERE AIN = :ain";
+		// Prepare the statement
+		$statement = $connection->prepare( $sql );
+		// Bind the variable $id to the placeholder :id
+		$statement->bindValue( ":ain", $ain, PDO::PARAM_INT );
+		// Run the query
+		$statement->execute();
+		// Retrieve the resulting record as an associative array of field names and corresponding field values
+		$dbResults = array();
+		$dbResults = $statement->fetch();
+		// Close the connection
+		$connection = null;
+
+		require( TEMPLATE_PATH . "appform.php" );
 	}
 
 	function confirm() {
@@ -178,7 +192,7 @@
 	}
 
 	function landingpage() {
-		require( TEMPLATE_PATH . "landing.html" );
+		require( TEMPLATE_PATH . "landing.php" );
 	}
 
 	/*$array = PropertyInfo::getInfoUsingId(2023007025);

@@ -11,7 +11,7 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<meta charset="UTF-8" />
 		<!-- css for all styles--> 
-		<link rel='stylesheet'  href='../pages/css/landing.css' type='text/css' media='all' />
+		<link rel='stylesheet'  href='pages/css/landing.css' type='text/css' media='all' />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="icon" href="http://assessor.lacounty.gov/wp-content/uploads/2015/01/LACseal16.png" type="image/x-icon" />
@@ -100,9 +100,9 @@
 
 
 
-<script src="../resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../resources/library/jquery.maskedinput.js" type="text/javascript"></script>
-<script src="../pages/js/mask.js" type="text/javascript"></script>
+<script src="resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="resources/library/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="pages/js/mask.js" type="text/javascript"></script>
 
 
 

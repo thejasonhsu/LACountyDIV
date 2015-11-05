@@ -5,11 +5,20 @@
 	define( "DB_DSN", "mysql:host=uscitp.com;dbname=tbian_LACounty" ); // Constant that tells PHP where to find MySQL database
 	define( "DB_USERNAME", "tbian_test" );
 	define( "DB_PASSWORD", "btbtbt@9" );
-	define( "CLASS_PATH", "classes/" ); // Path in relation to top-level folder, cms
+
+	define( "PDR_FILE_DATA_TABLE", "tbian_LACounty.ParcelDataRepository_FileDate" ); // ParcelDataRepository_TABLEs_sampleDATA.sql
+	define( "PARCEL_DATA_REPOSITORY_TABLE", "tbian_LACounty.ParcelDataRepository" ); // ParcelDataRepository_TABLEs_sampleDATA.sql
+
+	define( "DIV_PARAMETER_DATES_TABLE", "tbian_LACounty.DeclineInValue_ParameterDates" ); // DeclineInValue_ParcelStatus_TABLEs_sampleDATA.sql
+	define( "DIV_FILE_DATE_TABLE", "tbian_LACounty.DeclineInValue_FileDate" ); // DeclineInValue_ParcelStatus_TABLEs_sampleDATA.sql
+	define( "DIV_PARCEL_STATUS_TABLE", "tbian_LACounty.DeclineInValue_ParcelStatus" ); // DeclineInValue_ParcelStatus_TABLEs_sampleDATA.sql
+	
+	define( "DIV_FILING_APP_TABLE", "tbian_LACounty.DIVFilingApplicaton" ); // DIVFilingApplication.sql
+
 	define( "TEMPLATE_PATH", "pages/" ); // Path in relation to top-level folder, cms
+	define( "LIBRARY_PATH", "resources/library" );
 	define( "RESOURCE_PATH", "resources/");
 	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
-	require( CLASS_PATH . "PropertyInfo.php" );
 
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";
