@@ -4,6 +4,7 @@
     $.mask.definitions['~']='[+-]';
     $("#zip1").mask("99999" , {placeholder:" "});
     $("#zip2").mask("99999" , {placeholder:" "});
+    $("#AIN").mask("9999-999-999", {placeholder:" "});
     $("#ain1").mask("9999-999-999", {placeholder:" "});
     $("#ain2").mask("9999-999-999", {placeholder:" "});
     $("#Comp1SaleDate").mask("99/99/9999",{placeholder:"  /  /    "});

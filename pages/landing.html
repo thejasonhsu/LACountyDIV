@@ -99,30 +99,13 @@
 
 
 
-<!-- code snippet for masking input -->
-<script src="http://tbian.student.uscitp.com/LACountyDIV-master/resources/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="http://tbian.student.uscitp.com/LACountyDIV-master/resources/jquery.maskedinput.js" type="text/javascript"></script>
-<script type="text/javascript">
 
-    jQuery(function($){
-        $.mask.definitions['~'] = "[+-]";
-        $("#AIN").mask("9999-999-999", {placeholder:" "});
-       
-    });
-</script>
-<script type="text/javascript">
-function validate(evt) {
-  var theEvent = evt || window.event;
-  var key = theEvent.keyCode || theEvent.which;
-  key = String.fromCharCode( key );
-  var regex = /[0-9]|\./;
-  if( !regex.test(key) ) {
-    theEvent.returnValue = false;
-    if(theEvent.preventDefault) theEvent.preventDefault();
-  }
-}
-</script>
-<!-- end of code snippet for masking input -->
+<script src="../resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../resources/library/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="../pages/js/mask.js" type="text/javascript"></script>
+
+
+
 
 
 
