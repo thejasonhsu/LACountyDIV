@@ -1124,6 +1124,14 @@ jQuery(document).ready(function () {
             $("#accordion").accordion();
         })
     </script>
+
+    <script type="text/javascript" src="pages/js/fillform.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function {
+            fillForm();
+        });         
+    </script>
+
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1339,7 +1347,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div style="padding:20px 0px 20px 0px">
                                     The California Revenue and Taxation Code allows for a temporary reduction in assessed value when property suffers a "decline-in-value."
-                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span>2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
+                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span id="lblAssessedValue">2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
                                 </div>
                                 <div class="DIVform-content-box">
                                     <div class="DIVform-content-box-header">
@@ -1356,9 +1364,9 @@ jQuery(document).ready(function () {
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="padding:0px 20px 0px 0px; text-align:center; float:left; display:inline-block">
                                                 <div style="font-size:36px; font-weight:bold; padding-top:10px"><span id="lblAssessedValue1">$683,385</span></div><br />
-                                                <span style="font-size:12px">Projected <span>2015</span> Assessed Value</span>
+                                                <span style="font-size:12px">Projected <span id="lblAssessedYear">2015</span> Assessed Value</span>
                                             </div>
-                                            This is your projected assessed value for <span>2015</span>. Your <span>2015-16</span> taxes will be based on this value. If you believe the market value of your property as of January 1, <span>2015</span> is less than the value shown, please complete the online form below (or <strong><a href="http://ezforms.assessor.lacounty.gov/Form/Fill/15" target="_blank">click here to file by mail</a></strong>).
+                                            This is your projected assessed value for <span id="lblAssessedYear">2015</span>. Your <span>2015-16</span> taxes will be based on this value. If you believe the market value of your property as of January 1, <span id="lblAssessedYear">2015</span> is less than the value shown, please complete the online form below (or <strong><a href="http://ezforms.assessor.lacounty.gov/Form/Fill/15" target="_blank">click here to file by mail</a></strong>).
                                         </div>
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="width:85%; float:left">
@@ -1464,13 +1472,13 @@ jQuery(document).ready(function () {
                                                     <td style="text-align:right; border:none">
                                                         <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                     </td>
-                                                    <td style="font-weight:bold; border:none">
+                                                    <td id="lblSQFTmain" style="font-weight:bold; border:none">
                                                         2110
                                                     </td>
-                                                    <td style="font-weight:bold; border:none">
+                                                    <td id="lblBedrooms" style="font-weight:bold; border:none">
                                                         4
                                                     </td>
-                                                    <td style="font-weight:bold; border:none">
+                                                    <td id="lblBathrooms" style="font-weight:bold; border:none">
                                                         2
                                                     </td>
                                                 </tr>
@@ -1494,7 +1502,7 @@ jQuery(document).ready(function () {
                                         <div>
                                             <div style="margin-bottom: 20px">
                                                 <strong>This section is optional.</strong>
-                                                The best information you can provide that supports your opinion of the market value of your property is sales of comparable properties. You should try to find two comparable sales that sold as close to January 1, <span>2015</span> as possible, but no later than March 31, <span>2015</span>. While the submission of sales is helpful in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.
+                                                The best information you can provide that supports your opinion of the market value of your property is sales of comparable properties. You should try to find two comparable sales that sold as close to January 1, <span id="lblAssessedYear">2015</span> as possible, but no later than March 31, <span>2015</span>. While the submission of sales is helpful in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.
                                             </div>
                                             <div style="margin-bottom: 20px">
                                                 For Single Family/Multi-Res properties: Include building size, year built, number of bedrooms & baths, proximity, number of units and income (if Multi-Res). For Commercial/Industrial properties: Include income, building and land size, use, zoning, year built, and proximity.
