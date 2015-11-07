@@ -21,21 +21,23 @@ class Rest
 		echo "In Rest: recievedAin = " . $recievedAin;
 		echo '<p></p>';
 		echo "In Rest: recievedPin = " . $recievedPin;
+		echo '<p></p>';
+		print_r( $testLoginPairs );
 
-		if ( in_array( $recievedAin, $testLoginPairs ) ) {
+		if ( array_key_exists( $recievedAin, $testLoginPairs ) ) {
 			if ( $testLoginPairs[$recievedAin] == $recievedPin ) {
 				return "success";
 			}
 			else {
 				// DEBUG
 				echo '<p></p>';
-				echo "recievedAin is in loginPairs, but recievedPin is not its match";
+				echo "recievedAin is in testLoginPairs, but recievedPin is not its match";
 			}
 		}
 		else {
 			// DEBUG
 			echo '<p></p>';
-			echo "recievedAin is not in loginPairs";
+			echo "recievedAin is not in testLoginPairs";
 
 			return "fail";
 		}
