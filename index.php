@@ -1,9 +1,10 @@
 <?php
 	require( "resources/config.php" );
+	require( "resources/library/Rest.php" );
 
 	session_start();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
-	$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+	//$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
 	switch ( $action ) {
 		case 'login':
@@ -37,10 +38,10 @@
 			exit;
 		}
 
-		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
-		$response = json_decode($response);
+		$response = file_get_contents( "https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
+		$response = json_decode( $response );
 
-		if($response->success == false) {
+		if( $response->success == false ) {
 			// Error: Captcha was not successful
 
 			// DEBUG
@@ -53,6 +54,7 @@
 		}
 
 		// Check that valid AIN and PIN were given
+		$loginError = NULL;
 		$validMatch = false;
 		$ain; $pin;
 
@@ -61,29 +63,54 @@
 				$ain = $_POST['AIN'];
 				$pin = $_POST['PIN'];
 
+				// Remove dashes from AIN
+				$ain = str_replace( "-", "", $ain );
+
 				// DEBUG
 				echo '<p></p>';
 				echo "AIN: " . $ain . " " . "PIN: " . $pin;
 
-				// TODO: Pass ain and pin to rest service
+				// Pass ain and pin to rest service
+				$loginData = json_encode( array( 'ain' => $ain,'pin' => $pin ), JSON_FORCE_OBJECT );
+				$restResult = Rest::restValidate( $loginData );
 
-				// DEBUG
-				$validMatch = true;				
+				if ( strcmp( $restResult, "success" ) == 0 ) {
+					// DEBUG
+					echo '<p></p>';
+					echo "Valid ain/pin match!";
+					
+					$validMatch = true;
+				}
+				else {
+					// DEBUG
+					echo '<p></p>';
+					echo "Invalid ain/pin match!";
+					
+					$validMatch = false;
+					$loginError = true;
+					require( TEMPLATE_PATH . "landing.php" );
+				}
 		}
 		else {
 			// Error: User did not enter both an AIN and PIN
+			echo '<p></p>';
 			echo "Please enter both AIN and PIN. ";
+			$loginError = true;
+			require( TEMPLATE_PATH . "landing.php" );
 		}
 
-		if ($validMatch && $response->success) {
+		if ( $validMatch && $response->success ) {
 			// DEBUG
 			echo '<p></p>';
-			echo "Valid match and successful captcha response. ";
+			echo "Valid match and successful captcha response. AIN: " . $ain;
 
+			$loginError = false;
 			form($ain);
 		}
 		else {
 			// Error: Show that it was an invalid combination
+			$loginError = true;
+			require( TEMPLATE_PATH . "landing.php" );
 		}
 	}
 

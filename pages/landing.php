@@ -996,7 +996,7 @@
     <a class="ubtn-link ubtn-left tooltip-560306fdf33b6"  href = "http://assessor.lacounty.gov/decline-in-value-review/" target=''><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">My Decline-in-Value Review Status</span></button></a>
 	<a class="ubtn-link ubtn-left tooltip-560306fe13d65"  href = "http://assessor.lacounty.gov/wp-content/uploads/2015/02/E-23.pdf" target=' _blank'><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">Decline-in-Value Printable Brochure</span></button></a> 
 	</div>			
-				<br/> 
+				<br/>
 				
 	<div class="vc_row wpb_row vc_row-fluid"  ><div class="parallax-wrapper">
 	
@@ -1015,6 +1015,16 @@
                     <p>
                         Please enter the 10-digit Assessor's Identification Number (AIN) and the Property Identification Number (PIN) that appears on your Annual Property Tax Bill, then click on "Login".
                     </p>
+                    <!-- Jenny Test Code -->
+                    <p>
+                    	<?php
+                    		if ( isset( $loginError ) ) {
+                    			if ( $loginError ) {
+                    				echo "Wrong username/password";
+                    			}
+                    		}
+                    	?>
+                	</p>
                 </div>
             </div> 
 <form action="index.php?action=login" method="post">		
