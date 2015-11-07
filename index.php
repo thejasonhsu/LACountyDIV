@@ -56,12 +56,18 @@
 		// Check that valid AIN and PIN were given
 		$loginError = NULL;
 		$validMatch = false;
-		$ain; $pin;
+		$ain; $pin; $ainWithDashes;
 
 		if ( isset( $_POST['AIN'] ) && isset( $_POST['PIN'] ) ) {
 
 				$ain = $_POST['AIN'];
 				$pin = $_POST['PIN'];
+
+				$ainWithDashes = $ain;
+
+				// DEBUG
+				echo '<p></p>';
+				echo "AIN with Dashes: " . $ainWithDashes;
 
 				// Remove dashes from AIN
 				$ain = str_replace( "-", "", $ain );
@@ -105,7 +111,7 @@
 			echo "Valid match and successful captcha response. AIN: " . $ain;
 
 			$loginError = false;
-			form($ain);
+			form($ain, $ainWithDashes);
 		}
 		else {
 			// DEBUG
@@ -123,7 +129,7 @@
 		// Is there a formal logout? Where do we redirect them?
 	}
 
-	function form($ain) {
+	function form($ain, $ainWithDashes) {
 		// Connect to the database using the login details from the config file
 		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		// Text for the SQL statement; retrieves all the fields for the given id

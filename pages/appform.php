@@ -1348,7 +1348,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div style="padding:20px 0px 20px 0px">
                                     The California Revenue and Taxation Code allows for a temporary reduction in assessed value when property suffers a "decline-in-value."
-                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span id="lblAssessedYear">2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
+                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span></font></strong>.
                                 </div>
                                 <div class="DIVform-content-box">
                                     <div class="DIVform-content-box-header">
@@ -1357,17 +1357,27 @@ jQuery(document).ready(function () {
                                     <div class="DIVform-content-box-body">
                                         <div style="font-size:18px;">
                                             <strong>Property Address:</strong>
-                                            <span id="PropertyInfo_lblPropertyAddress">23656  COMMUNITY ST  LOS ANGELES CA 91304-3001</span>
+                                            <span id="PropertyInfo_lblPropertyAddress">
+                                                <?php
+                                                    if ( isset( $dbResults['SitusHouseNo'] ) ) { echo $dbResults['SitusHouseNo'] . " "; }
+                                                    if ( isset( $dbResults['SitusFraction'] ) ) { echo $dbResults['SitusFraction'] . " "; }
+                                                    if ( isset( $dbResults['SitusDirection'] ) ) { echo $dbResults['SitusDirection'] . " "; }
+                                                    if ( isset( $dbResults['SitusUnit'] ) ) { echo $dbResults['SitusUnit'] . " "; }
+                                                    if ( isset( $dbResults['SitusStreet'] ) ) { echo $dbResults['SitusStreet'] . " "; }
+                                                    if ( isset( $dbResults['SitusCity'] ) ) { echo $dbResults['SitusCity'] . " "; }
+                                                    if ( isset( $dbResults['SitusZIP'] ) ) { echo $dbResults['SitusZIP'] . " "; }
+                                                ?>
+                                            </span>
                                             <br />
                                             <strong>AIN:</strong>
-                                            <span id="PropertyInfo_lblAIN">2005-020-045</span>
+                                            <span id="PropertyInfo_lblAIN"><?php if ( isset( $ainWithDashes ) ) { echo $ainWithDashes; } ?></span>
                                         </div>
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="padding:0px 20px 0px 0px; text-align:center; float:left; display:inline-block">
-                                                <div style="font-size:36px; font-weight:bold; padding-top:10px"><span id="lblAssessedValue1">$683,385</span></div><br />
-                                                <span style="font-size:12px">Projected <span id="lblAssessedYear">2015</span> Assessed Value</span>
+                                                <div style="font-size:36px; font-weight:bold; padding-top:10px"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div><br />
+                                                <span style="font-size:12px">Projected <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span> Assessed Value</span>
                                             </div>
-                                            This is your projected assessed value for <span id="lblAssessedYear">2015</span>. Your <span>2015-16</span> taxes will be based on this value. If you believe the market value of your property as of January 1, <span id="lblAssessedYear">2015</span> is less than the value shown, please complete the online form below (or <strong><a href="http://ezforms.assessor.lacounty.gov/Form/Fill/15" target="_blank">click here to file by mail</a></strong>).
+                                            This is your projected assessed value for <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>. Your <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY'] . "-" . ( intval( $dbResults['RollYYYY'] )+1 ); } ?></span> taxes will be based on this value. If you believe the market value of your property as of January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span> is less than the value shown, please complete the online form below (or <strong><a href="http://ezforms.assessor.lacounty.gov/Form/Fill/15" target="_blank">click here to file by mail</a></strong>).
                                         </div>
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="width:85%; float:left">
@@ -1430,19 +1440,43 @@ jQuery(document).ready(function () {
                                                 </strong>
                                             </div>
                                             <div class="DIVform-float-left-text" style="text-align:left; line-height:1.5">
-                                                <span id="lblMailStreet">23656 Community Street</span><br />
-                                                <span id="lblMailCity">West Hills</span><br />
-                                                <span id="lblMailState">CA</span><br />
-                                                <span id="lblMailZip">91304-3001</span><br />
+                                                <span id="lblMailStreet">
+                                                    <?php
+                                                        if ( isset( $dbResults['MailHouseNo'] ) ) { echo $dbResults['MailHouseNo'] . " "; }
+                                                        if ( isset( $dbResults['MailFraction'] ) ) { echo $dbResults['MailFraction'] . " "; }
+                                                        if ( isset( $dbResults['MailDirection'] ) ) { echo $dbResults['MailDirection'] . " "; }
+                                                        if ( isset( $dbResults['MailUnit'] ) ) { echo $dbResults['MailUnit'] . " "; }
+                                                        if ( isset( $dbResults['MailStreet'] ) ) { echo $dbResults['MailStreet']; }
+                                                    ?>
+                                                </span><br />
+                                                <span id="lblMailCity">
+                                                    <?php
+                                                        if ( isset( $dbResults['MailCity'] ) ) {
+                                                            $MailCity = $dbResults['MailCity'];
+                                                            $MailCity = substr( $MailCity, 0, -3 );
+                                                            echo $MailCity;
+                                                        }
+                                                    ?>
+                                                </span><br />
+                                                <span id="lblMailState">
+                                                    <?php
+                                                        if ( isset( $dbResults['MailCity'] ) ) {
+                                                            $MailCity = $dbResults['MailCity'];
+                                                            $MailCity = substr( $MailCity, -2 );
+                                                            echo $MailCity;
+                                                        }
+                                                    ?>
+                                                </span><br />
+                                                <span id="lblMailZip"><?php if ( isset( $dbResults['MailZip'] ) ) { echo $dbResults['MailZip']; } ?></span><br />
                                             </div>
                                             <div style="clear:both"></div>
                                         </div>
                                         <h3><a href="#">Your Property Information</a></h3>
                                         <div>
-                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>:</strong></div>
                                             <input type="text" name="ProjectedAssessedValue" class="DIVform-form-field" maxlength ="9" onkeypress='validate(event)'/>
                                             <div style="clear:both"></div>
-                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span id="lblAssessedYear">2015</span>: </strong></div>
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>: </strong></div>
                                             <input type="text" name="OpinionOfValue" class="DIVform-form-field" id="userinput-value" maxlength ="9" onkeypress='validate(event)'/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
@@ -1474,13 +1508,13 @@ jQuery(document).ready(function () {
                                                         <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                     </td>
                                                     <td id="lblSQFTmain" style="font-weight:bold; border:none">
-                                                        2110
+                                                        <?php if ( isset( $dbResults['SQFTmain'] ) ) { echo $dbResults['SQFTmain']; } ?>
                                                     </td>
                                                     <td id="lblBedrooms" style="font-weight:bold; border:none">
-                                                        4
+                                                        <?php if ( isset( $dbResults['Bedrooms'] ) ) { echo $dbResults['Bedrooms']; } ?>
                                                     </td>
                                                     <td id="lblBathrooms" style="font-weight:bold; border:none">
-                                                        2
+                                                        <?php if ( isset( $dbResults['Bathrooms'] ) ) { echo $dbResults['Bathrooms']; } ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -1503,7 +1537,7 @@ jQuery(document).ready(function () {
                                         <div>
                                             <div style="margin-bottom: 20px">
                                                 <strong>This section is optional.</strong>
-                                                The best information you can provide that supports your opinion of the market value of your property is sales of comparable properties. You should try to find two comparable sales that sold as close to January 1, <span id="lblAssessedYear">2015</span> as possible, but no later than March 31, <span>2015</span>. While the submission of sales is helpful in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.
+                                                The best information you can provide that supports your opinion of the market value of your property is sales of comparable properties. You should try to find two comparable sales that sold as close to January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span> as possible, but no later than March 31, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>. While the submission of sales is helpful in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.
                                             </div>
                                             <div style="margin-bottom: 20px">
                                                 For Single Family/Multi-Res properties: Include building size, year built, number of bedrooms & baths, proximity, number of units and income (if Multi-Res). For Commercial/Industrial properties: Include income, building and land size, use, zoning, year built, and proximity.
@@ -1529,7 +1563,7 @@ jQuery(document).ready(function () {
                                                 </div>
                                                 <div style="clear:both"></div>
                                                 <div class="DIVform-comparable-content" style="width:40%">
-                                                    <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span>2015</span>)</span><br />Sale Price:<br /></div>
+                                                    <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
                                                     <input class="DIVform-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" id="Comp1SaleDate"  placeholder="mm/dd/yyyy"/>
                                                     <input class="DIVform-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
                                                     <div style="clear:both"></div>
@@ -1560,7 +1594,7 @@ jQuery(document).ready(function () {
                                                 </div>
                                                 <div style="clear:both"></div>
                                                 <div class="DIVform-comparable-content" style="width:40%">
-                                                    <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span>2015</span>)</span><br />Sale Price:<br /></div>
+                                                    <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
                                                     <input class="DIVform-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" id="Comp2SaleDate" placeholder="mm/dd/yyyy"/>
                                                     <input class="DIVform-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
                                                     <div style="clear:both"></div>

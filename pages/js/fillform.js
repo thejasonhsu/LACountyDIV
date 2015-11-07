@@ -51,7 +51,7 @@ function fillForm() {
 	var MailCity = "<?php echo $dbResults['MailCity'] ?>";
 	var MailState = MailCity.slice(MailCity.length - 2);
 	MailCity = MailCity.slice(0, MailCity.length - 3);
-	var MailZIP = "<?php echo $dbResults['MailZIP'] ?>";
+	var MailZIP = "<?php echo $dbResults['MailZip'] ?>";
 	var MailAddress = MailHouseNo + " " + MailFraction + " "
 					+ MailDirection + " " + MailUnit + " "
 					+ MailStreet;
