@@ -1126,6 +1126,7 @@ jQuery(document).ready(function () {
     </script>
 
     <script type="text/javascript" src="pages/js/fillform.js"></script>
+    <script type="text/javascript" src="pages/js/validateinput.js"></script>>
     <script type="text/javascript">
         $(document).ready(function {
             fillForm();
@@ -1347,7 +1348,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div style="padding:20px 0px 20px 0px">
                                     The California Revenue and Taxation Code allows for a temporary reduction in assessed value when property suffers a "decline-in-value."
-                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span id="lblAssessedValue">2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
+                                    A decline-in-value occurs when the market value of your property is less than the assessed value as of January 1, <span id="lblAssessedYear">2015</span>. If a decline-in-value has occurred, the property owner can request a review. <strong>This application MUST be filed between <font style="color: red;">July 2 and November 30, <span>2015</span></font></strong>.
                                 </div>
                                 <div class="DIVform-content-box">
                                     <div class="DIVform-content-box-header">
@@ -1391,12 +1392,12 @@ jQuery(document).ready(function () {
                                         <div style="margin-top:40px">
                                             Begin the application by filling out the fields in the "Owner Information" section below. Then, complete each remaining section by clicking on the section name.
                                         </div>
-                                <form action = "index.php?action=confirm" method="post">
+                                <form action = "index.php?action=confirm" method="post" onsubmit="return validateInput();">
                                     <div id="accordion">
                                         <h3><a href="#">Owner Information</a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text"> Owner Name: </div>
-                                            <input type="text" name="OwnerName" class="DIVform-form-field" />
+                                            <input type="text" name="OwnerName" class="DIVform-form-field" id="owner-name"/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Daytime Telephone: </div>
                                             <input type="text" name="Telephone" class="DIVform-form-field" id="phone" placeholder="(  )   -    "/>
@@ -1406,10 +1407,10 @@ jQuery(document).ready(function () {
                                             <br />
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Email address: </div>
-                                            <input type="text" name="Email" class="DIVform-form-field" />
+                                            <input type="text" name="Email" class="DIVform-form-field" id="email"/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Confirm email address: </div>
-                                            <input type="text" name="ConfirmEmail" class="DIVform-form-field" />
+                                            <input type="text" name="ConfirmEmail" class="DIVform-form-field" id="confirm-email"/>
                                             <div style="clear:both"></div>
                                         </div>
                                         <h3><a href="#">Mailing Address on File</a></h3>
@@ -1441,8 +1442,8 @@ jQuery(document).ready(function () {
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
                                             <input type="text" name="ProjectedAssessedValue" class="DIVform-form-field" maxlength ="9" onkeypress='validate(event)'/>
                                             <div style="clear:both"></div>
-                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-                                            <input type="text" name="OpinionOfValue" class="DIVform-form-field" maxlength ="9" onkeypress='validate(event)'/>
+                                            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span id="lblAssessedYear">2015</span>: </strong></div>
+                                            <input type="text" name="OpinionOfValue" class="DIVform-form-field" id="userinput-value" maxlength ="9" onkeypress='validate(event)'/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
                                             <select name="PropertyType" class="DIVform-form-field">
