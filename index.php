@@ -88,7 +88,7 @@
 					
 					$validMatch = false;
 					$loginError = true;
-					//require( TEMPLATE_PATH . "landing.php" );
+					require( TEMPLATE_PATH . "landing.php" );
 				}
 		}
 		else {
@@ -96,7 +96,7 @@
 			echo '<p></p>';
 			echo "Please enter both AIN and PIN. ";
 			$loginError = true;
-			//require( TEMPLATE_PATH . "landing.php" );
+			require( TEMPLATE_PATH . "landing.php" );
 		}
 
 		if ( $validMatch && $response->success ) {
@@ -105,7 +105,7 @@
 			echo "Valid match and successful captcha response. AIN: " . $ain;
 
 			$loginError = false;
-			//form($ain);
+			form($ain);
 		}
 		else {
 			// DEBUG
@@ -114,7 +114,7 @@
 
 			// Error: Show that it was an invalid combination
 			$loginError = true;
-			//require( TEMPLATE_PATH . "landing.php" );
+			require( TEMPLATE_PATH . "landing.php" );
 		}
 	}
 
