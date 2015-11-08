@@ -170,4 +170,5 @@
 /* Corrects wordpress theme incompatibility */
 .datepick-month-year {
     -webkit-appearance: menulist;
+    padding: 0px;
 }
