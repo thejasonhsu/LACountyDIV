@@ -150,78 +150,34 @@
 	}
 
 	function confirm() {
-		$ownerName = isset( $_POST['OwnerName'] ) ? $_POST['OwnerName'] : "";
-		$telephone = isset( $_POST['Telephone'] ) ? $_POST['Telephone'] : "";
-		$email = isset( $_POST['Email'] ) ? $_POST['Email'] : "";
-		$confirmEmail = isset( $_POST['ConfirmEmail'] ) ? $_POST['ConfirmEmail'] : "";
-		$projectedAssessedValue = isset( $_POST['ProjectedAssessedValue'] ) ? $_POST['ProjectedAssessedValue'] : "";
-		$opinionOfValue = isset( $_POST['OpinionOfValue'] ) ? $_POST['OpinionOfValue'] : "";
-		$propertyType = isset( $_POST['PropertyType'] ) ? $_POST['PropertyType'] : "";
-		$approxSqFootage = isset( $_POST['ApproxSqFootage'] ) ? $_POST['ApproxSqFootage'] : "";
-		$numBedrooms = isset( $_POST['NumBedrooms'] ) ? $_POST['NumBedrooms'] : "";
-		$numBathrooms = isset( $_POST['NumBathrooms'] ) ? $_POST['NumBathrooms'] : "";
-		$comp1Address = isset( $_POST['Comp1Address'] ) ? $_POST['Comp1Address'] : "";
-		$comp1City = isset( $_POST['Comp1City'] ) ? $_POST['Comp1City'] : "";
-		$comp1Zip = isset( $_POST['Comp1Zip'] ) ? $_POST['Comp1Zip'] : "";
-		$comp1AIN = isset( $_POST['Comp1AIN'] ) ? $_POST['Comp1AIN'] : "";
-		$comp1SaleDate = isset( $_POST['Comp1SaleDate'] ) ? $_POST['Comp1SaleDate'] : "";
-		$comp1SalePrice = isset( $_POST['Comp1SalePrice'] ) ? $_POST['Comp1SalePrice'] : "";
-		$comp1Description = isset( $_POST['Comp1Description'] ) ? $_POST['Comp1Description'] : "";
-		$comp2Address = isset( $_POST['Comp2Address'] ) ? $_POST['Comp2Address'] : "";
-		$comp2City = isset( $_POST['Comp2City'] ) ? $_POST['Comp2City'] : "";
-		$comp2Zip = isset( $_POST['Comp2Zip'] ) ? $_POST['Comp2Zip'] : "";
-		$comp2AIN = isset( $_POST['Comp2AIN'] ) ? $_POST['Comp2AIN'] : "";
-		$comp2SaleDate = isset( $_POST['Comp2SaleDate'] ) ? $_POST['Comp2SaleDate'] : "";
-		$comp2Description = isset( $_POST['Comp2Description'] ) ? $_POST['Comp2Description'] : "";
-		$comp2SalePrice = isset( $_POST['Comp2SalePrice'] ) ? $_POST['Comp2SalePrice'] : "";
+		$userResponse = array();
+		$userResponse['ownerName'] = isset( $_POST['OwnerName'] ) ? $_POST['OwnerName'] : "";
+		$userResponse['telephone'] = isset( $_POST['Telephone'] ) ? $_POST['Telephone'] : "";
+		$userResponse['email'] = isset( $_POST['Email'] ) ? $_POST['Email'] : "";
+		$userResponse['confirmEmail'] = isset( $_POST['ConfirmEmail'] ) ? $_POST['ConfirmEmail'] : "";
+		$userResponse['opinionOfValue'] = isset( $_POST['OpinionOfValue'] ) ? $_POST['OpinionOfValue'] : "";
+		$userResponse['propertyType'] = isset( $_POST['PropertyType'] ) ? $_POST['PropertyType'] : "";
+		$userResponse['approxSqFootage'] = isset( $_POST['ApproxSqFootage'] ) ? $_POST['ApproxSqFootage'] : "";
+		$userResponse['numBedrooms'] = isset( $_POST['NumBedrooms'] ) ? $_POST['NumBedrooms'] : "";
+		$userResponse['numBathrooms'] = isset( $_POST['NumBathrooms'] ) ? $_POST['NumBathrooms'] : "";
+		$userResponse['comp1Address'] = isset( $_POST['Comp1Address'] ) ? $_POST['Comp1Address'] : "";
+		$userResponse['comp1City'] = isset( $_POST['Comp1City'] ) ? $_POST['Comp1City'] : "";
+		$userResponse['comp1Zip'] = isset( $_POST['Comp1Zip'] ) ? $_POST['Comp1Zip'] : "";
+		$userResponse['comp1AIN'] = isset( $_POST['Comp1AIN'] ) ? $_POST['Comp1AIN'] : "";
+		$userResponse['comp1SaleDate'] = isset( $_POST['Comp1SaleDate'] ) ? $_POST['Comp1SaleDate'] : "";
+		$userResponse['comp1SalePrice'] = isset( $_POST['Comp1SalePrice'] ) ? $_POST['Comp1SalePrice'] : "";
+		$userResponse['comp1Description'] = isset( $_POST['Comp1Description'] ) ? $_POST['Comp1Description'] : "";
+		$userResponse['comp2Address'] = isset( $_POST['Comp2Address'] ) ? $_POST['Comp2Address'] : "";
+		$userResponse['comp2City'] = isset( $_POST['Comp2City'] ) ? $_POST['Comp2City'] : "";
+		$userResponse['comp2Zip'] = isset( $_POST['Comp2Zip'] ) ? $_POST['Comp2Zip'] : "";
+		$userResponse['comp2AIN'] = isset( $_POST['Comp2AIN'] ) ? $_POST['Comp2AIN'] : "";
+		$userResponse['comp2SaleDate'] = isset( $_POST['Comp2SaleDate'] ) ? $_POST['Comp2SaleDate'] : "";
+		$userResponse['comp2Description'] = isset( $_POST['Comp2Description'] ) ? $_POST['Comp2Description'] : "";
+		$userResponse['comp2SalePrice'] = isset( $_POST['Comp2SalePrice'] ) ? $_POST['Comp2SalePrice'] : "";
 		// TODO: Add name to additional information textarea
 		// TODO: Add name to checkbox confirmation
 
-		// DEBUG
-		echo '<p></p>';
-		echo "OwnerName: " . $ownerName;
-		echo '<p></p>';
-		echo "Telephone: " . $telephone;
-		echo '<p></p>';
-		echo "Email: " . $email;
-		echo '<p></p>';
-		echo "ConfirmEmail: " . $confirmEmail;
-		echo '<p></p>';
-		echo "ProjectedAssessedValue: " . $projectedAssessedValue;
-		echo '<p></p>';
-		echo "OpinionOfValue: " . $opinionOfValue;
-		echo '<p></p>';
-		echo "PropertyType: " . $propertyType;
-		echo '<p></p>';
-		echo "ApproxSqFootage: " . $approxSqFootage;
-		echo '<p></p>';
-		echo "NumBedrooms: " . $numBedrooms;
-		echo '<p></p>';
-		echo "NumBathrooms: " . $numBathrooms;
-		echo '<p></p>';
-		echo "Comp1Address: " . $comp1Address;
-		echo '<p></p>';
-		echo "Comp1City: " . $comp1City;
-		echo '<p></p>';
-		echo "Comp1Zip: " . $comp1Zip;
-		echo '<p></p>';
-		echo "Comp1SaleDate: " . $comp1SaleDate;
-		echo '<p></p>';
-		echo "Comp1SalePrice: " . $comp1SalePrice;
-		echo '<p></p>';
-		echo "Comp1Description: " . $comp1Description;
-		echo '<p></p>';
-		echo "Comp2Address: " . $comp2Address;
-		echo '<p></p>';
-		echo "Comp2City: " . $comp2City;
-		echo '<p></p>';
-		echo "Comp2Zip: " . $comp2Zip;
-		echo '<p></p>';
-		echo "Comp2AIN: " . $comp2AIN;
-		echo '<p></p>';
-		echo "Comp2SaleDate: " . $comp2SaleDate;
-		echo '<p></p>';
-		echo "Comp2SalePrice: " . $comp2SalePrice;
+		require( TEMPLATE_PATH . "confirmation.php" );
 	}
 
 	function submit() {

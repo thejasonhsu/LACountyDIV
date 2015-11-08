@@ -1363,20 +1363,20 @@ jQuery(document).ready(function () {
                                     </div>
                                     <div class="DIVform-content-box-body">
                                         <div class="DIVform-float-left-text"> Owner Name: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> OWNER NAME </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['ownerName'] ) ) { echo $userResponse['ownerName']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text"> Daytime Telephone: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> 999-999-9999 </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['telephone'] ) ) { echo $userResponse['telephone']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <br /><br />
                                         <strong>Results will be sent to this email address:</strong>
                                         <br />
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text"> Email address: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> EMAIL@WEBSITE.COM </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['email'] ) ) { echo $userResponse['email']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text"> Confirm email address: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> EMAIL@WEBSITE.COM </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['confirmEmail'] ) ) { echo $userResponse['confirmEmail']; } ?> </div>
                                         <div style="clear:both"></div>
                                     </div>
                                 </div>
@@ -1411,10 +1411,11 @@ jQuery(document).ready(function () {
                                         <div class="DIVform-float-left-text DIVform-float-left-result"> $999,999 </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> $999,999 </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> PROPERTYTYPE </div>
+                                        <!-- Jenny: Add code to check for property type code and display correct text -->
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['propertyType'] ) ) { echo $userResponse['propertyType']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <br />
                                         <br />
@@ -1436,13 +1437,13 @@ jQuery(document).ready(function () {
                                                     <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    2110
+                                                    <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    4
+                                                    <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    2
+                                                    <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1483,19 +1484,19 @@ jQuery(document).ready(function () {
                                                 </strong>
                                             </div>
                                             <div class="DIVform-float-left-text" style="text-align:left; line-height:1">
-                                                ADDRESS HERE<br/>
-                                                CITY HERE<br/>
-                                                ZIP HERE<br/>
-                                                AIN HERE<br/>
+                                                <?php if ( isset( $userResponse['comp1Address'] ) ) { echo $userResponse['comp1Address']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp1City'] ) ) { echo $userResponse['comp1City']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp1Zip'] ) ) { echo $userResponse['comp1Zip']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp1AIN'] ) ) { echo $userResponse['comp1AIN']; } ?><br/>
                                                 <Br/>
-                                                SALE DATE HERE<br/>
-                                                SALE PRICE HERE<br/>
+                                                <?php if ( isset( $userResponse['comp1SaleDate'] ) ) { echo $userResponse['comp1SaleDate']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp1SalePrice'] ) ) { echo $userResponse['comp1SalePrice']; } ?><br/>
                                                 <br/>
                                             </div>
                                             <div style="clear:both"></div>
                                             <div style="margin:10px 0px 10px 0px">
                                             <strong>Property Description:</strong><br/>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            <?php if ( isset( $userResponse['comp1Description'] ) ) { echo $userResponse['comp1Description']; } ?>
                                             </div>
                                         </div>
                                         <div class="DIVform-comparable-box">
@@ -1514,19 +1515,19 @@ jQuery(document).ready(function () {
                                                 </strong>
                                             </div>
                                             <div class="DIVform-float-left-text" style="text-align:left; line-height:1">
-                                                ADDRESS HERE<br/>
-                                                CITY HERE<br/>
-                                                ZIP HERE<br/>
-                                                AIN HERE<br/>
+                                                <?php if ( isset( $userResponse['comp2Address'] ) ) { echo $userResponse['comp2Address']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp2City'] ) ) { echo $userResponse['comp2City']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp2Zip'] ) ) { echo $userResponse['comp2Zip']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp2AIN'] ) ) { echo $userResponse['comp2AIN']; } ?><br/>
                                                 <Br/>
-                                                SALE DATE HERE<br/>
-                                                SALE PRICE HERE<br/>
+                                                <?php if ( isset( $userResponse['comp2SaleDate'] ) ) { echo $userResponse['comp2SaleDate']; } ?><br/>
+                                                <?php if ( isset( $userResponse['comp2SalePrice'] ) ) { echo $userResponse['comp2SalePrice']; } ?><br/>
                                                 <br/>
                                             </div>
                                             <div style="clear:both"></div>
                                             <div style="margin:10px 0px 10px 0px">
                                             <strong>Property Description:</strong><br/>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            <?php if ( isset( $userResponse['comp2Description'] ) ) { echo $userResponse['comp2Description']; } ?>
                                             </div>                                            
                                         </div>
                                     </div>
