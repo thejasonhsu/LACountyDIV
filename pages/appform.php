@@ -1125,13 +1125,7 @@ jQuery(document).ready(function () {
         })
     </script>
 
-    <script type="text/javascript" src="pages/js/fillform.js"></script>
     <script type="text/javascript" src="pages/js/validateinput.js"></script>>
-    <script type="text/javascript">
-        $(document).ready(function {
-            fillForm();
-        });         
-    </script>
     <link rel="stylesheet" type="text/css" href="pages/css/smoothness.datepick.css"> 
     <script type="text/javascript" src="pages/js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="pages/js/jquery.datepick.js"></script>
@@ -1476,7 +1470,6 @@ jQuery(document).ready(function () {
                                         <h3><a href="#">Your Property Information</a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>:</strong></div>
-                                            <!--<input type="text" name="ProjectedAssessedValue" class="DIVform-form-field" maxlength ="9" onkeypress='validate(event)'/>-->
                                             <div class="DIVform-float-left-text" style="text-align:left"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>: </strong></div>
