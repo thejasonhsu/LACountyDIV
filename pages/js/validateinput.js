@@ -105,6 +105,17 @@ function validateUserInputValue() {
  * @return {boolean} Returns true if all input was valid, false otherwise.
  */
 function validateInput() {
+	var errMsg = document.getElementById('DIVform-error-message');
+
+	if(!document.getElementById('confirm-checkbox').checked) {
+		//confirmation checkbox not checked, output error message
+		errMsg.innerHTML = "Please confirm that your application is correct by clicking the checkbox below."
+		return false;
+	}
+	else {
+		errMsg.innerHTML = "";
+	}
+
 	var valid = true;
 
 	//IMPORTANT: the use of the bitwise AND operator here, '&', is necessary to prevent short-circuit behavior. Do NOT change it to the regular AND oeprator, '&&'.
@@ -119,7 +130,11 @@ function validateInput() {
 
 	if(!valid) {
 		//set error text at bottom of the page
+		errMsg.innerHTML = "You have one or more errors in your application. Please review the form for the highlighted errors and correct them."
 		return false;
 	}
-	else return true;
+	else {
+		errMsg.innerHTML = "";
+		return true;
+	}
 }

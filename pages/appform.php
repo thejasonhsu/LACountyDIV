@@ -1618,7 +1618,8 @@ jQuery(document).ready(function () {
                                             <textarea class="DIVform-form-field" style="width:100% !important; margin-top:20px"></textarea>
                                         </div>
                                     </div>
-                                    <div id="DIVform-end-of-form" style="margin: 0 auto; text-align:center">
+                                    <div id="DIVform-end-of-form">
+                                        <div id="DIVform-error-message"></div>
                                         <input type="checkbox" id="confirm-checkbox" />
                                         &nbsp;&nbsp;I confirm that I am the owner of this property and the above information is true.
                                         <br />

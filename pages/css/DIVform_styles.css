@@ -152,6 +152,21 @@
     margin: 2px;
 }
 
+#DIVform-end-of-form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#DIVform-error-message {
+    color: red;
+    width: 60%;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #DIVform-submit-confirmation-box {
     
 }
