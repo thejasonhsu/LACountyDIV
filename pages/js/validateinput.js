@@ -12,7 +12,10 @@ function validateOwnerName() {
 		ownerName.style.cssText = 'border:1px solid red !important;';
 		return false;
 	}
-	return true;
+	else {
+		ownerName.style.cssText = null;	
+		return true;
+	}
 }
 
 /**
@@ -28,7 +31,10 @@ function validateTelephone() {
 		phoneNo.style.cssText = 'border:1px solid red !important;';
 		return false;
 	}
-	return true;
+	else {
+		phoneNo.style.cssText = null;	
+		return true;
+	}
 }
 
 /**
@@ -45,7 +51,10 @@ function validateEmail() {
 		email.style.cssText = 'border:1px solid red !important;';
 		return false;
 	}
-	return true;
+	else {
+		email.style.cssText = null;
+		return true;
+	}
 }
 
 /**
@@ -64,7 +73,10 @@ function validateConfirmEmail() {
 		confirmEmail.style.cssText = 'border:1px solid red !important;';
 		return false;
 	}
-	return true;
+	else {
+		confirmEmail.style.cssText = null;	
+		return true;
+	}
 }
 
 /**
@@ -80,7 +92,10 @@ function validateUserInputValue() {
 		val.style.cssText = 'border:1px solid red !important;';
 		return false;
 	}
-	return true;
+	else {
+		val.style.cssText = null;	
+		return true;
+	}
 }
 
 /**
