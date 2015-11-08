@@ -122,10 +122,29 @@ function validateInput() {
 	if(!(validateOwnerName() & validateTelephone() & validateEmail() & validateConfirmEmail())) {
 		//set error flags on owner information section
 		valid = false;
+		var warning = new Image();
+		warning.src = 'warning.png';
+		var img = document.getElementById('warning-icon1');
+		img.src = warning.src;
+		document.getElementById('owner-info').style.cssText = "color:red !important";
 	}
+	else {
+		var img = document.getElementById('warning-icon1');
+		img.style.display = 'none';
+		document.getElementById('owner-info').style.cssText = null;	
+	}
+
 	if(!validateUserInputValue()) {
 		//set error flags on property info section
 		valid = false;
+		var img = document.getElementById('warning-icon2');
+		img.src = 'warning.png';
+		document.getElementById('property-info').style.cssText = "color:red !important";
+	}	
+	else {
+		var img = document.getElementById('warning-icon2');
+		img.style.display = 'none';
+		document.getElementById('property-info').style.cssText = null;	
 	}
 
 	if(!valid) {

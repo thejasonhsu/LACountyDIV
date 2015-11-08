@@ -1400,7 +1400,7 @@ jQuery(document).ready(function () {
                                         </div>
                                 <form action = "index.php?action=confirm" method="post" onsubmit="return validateInput();">
                                     <div id="accordion">
-                                        <h3><a href="#">Owner Information</a></h3>
+                                        <h3><a id="owner-info" href="#">Owner Information<img class="DIVform-warning-icon" id="warning-icon1" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text"> Owner Name: </div>
                                             <input type="text" name="OwnerName" class="DIVform-form-field" id="owner-name"/>
@@ -1419,7 +1419,7 @@ jQuery(document).ready(function () {
                                             <input type="text" name="ConfirmEmail" class="DIVform-form-field" id="confirm-email"/>
                                             <div style="clear:both"></div>
                                         </div>
-                                        <h3><a href="#">Mailing Address on File</a></h3>
+                                        <h3><a id="mailing-address" href="#">Mailing Address on File</a></h3>
                                         <div>
                                             <div style="margin-bottom:20px">
                                                 <strong>Address out of date?</strong>
@@ -1467,7 +1467,7 @@ jQuery(document).ready(function () {
                                             </div>
                                             <div style="clear:both"></div>
                                         </div>
-                                        <h3><a href="#">Your Property Information</a></h3>
+                                        <h3><a id="property-info" href="#">Your Property Information<img class="DIVform-warning-icon" id="warning-icon2" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>:</strong></div>
                                             <div class="DIVform-float-left-text" style="text-align:left"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
@@ -1529,7 +1529,7 @@ jQuery(document).ready(function () {
                                                 </tr>
                                             </table>
                                         </div>
-                                        <h3><a href="#">Comparable Sales</a></h3>
+                                        <h3><a id="comaparables" href="#">Comparable Sales</a></h3>
                                         <div>
                                             <div style="margin-bottom: 20px">
                                                 <strong>This section is optional.</strong>
@@ -1603,7 +1603,7 @@ jQuery(document).ready(function () {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3><a href="#">Additional Information</a></h3>
+                                        <h3><a id="addl-info" href="#">Additional Information</a></h3>
                                         <div>
                                             <div>
                                                 Please provide any additional information you would like us to consider in valuing your property. If your property consists of more than one parcel, list the other associated parcel numbers here.
