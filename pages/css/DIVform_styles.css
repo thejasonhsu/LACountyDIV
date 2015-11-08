@@ -82,6 +82,7 @@
     padding: 0px 0px 0px 15px;
     border: 1px solid #dddddd;
     outline: none;
+    min-height: 45px;
 }
 
 #accordion .ui-accordion-header:hover {
@@ -164,4 +165,9 @@
     line-height: 1em;
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Corrects wordpress theme incompatibility */
+.datepick-month-year {
+    -webkit-appearance: menulist;
 }
