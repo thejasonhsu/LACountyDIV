@@ -1132,7 +1132,9 @@ jQuery(document).ready(function () {
             fillForm();
         });         
     </script>
-
+    <link rel="stylesheet" type="text/css" href="pages/css/smoothness.datepick.css"> 
+    <script type="text/javascript" src="pages/js/jquery.plugin.js"></script> 
+    <script type="text/javascript" src="pages/js/jquery.datepick.js"></script>
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1565,6 +1567,7 @@ jQuery(document).ready(function () {
                                                 <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
                                                     <input class="DIVform-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" id="Comp1SaleDate"  placeholder="mm/dd/yyyy"/>
+                                                    <script>$('#Comp1SaleDate').datepick();</script>
                                                     <input class="DIVform-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
                                                     <div style="clear:both"></div>
                                                 </div>
@@ -1596,6 +1599,7 @@ jQuery(document).ready(function () {
                                                 <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
                                                     <input class="DIVform-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" id="Comp2SaleDate" placeholder="mm/dd/yyyy"/>
+                                                    <script>$('#Comp2SaleDate').datepick();</script>
                                                     <input class="DIVform-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
                                                     <div style="clear:both"></div>
                                                 </div>
