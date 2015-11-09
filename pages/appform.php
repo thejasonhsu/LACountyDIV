@@ -1608,7 +1608,7 @@ jQuery(document).ready(function () {
                                             <div>
                                                 Please provide any additional information you would like us to consider in valuing your property. If your property consists of more than one parcel, list the other associated parcel numbers here.
                                             </div>
-                                            <textarea class="DIVform-form-field" style="width:100% !important; margin-top:20px"></textarea>
+                                            <textarea name="AdditionalInformation" class="DIVform-form-field" style="width:100% !important; margin-top:20px"></textarea>
                                         </div>
                                     </div>
                                     <div id="DIVform-end-of-form">

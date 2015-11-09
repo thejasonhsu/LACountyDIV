@@ -1,10 +1,14 @@
 <?php
 	require( "resources/config.php" );
-	require( "resources/library/Rest.php" );
 
 	session_start();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
-	//$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+	$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+
+	if ( $action != "login" && $action != "logout" && !$username ) {
+	  landingpage();
+	  exit;
+	}
 
 	switch ( $action ) {
 		case 'login':
@@ -16,7 +20,7 @@
 		case 'confirm':
 			confirm();
 			break;
-		case 'submit':
+		case 'logout':
 			submit();
 			break;
 		default:
@@ -46,7 +50,7 @@
 
 			// DEBUG
 			echo "Unsucessful; not a human. ";
-			exit;
+			require( TEMPLATE_PATH . "landing.php" );
 		}
 		else {
 			// DEBUG
@@ -111,7 +115,10 @@
 			echo "Valid match and successful captcha response. AIN: " . $ain;
 
 			$loginError = false;
-			form($ain, $ainWithDashes);
+
+			$_SESSION['username'] = $ain;
+
+			form($ain, $ainWithDashes); // Question: Should we make appform the default and use header instead of require when they sign in?
 		}
 		else {
 			// DEBUG
@@ -126,25 +133,11 @@
 
 	function logout() {
 		unset( $_SESSION['username'] );
-		// Is there a formal logout? Where do we redirect them?
+		header( "Location: index.php" );
 	}
 
 	function form($ain, $ainWithDashes) {
-		// Connect to the database using the login details from the config file
-		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		// Text for the SQL statement; retrieves all the fields for the given id
-		$sql = "SELECT * FROM " . PARCEL_DATA_REPOSITORY_TABLE . " WHERE AIN = :ain";
-		// Prepare the statement
-		$statement = $connection->prepare( $sql );
-		// Bind the variable $id to the placeholder :id
-		$statement->bindValue( ":ain", $ain, PDO::PARAM_INT );
-		// Run the query
-		$statement->execute();
-		// Retrieve the resulting record as an associative array of field names and corresponding field values
-		$dbResults = array();
-		$dbResults = $statement->fetch();
-		// Close the connection
-		$connection = null;
+		$dbResults = PropertyInfo::getInfoUsingId($ain);
 
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -174,22 +167,17 @@
 		$userResponse['comp2SaleDate'] = isset( $_POST['Comp2SaleDate'] ) ? $_POST['Comp2SaleDate'] : "";
 		$userResponse['comp2Description'] = isset( $_POST['Comp2Description'] ) ? $_POST['Comp2Description'] : "";
 		$userResponse['comp2SalePrice'] = isset( $_POST['Comp2SalePrice'] ) ? $_POST['Comp2SalePrice'] : "";
-		// TODO: Add name to additional information textarea
-		// TODO: Add name to checkbox confirmation
+		$userResponse['additionalInfo'] = isset( $_POST['AdditionalInformation'] ) ? $_POST['AdditionalInformation'] : "";
 
 		require( TEMPLATE_PATH . "confirmation.php" );
 	}
 
 	function submit() {
-		
+		// TODO: Call function which will send information to the database
+		logout();
 	}
 
 	function landingpage() {
 		require( TEMPLATE_PATH . "landing.php" );
 	}
-
-	/*$array = PropertyInfo::getInfoUsingId(2023007025);
-	print_r($array);
-	echo "The AIN for the record requested is: ";
-	echo $array['AIN'];*/
 ?>
