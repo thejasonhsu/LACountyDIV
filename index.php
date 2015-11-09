@@ -20,6 +20,9 @@
 		case 'confirm':
 			confirm();
 			break;
+		case 'edit':
+			edit();
+			break;
 		case 'logout':
 			submit();
 			break;
@@ -116,7 +119,7 @@
 
 			$loginError = false;
 
-			$_SESSION['username'] = $ain;
+			$_SESSION['username'] = $ainWithDashes;
 
 			form($ain, $ainWithDashes); // Question: Should we make appform the default and use header instead of require when they sign in?
 		}
@@ -137,7 +140,8 @@
 	}
 
 	function form($ain, $ainWithDashes) {
-		$dbResults = PropertyInfo::getInfoUsingId($ain);
+		$propInfo = new PropertyInfo( $ain );
+		$dbResults = $propInfo->getInfo( $ain );
 
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -169,7 +173,26 @@
 		$userResponse['comp2SalePrice'] = isset( $_POST['Comp2SalePrice'] ) ? $_POST['Comp2SalePrice'] : "";
 		$userResponse['additionalInfo'] = isset( $_POST['AdditionalInformation'] ) ? $_POST['AdditionalInformation'] : "";
 
+		// Get info for form that was from the database
+		$ain = str_replace( "-", "", $_SESSION['username'] );
+		$propInfo = new PropertyInfo( $ain );
+
+		$userResponse['propertyAddress'] = $propInfo->getPropertyAddress();
+		$userResponse['ainWithDashes'] = $_SESSION['username'];
+		$userResponse['mailingStreet'] = $propInfo->getMailingStreet();
+		$userResponse['mailingCity'] = $propInfo->getMailingCity();
+		$userResponse['mailingState'] = $propInfo->getMailingState();
+		$userResponse['mailingZip'] = $propInfo->getMailingZip();
+		$userResponse['propertyAssessment'] = $propInfo->getPropertyAssessment();
+		$userResponse['recordSQFT'] = $propInfo->getRecordSQFT();
+		$userResponse['recordBedrooms'] = $propInfo->getRecordBedrooms();
+		$userResponse['recordBathrooms'] = $propInfo->getRecordBathrooms();
+
 		require( TEMPLATE_PATH . "confirmation.php" );
+	}
+
+	function edit() {
+
 	}
 
 	function submit() {
