@@ -1547,7 +1547,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="DIVform-submit-confirmation-box">
                                     <div style="float:left; width:32%; height:1px"></div>
-                                    <form><input class="DIVform-button" type="submit" value="Submit"></form>
+                                    <form action = "index.php?action=submit" method="post"><input class="DIVform-button" type="submit" value="Submit"></form>
                                     <div style="float:left; width: 4%; height:1px;display:inline-block"></div>
                                     <form action = "index.php?action=edit" method="post">
                                         <input class="DIVform-button" type="submit" value="Back">

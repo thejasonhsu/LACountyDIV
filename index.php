@@ -23,8 +23,11 @@
 		case 'edit':
 			edit();
 			break;
-		case 'logout':
+		case 'submit':
 			submit();
+			break;
+		case 'logout':
+			logout();
 			break;
 		default:
 			landingpage();
@@ -50,14 +53,7 @@
 
 		if( $response->success == false ) {
 			// Error: Captcha was not successful
-
-			// DEBUG
-			echo "Unsucessful; not a human. ";
-			require( TEMPLATE_PATH . "landing.php" );
-		}
-		else {
-			// DEBUG
-			echo "Captcha response was a success. ";
+			logout();
 		}
 
 		// Check that valid AIN and PIN were given
@@ -72,33 +68,18 @@
 
 				$ainWithDashes = $ain;
 
-				// DEBUG
-				echo '<p></p>';
-				echo "AIN with Dashes: " . $ainWithDashes;
-
 				// Remove dashes from AIN
 				$ain = str_replace( "-", "", $ain );
-
-				// DEBUG
-				echo '<p></p>';
-				echo "AIN: " . $ain . " " . "PIN: " . $pin;
 
 				// Pass ain and pin to rest service
 				$loginData = json_encode( array( 'ain' => $ain,'pin' => $pin ), JSON_FORCE_OBJECT );
 				$restResult = Rest::restValidate( $loginData );
 
-				if ( strcmp( $restResult, "success" ) == 0 ) {
-					// DEBUG
-					echo '<p></p>';
-					echo "Valid ain/pin match!";
-					
+				if ( strcmp( $restResult, "success" ) == 0 ) {					
 					$validMatch = true;
 				}
 				else {
-					// DEBUG
-					echo '<p></p>';
-					echo "Invalid ain/pin match!";
-					
+					// Error: AIN and PIN did not match					
 					$validMatch = false;
 					$loginError = true;
 					require( TEMPLATE_PATH . "landing.php" );
@@ -106,17 +87,11 @@
 		}
 		else {
 			// Error: User did not enter both an AIN and PIN
-			echo '<p></p>';
-			echo "Please enter both AIN and PIN. ";
 			$loginError = true;
 			require( TEMPLATE_PATH . "landing.php" );
 		}
 
 		if ( $validMatch && $response->success ) {
-			// DEBUG
-			echo '<p></p>';
-			echo "Valid match and successful captcha response. AIN: " . $ain;
-
 			$loginError = false;
 
 			$_SESSION['username'] = $ainWithDashes;
@@ -124,11 +99,7 @@
 			form($ain, $ainWithDashes); // Question: Should we make appform the default and use header instead of require when they sign in?
 		}
 		else {
-			// DEBUG
-			echo '<p></p>';
-			echo "Error: Invalid ain/pin pair";
-
-			// Error: Show that it was an invalid combination
+			// Error: Invalid combination
 			$loginError = true;
 			require( TEMPLATE_PATH . "landing.php" );
 		}
@@ -137,6 +108,9 @@
 	function logout() {
 		session_unset();
 		session_destroy();
+		//session_write_close();
+		setcookie(session_name(),'',0,'/');
+		//session_regenerate_id(true);
 		header( "Location: index.php" );
 	}
 

@@ -17,29 +17,15 @@ class Rest
 		$recievedAin = $recievedData->ain;
 		$recievedPin = $recievedData->pin;
 
-		// DEBUG
-		echo '<p></p>';
-		echo "In Rest: recievedAin = " . $recievedAin;
-		echo '<p></p>';
-		echo "In Rest: recievedPin = " . $recievedPin;
-		echo '<p></p>';
-		print_r( $testLoginPairs );
-
 		if ( array_key_exists( $recievedAin, $testLoginPairs ) ) {
 			if ( $testLoginPairs[$recievedAin] == $recievedPin ) {
 				return "success";
 			}
 			else {
-				// DEBUG
-				echo '<p></p>';
-				echo "recievedAin is in testLoginPairs, but recievedPin is not its match";
+				return "fail";
 			}
 		}
 		else {
-			// DEBUG
-			echo '<p></p>';
-			echo "recievedAin is not in testLoginPairs";
-
 			return "fail";
 		}
 	}

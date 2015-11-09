@@ -1130,20 +1130,6 @@ jQuery(document).ready(function () {
     <script type="text/javascript" src="pages/js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="pages/js/jquery.datepick.js"></script>
 
-    <!-- Jenny testing js -->
-    <!--<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { 
-        if ( isset( $_SESSION['userFormResponse'] ) ) { 
-                echo "What's up????"; ?>
-
-            <script type="text/javascript" src="pages/js/fillform.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function {
-                    fillForm();
-                });         
-            </script>
-
-    <?php } } ?>-->
-
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1634,9 +1620,9 @@ jQuery(document).ready(function () {
                                         <div style="float:left; width:32%; height:1px"></div>
                                         <input class="DIVform-button" type="submit" value="Next">
                                 </form>
-                                <form action="http://assessor.lacounty.gov/decline-in-value">
+                                <form action = "index.php?action=logout" method="post">
                                     <div style="float:left; width: 4%; height:1px;display:inline-block"></div>
-                                    <input class="DIVform-button" type="submit" value="Cancel" onclick="window.location.href='http://assessor.lacounty.gov/decline-in-value'">
+                                    <input class="DIVform-button" type="submit" value="Cancel">
                                 </form>
                                 <div style="clear:both"></div>
                             </div>
