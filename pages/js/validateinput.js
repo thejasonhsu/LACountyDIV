@@ -123,7 +123,7 @@ function validateInput() {
 		//set error flags on owner information section
 		valid = false;
 		var warning = new Image();
-		warning.src = 'warning.png';
+		warning.src = 'pages/img/warning.png';
 		var img = document.getElementById('warning-icon1');
 		img.src = warning.src;
 		document.getElementById('owner-info').style.cssText = "color:red !important";
@@ -138,7 +138,7 @@ function validateInput() {
 		//set error flags on property info section
 		valid = false;
 		var img = document.getElementById('warning-icon2');
-		img.src = 'warning.png';
+		img.src = 'pages/img/warning.png';
 		document.getElementById('property-info').style.cssText = "color:red !important";
 	}	
 	else {
