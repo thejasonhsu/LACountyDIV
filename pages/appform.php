@@ -1125,10 +1125,25 @@ jQuery(document).ready(function () {
         })
     </script>
 
-    <script type="text/javascript" src="pages/js/validateinput.js"></script>>
+    <script type="text/javascript" src="pages/js/validateinput.js"></script>
     <link rel="stylesheet" type="text/css" href="pages/css/smoothness.datepick.css"> 
     <script type="text/javascript" src="pages/js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="pages/js/jquery.datepick.js"></script>
+
+    <!-- Jenny testing js -->
+    <!--<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { 
+        if ( isset( $_SESSION['userFormResponse'] ) ) { 
+                echo "What's up????"; ?>
+
+            <script type="text/javascript" src="pages/js/fillform.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function {
+                    fillForm();
+                });         
+            </script>
+
+    <?php } } ?>-->
+
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1366,7 +1381,7 @@ jQuery(document).ready(function () {
                                             </span>
                                             <br />
                                             <strong>AIN:</strong>
-                                            <span id="PropertyInfo_lblAIN"><?php if ( isset( $ainWithDashes ) ) { echo $ainWithDashes; } ?></span>
+                                            <span id="PropertyInfo_lblAIN"><?php if ( isset( $_SESSION['username'] ) ) { echo $_SESSION['username']; } ?></span>
                                         </div>
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="padding:0px 20px 0px 0px; text-align:center; float:left; display:inline-block">
@@ -1403,20 +1418,20 @@ jQuery(document).ready(function () {
                                         <h3><a id="owner-info" href="#">Owner Information<img class="DIVform-warning-icon" id="warning-icon1" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text"> Owner Name: </div>
-                                            <input type="text" name="OwnerName" class="DIVform-form-field" id="owner-name"/>
+                                            <input type="text" name="OwnerName" class="DIVform-form-field" id="owner-name" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['ownerName']; } ?>"/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Daytime Telephone: </div>
-                                            <input type="text" name="Telephone" class="DIVform-form-field" id="phone" placeholder="(  )   -    "/>
+                                            <input type="text" name="Telephone" class="DIVform-form-field" id="phone" placeholder="(  )   -    " value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['telephone']; } ?>"/>
                                             <div style="clear:both"></div>
                                             <br /><br />
                                             <strong>To be notified of results by email, please enter your email address:</strong>
                                             <br />
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Email address: </div>
-                                            <input type="text" name="Email" class="DIVform-form-field" id="email"/>
+                                            <input type="text" name="Email" class="DIVform-form-field" id="email" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['email']; } ?>"/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Confirm email address: </div>
-                                            <input type="text" name="ConfirmEmail" class="DIVform-form-field" id="confirm-email"/>
+                                            <input type="text" name="ConfirmEmail" class="DIVform-form-field" id="confirm-email" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['confirmEmail']; } ?>"/>
                                             <div style="clear:both"></div>
                                         </div>
                                         <h3><a id="mailing-address" href="#">Mailing Address on File</a></h3>
@@ -1473,7 +1488,7 @@ jQuery(document).ready(function () {
                                             <div class="DIVform-float-left-text" style="text-align:left"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>: </strong></div>
-                                            <input type="text" name="OpinionOfValue" class="DIVform-form-field" id="userinput-value" maxlength ="9" onkeypress='validate(event)'/>
+                                            <input type="text" name="OpinionOfValue" class="DIVform-form-field" id="userinput-value" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['opinionOfValue']; } ?>"/>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
                                             <select name="PropertyType" class="DIVform-form-field">
@@ -1518,13 +1533,13 @@ jQuery(document).ready(function () {
                                                         Please make any necessary corrections in the corresponding boxes:
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="ApproxSqFootage" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="ApproxSqFootage" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['approxSqFootage']; } ?>">
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="NumBedrooms" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="NumBedrooms" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['numBedrooms']; } ?>">
                                                     </td>
                                                     <td style="border:none">
-                                                        <input type="text" name="NumBathrooms" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)'>
+                                                        <input type="text" name="NumBathrooms" class="DIVform-form-field" style="margin-bottom:0px" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['numBathrooms']; } ?>">
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1542,59 +1557,59 @@ jQuery(document).ready(function () {
                                                 <strong>Comparable 1:</strong><br />
                                                 <div class="DIVform-comparable-content" style="width:35%">
                                                     Address:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp1Address" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1Address" style="width:100% !important" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1Address']; } ?>"/>
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:20%">
                                                     City:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp1City" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1City" style="width:100% !important" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1City']; } ?>"/>
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:15%">
                                                     Zip:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp1Zip" style="width:100% !important" id="zip1"/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp1Zip" style="width:100% !important" id="zip1" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1Zip']; } ?>"/>
                                                 </div>
 
                                                 <div class="DIVform-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
                                                     <strong>Or, enter an AIN:</strong><br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp1AIN" style="width:100% !important" placeholder="    -   -   " id="ain1" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp1AIN" style="width:100% !important" placeholder="    -   -   " id="ain1" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1AIN']; } ?>"/>
                                                 </div>
                                                 <div style="clear:both"></div>
                                                 <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
-                                                    <input class="DIVform-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" id="Comp1SaleDate"  placeholder="mm/dd/yyyy"/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp1SaleDate" style="width:40% !important" id="Comp1SaleDate"  placeholder="mm/dd/yyyy" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1SaleDate']; } ?>"/>
                                                     <script>$('#Comp1SaleDate').datepick();</script>
-                                                    <input class="DIVform-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp1SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1SalePrice']; } ?>"/>
                                                     <div style="clear:both"></div>
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:55%">
                                                     Property Description:
-                                                    <textarea name="Comp1Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
+                                                    <textarea name="Comp1Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"><?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp1Description']; } ?></textarea>
                                                 </div>
                                             </div>
                                             <div class="DIVform-comparable-box">
                                                 <strong>Comparable 2:</strong><br />
                                                 <div class="DIVform-comparable-content" style="width:35%">
                                                     Address:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp2Address" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2Address" style="width:100% !important" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2Address']; } ?>" />
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:20%">
                                                     City:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp2City" style="width:100% !important" />
+                                                    <input class="DIVform-form-field" type="text" name="Comp2City" style="width:100% !important" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2City']; } ?>"/>
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:15%">
                                                     Zip:<br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp2Zip" style="width:100% !important" id="zip2"/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2Zip" style="width:100% !important" id="zip2" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2Zip']; } ?>"/>
                                                 </div>
 
                                                 <div class="DIVform-comparable-content" style="width:25%; margin-left:2%; padding-left:2%; border-left: 1px solid #dddddd">
                                                     <strong>Or, enter an AIN:</strong><br />
-                                                    <input class="DIVform-form-field" type="text" name="Comp2AIN" style="width:100% !important" id="ain2" placeholder="    -   -   "/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2AIN" style="width:100% !important" id="ain2" placeholder="    -   -   " value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2AIN']; } ?>"/>
                                                 </div>
                                                 <div style="clear:both"></div>
                                                 <div class="DIVform-comparable-content" style="width:40%">
                                                     <div style="float:left; width:50%; margin-right:10px; text-align:right">Sale Date:<span style="font-size:12px"><br style="display:block; margin:-8px" />(No later than 03/31/<span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>)</span><br />Sale Price:<br /></div>
-                                                    <input class="DIVform-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" id="Comp2SaleDate" placeholder="mm/dd/yyyy"/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2SaleDate" style="width:40% !important" id="Comp2SaleDate" placeholder="mm/dd/yyyy" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2SaleDate']; } ?>"/>
                                                     <script>$('#Comp2SaleDate').datepick();</script>
-                                                    <input class="DIVform-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)'/>
+                                                    <input class="DIVform-form-field" type="text" name="Comp2SalePrice" style="width:40% !important" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2SalePrice']; } ?>"/>
                                                     <div style="clear:both"></div>
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:55%">
@@ -1608,7 +1623,7 @@ jQuery(document).ready(function () {
                                             <div>
                                                 Please provide any additional information you would like us to consider in valuing your property. If your property consists of more than one parcel, list the other associated parcel numbers here.
                                             </div>
-                                            <textarea name="AdditionalInformation" class="DIVform-form-field" style="width:100% !important; margin-top:20px"></textarea>
+                                            <textarea name="AdditionalInformation" class="DIVform-form-field" style="width:100% !important; margin-top:20px"><?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['additionalInfo']; } ?></textarea>
                                         </div>
                                     </div>
                                     <div id="DIVform-end-of-form">

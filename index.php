@@ -142,7 +142,7 @@
 
 	function form($ain, $ainWithDashes) {
 		$propInfo = new PropertyInfo( $ain );
-		$dbResults = $propInfo->getInfo( $ain );
+		$dbResults = $propInfo->getInfo();
 		$_SESSION['propertyInfo'] = $propInfo;
 
 		require( TEMPLATE_PATH . "appform.php" );
@@ -195,7 +195,10 @@
 	}
 
 	function edit() {
-
+		$propInfo = $_SESSION['propertyInfo'];
+		$dbResults = $propInfo->getInfo();
+		
+		require( TEMPLATE_PATH . "appform.php" );
 	}
 
 	function submit() {
