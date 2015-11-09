@@ -996,7 +996,7 @@
     <a class="ubtn-link ubtn-left tooltip-560306fdf33b6"  href = "http://assessor.lacounty.gov/decline-in-value-review/" target=''><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">My Decline-in-Value Review Status</span></button></a>
 	<a class="ubtn-link ubtn-left tooltip-560306fe13d65"  href = "http://assessor.lacounty.gov/wp-content/uploads/2015/02/E-23.pdf" target=' _blank'><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">Decline-in-Value Printable Brochure</span></button></a> 
 	</div>			
-				<br/> 
+				<br/>
 				
 	<div class="vc_row wpb_row vc_row-fluid"  ><div class="parallax-wrapper">
 	
@@ -1009,7 +1009,7 @@
 
 		<div  id="line_1027">
 
-            <div class="wpb_text_column wpb_content_element  vc_custom_1435728330092" style=" ">
+			<div class="wpb_text_column wpb_content_element  vc_custom_1435728330092" style=" ">
                 <div class="wpb_wrapper">
                     <h3>Sign in to File Online</h3>
                     <p>
@@ -1018,29 +1018,29 @@
                 </div>
             </div> 
 			<script type="text/javascript"> 
-			function not_show_error(){
-				document.getElementById("error_message_div").style.display="none"; 
-			}	
-			function show_error(){
-				document.getElementById("error_message_div").innerHTML="Wrong AIN/PIN"; 
-			}			
+				function not_show_error(){
+					document.getElementById("error_message_div").style.display="none"; 
+				}	
+				function show_error(){
+					document.getElementById("error_message_div").innerHTML="<?php if ( isset( $errorMessage ) ) { echo $errorMessage; } ?>"; 
+				}			
 			</script> 
 			<div id ="error_message_div"> 
-			<?php
-			$msg = $_GET['msg'];
-			/* set arbitary true or false for testing */
-			//$msg=false; 
-			if (isset($msg)) { echo "<script> show_error(); </script>"; }
-			else {
-				/*make div disappear */
-				echo "<script> not_show_error(); </script>";
-			} ?>
-			</div> 
+				<?php
+					if ( isset( $loginError ) ) {
+						if ( $loginError ) {
+							echo "<script> show_error(); </script>";
+						}
+					}
+					else {
+						echo "<script> not_show_error(); </script>";
+					}
+				?>
+			</div>
 <form action="index.php?action=login" method="post">		
 		<div id="line_1038" >
 		AIN: <input name="AIN" type="text" maxlength="20" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   "/>
 		<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
-		
 		 </div> 
     <div id="line_1042"></div>
 		 <div  id="line_1043" >  
@@ -1059,7 +1059,7 @@
         <div class="g-recaptcha" data-sitekey="6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9" style="padding-bottom:3px"></div>
         <p>You must verify that you are a person.</p>
         <input type="submit" style="background-color:#357ad0; border-color:#357ad0" value="Login" />
-        <br  style="clear:both; "/>
+        <br />
 </form> 
 					
 					

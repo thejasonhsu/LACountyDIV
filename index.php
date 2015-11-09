@@ -41,11 +41,10 @@
 			$captcha = $_POST['g-recaptcha-response'];
 		}
 		if ( !$captcha ) {
-			// Error: User did not respond to captcha
-
-			// DEBUG
-			echo "Captcha not entered. ";
-			exit;
+			$loginError = true;
+			$errorMessage = "Please verify that you are a human by checking 'I'm not a robot.'";
+			require( TEMPLATE_PATH . "landing.php" );
+			return;
 		}
 
 		$response = file_get_contents( "https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
@@ -54,6 +53,7 @@
 		if( $response->success == false ) {
 			// Error: Captcha was not successful
 			logout();
+			return;
 		}
 
 		// Check that valid AIN and PIN were given
@@ -82,18 +82,20 @@
 					// Error: AIN and PIN did not match					
 					$validMatch = false;
 					$loginError = true;
+					$errorMessage = "Incorrect AIN/PIN.";
 					require( TEMPLATE_PATH . "landing.php" );
+					return;
 				}
 		}
 		else {
 			// Error: User did not enter both an AIN and PIN
 			$loginError = true;
+			$errorMessage = "Incorrect AIN/PIN.";
 			require( TEMPLATE_PATH . "landing.php" );
+			return;
 		}
 
 		if ( $validMatch && $response->success ) {
-			$loginError = false;
-
 			$_SESSION['username'] = $ainWithDashes;
 
 			form($ain, $ainWithDashes); // Question: Should we make appform the default and use header instead of require when they sign in?
@@ -101,7 +103,9 @@
 		else {
 			// Error: Invalid combination
 			$loginError = true;
+			$errorMessage = "Incorrect AIN/PIN.";
 			require( TEMPLATE_PATH . "landing.php" );
+			return;
 		}
 	}
 
