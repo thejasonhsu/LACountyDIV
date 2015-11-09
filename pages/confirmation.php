@@ -1549,8 +1549,8 @@ jQuery(document).ready(function () {
                                     <div style="float:left; width:32%; height:1px"></div>
                                     <form><input class="DIVform-button" type="submit" value="Submit"></form>
                                     <div style="float:left; width: 4%; height:1px;display:inline-block"></div>
-                                    <form action="http://assessor.lacounty.gov/decline-in-value">
-                                        <input class="DIVform-button" type="submit" value="Back" onclick="window.location.href='http://assessor.lacounty.gov/decline-in-value'">
+                                    <form action = "index.php?action=edit" method="post">
+                                        <input class="DIVform-button" type="submit" value="Back">
                                     </form>
                                     <div style="clear:both"></div>
                                 </div>

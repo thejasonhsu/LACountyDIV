@@ -135,13 +135,15 @@
 	}
 
 	function logout() {
-		unset( $_SESSION['username'] );
+		session_unset();
+		session_destroy();
 		header( "Location: index.php" );
 	}
 
 	function form($ain, $ainWithDashes) {
 		$propInfo = new PropertyInfo( $ain );
 		$dbResults = $propInfo->getInfo( $ain );
+		$_SESSION['propertyInfo'] = $propInfo;
 
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -174,8 +176,7 @@
 		$userResponse['additionalInfo'] = isset( $_POST['AdditionalInformation'] ) ? $_POST['AdditionalInformation'] : "";
 
 		// Get info for form that was from the database
-		$ain = str_replace( "-", "", $_SESSION['username'] );
-		$propInfo = new PropertyInfo( $ain );
+		$propInfo = $_SESSION['propertyInfo'];
 
 		$userResponse['propertyAddress'] = $propInfo->getPropertyAddress();
 		$userResponse['ainWithDashes'] = $_SESSION['username'];
@@ -187,6 +188,8 @@
 		$userResponse['recordSQFT'] = $propInfo->getRecordSQFT();
 		$userResponse['recordBedrooms'] = $propInfo->getRecordBedrooms();
 		$userResponse['recordBathrooms'] = $propInfo->getRecordBathrooms();
+
+		$_SESSION['userFormResponse'] = $userResponse;
 
 		require( TEMPLATE_PATH . "confirmation.php" );
 	}
