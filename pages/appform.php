@@ -1415,7 +1415,7 @@ jQuery(document).ready(function () {
                                         </div>
                                 <form action = "index.php?action=confirm" method="post" onsubmit="return validateInput();">
                                     <div id="accordion">
-                                        <h3><a id="owner-info" href="#">Owner Information<img class="DIVform-warning-icon" id="warning-icon1" /></a></h3>
+                                        <h3><a id="owner-info" href="#">Owner Information<img class="DIVform-warning-icon" id="warning-icon1" src="pages/img/warning.png" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text"> Owner Name: </div>
                                             <input type="text" name="OwnerName" class="DIVform-form-field" id="owner-name" value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['ownerName']; } ?>"/>
@@ -1482,7 +1482,7 @@ jQuery(document).ready(function () {
                                             </div>
                                             <div style="clear:both"></div>
                                         </div>
-                                        <h3><a id="property-info" href="#">Your Property Information<img class="DIVform-warning-icon" id="warning-icon2" /></a></h3>
+                                        <h3><a id="property-info" href="#">Your Property Information<img class="DIVform-warning-icon" id="warning-icon2" src="pages/img/warning.png" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>:</strong></div>
                                             <div class="DIVform-float-left-text" style="text-align:left"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
