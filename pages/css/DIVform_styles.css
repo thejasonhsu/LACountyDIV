@@ -171,9 +171,10 @@
     top: -2px;
     height: 100%;
     width: auto;
-    max-height: 30px;
+    max-height: 30px !important;
+    max-width: 30px !important;
     vertical-align: middle;
-    padding-left: 5px;
+    margin-left: 5px;
     display: none;
 }
 
