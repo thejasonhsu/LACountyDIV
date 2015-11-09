@@ -1478,11 +1478,68 @@ jQuery(document).ready(function () {
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
                                             <select name="PropertyType" class="DIVform-form-field">
-                                                <option selected="selected" value="SFR">House/Condo/Townhome</option>
-                                                <option value="R-I">Apartment/Multi-Units</option>
-                                                <option value="C/I">Commercial/Industrial</option>
-                                                <option value="VAC">Vacant Lot</option>
-                                                <option value="OTH">Other</option>
+                                                <?php
+                                                    if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { 
+                                                        $userResponse = $_SESSION['userFormResponse'];
+                                                        $chosen = $userResponse['propertyType'];
+
+                                                        if ( strcmp( $chosen, "SFR" ) == 0 ) {
+                                                ?>
+                                                            <option selected="selected" value="SFR">House/Condo/Townhome</option>
+                                                            <option value="R-I">Apartment/Multi-Units</option>
+                                                            <option value="C/I">Commercial/Industrial</option>
+                                                            <option value="VAC">Vacant Lot</option>
+                                                            <option value="OTH">Other</option>
+                                                <?php
+                                                        }
+                                                        elseif ( strcmp( $chosen, "R-I" ) == 0 ) {
+                                                ?>
+                                                        <option value="SFR">House/Condo/Townhome</option>
+                                                        <option selected="selected" value="R-I">Apartment/Multi-Units</option>
+                                                        <option value="C/I">Commercial/Industrial</option>
+                                                        <option value="VAC">Vacant Lot</option>
+                                                        <option value="OTH">Other</option>
+                                                <?php
+                                                        }
+                                                        elseif ( strcmp( $chosen, "C/I" ) == 0 ) {
+                                                ?>
+                                                        <option value="SFR">House/Condo/Townhome</option>
+                                                        <option value="R-I">Apartment/Multi-Units</option>
+                                                        <option selected="selected" value="C/I">Commercial/Industrial</option>
+                                                        <option value="VAC">Vacant Lot</option>
+                                                        <option value="OTH">Other</option>
+                                                <?php
+                                                        }
+                                                        elseif ( strcmp( $chosen, "VAC" ) == 0 ) {
+                                                ?>
+                                                        <option value="SFR">House/Condo/Townhome</option>
+                                                        <option value="R-I">Apartment/Multi-Units</option>
+                                                        <option value="C/I">Commercial/Industrial</option>
+                                                        <option selected="selected" value="VAC">Vacant Lot</option>
+                                                        <option value="OTH">Other</option>
+                                                <?php
+                                                        }
+                                                        else {
+                                                ?>
+                                                        <option value="SFR">House/Condo/Townhome</option>
+                                                        <option value="R-I">Apartment/Multi-Units</option>
+                                                        <option value="C/I">Commercial/Industrial</option>
+                                                        <option value="VAC">Vacant Lot</option>
+                                                        <option selected="selected" value="OTH">Other</option>
+                                                <?php
+                                                        }
+                                                    }
+
+                                                    else {
+                                                ?>
+                                                    <option selected="selected" value="SFR">House/Condo/Townhome</option>
+                                                    <option value="R-I">Apartment/Multi-Units</option>
+                                                    <option value="C/I">Commercial/Industrial</option>
+                                                    <option value="VAC">Vacant Lot</option>
+                                                    <option value="OTH">Other</option>
+                                                <?php
+                                                    }
+                                                ?>
                                             </select>
                                             <div style="clear:both"></div>
                                             <br />

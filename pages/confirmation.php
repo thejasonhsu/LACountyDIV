@@ -1414,8 +1414,26 @@ jQuery(document).ready(function () {
                                         <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
-                                        <!-- Jenny: Add code to check for property type code and display correct text -->
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['propertyType'] ) ) { echo $userResponse['propertyType']; } ?> </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php
+                                            if ( isset( $userResponse['propertyType'] ) ) {
+                                                $chosen = $userResponse['propertyType'];
+                                                if ( strcmp( $chosen, "SFR" ) == 0 ) {
+                                                    echo "House/Condo/Townhome";
+                                                }
+                                                else if ( strcmp( $chosen, "R-I" ) == 0 ) {
+                                                    echo "Apartment/Multi-Unit";
+                                                }
+                                                else if ( strcmp( $chosen, "C/I" ) == 0 ) {
+                                                    echo "Commercial/Industrial";
+                                                }
+                                                else if ( strcmp( $chosen, "VAC" ) == 0 ) {
+                                                    echo "Vacant Lot";
+                                                }
+                                                else if ( strcmp( $chosen, "OTH" ) == 0 ) {
+                                                    echo "Other";
+                                                }
+                                            } 
+                                        ?> </div>
                                         <div style="clear:both"></div>
                                         <br />
                                         <br />
