@@ -20,6 +20,9 @@
 	define( "RESOURCE_PATH", "resources/");
 	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
 
+	require( "resources/library/Rest.php" );
+	require( "pages/php/PropertyInfo.php" );
+
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";
 		error_log( $exception->getMessage() );

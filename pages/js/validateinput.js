@@ -123,9 +123,10 @@ function validateInput() {
 		//set error flags on owner information section
 		valid = false;
 		var warning = new Image();
-		warning.src = 'pages/img/warning.png';
+		warning.src = 'http://scf.usc.edu/~yangkevi/warning.png';
 		var img = document.getElementById('warning-icon1');
 		img.src = warning.src;
+		img.style.display = 'inline';
 		document.getElementById('owner-info').style.cssText = "color:red !important";
 	}
 	else {
@@ -138,7 +139,9 @@ function validateInput() {
 		//set error flags on property info section
 		valid = false;
 		var img = document.getElementById('warning-icon2');
+		img.src = 'http://scf.usc.edu/~yangkevi/warning.png';
 		img.src = 'pages/img/warning.png';
+		img.style.display = 'inline';
 		document.getElementById('property-info').style.cssText = "color:red !important";
 	}	
 	else {

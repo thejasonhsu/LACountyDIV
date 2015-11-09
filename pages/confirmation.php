@@ -1349,10 +1349,10 @@ jQuery(document).ready(function () {
                                     <div class="DIVform-content-box-body">
                                         <div style="font-size:18px;">
                                             <strong>Property Address:</strong>
-                                            <span id="PropertyInfo_lblPropertyAddress">23656  COMMUNITY ST  LOS ANGELES CA 91304-3001</span>
+                                            <span id="PropertyInfo_lblPropertyAddress"><?php if ( isset( $userResponse['propertyAddress'] ) ) { echo $userResponse['propertyAddress']; } ?></span>
                                             <br />
                                             <strong>AIN:</strong>
-                                            <span id="PropertyInfo_lblAIN">2005-020-045</span>
+                                            <span id="PropertyInfo_lblAIN"><?php if ( isset( $userResponse['ainWithDashes'] ) ) { echo $userResponse['ainWithDashes']; } ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1394,10 +1394,10 @@ jQuery(document).ready(function () {
                                             </strong>
                                         </div>
                                         <div class="DIVform-float-left-text" style="text-align:left; line-height:1.5">
-                                            <span id="lblMailStreet">23656 Community Street</span><br />
-                                            <span id="lblMailCity">West Hills</span><br />
-                                            <span id="lblMailState">CA</span><br />
-                                            <span id="lblMailZip">91304-3001</span><br />
+                                            <span id="lblMailStreet"><?php if ( isset( $userResponse['mailingStreet'] ) ) { echo $userResponse['mailingStreet']; } ?></span><br />
+                                            <span id="lblMailCity"><?php if ( isset( $userResponse['mailingCity'] ) ) { echo $userResponse['mailingCity']; } ?></span><br />
+                                            <span id="lblMailState"><?php if ( isset( $userResponse['mailingState'] ) ) { echo $userResponse['mailingState']; } ?></span><br />
+                                            <span id="lblMailZip"><?php if ( isset( $userResponse['mailingZip'] ) ) { echo $userResponse['mailingZip']; } ?></span><br />
                                         </div>
                                         <div style="clear:both"></div>
                                     </div>
@@ -1408,7 +1408,7 @@ jQuery(document).ready(function () {
                                     </div>
                                     <div class="DIVform-content-box-body">
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> $999,999 </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
                                         <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
@@ -1437,13 +1437,13 @@ jQuery(document).ready(function () {
                                                     <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
+                                                    <?php if ( isset( $userResponse['recordSQFT'] ) ) { echo $userResponse['recordSQFT']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
+                                                    <?php if ( isset( $userResponse['recordBedrooms'] ) ) { echo $userResponse['recordBedrooms']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
+                                                    <?php if ( isset( $userResponse['recordBathrooms'] ) ) { echo $userResponse['recordBathrooms']; } ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1451,13 +1451,13 @@ jQuery(document).ready(function () {
                                                     Please make any necessary corrections in the corresponding boxes:
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    -
+                                                    <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    -
+                                                    <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
                                                 </td>
                                                 <td style="font-weight:bold; border:none">
-                                                    -
+                                                    <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1538,7 +1538,7 @@ jQuery(document).ready(function () {
                                     </div>
                                     <div class="DIVform-content-box-body">
                                         <strong>Your Response:</strong><br/>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        <?php if ( isset( $userResponse['additionalInfo'] ) ) { echo $userResponse['additionalInfo']; } ?>
                                     </div>
                                 </div>
 
@@ -1549,8 +1549,8 @@ jQuery(document).ready(function () {
                                     <div style="float:left; width:32%; height:1px"></div>
                                     <form><input class="DIVform-button" type="submit" value="Submit"></form>
                                     <div style="float:left; width: 4%; height:1px;display:inline-block"></div>
-                                    <form action="http://assessor.lacounty.gov/decline-in-value">
-                                        <input class="DIVform-button" type="submit" value="Back" onclick="window.location.href='http://assessor.lacounty.gov/decline-in-value'">
+                                    <form action = "index.php?action=edit" method="post">
+                                        <input class="DIVform-button" type="submit" value="Back">
                                     </form>
                                     <div style="clear:both"></div>
                                 </div>

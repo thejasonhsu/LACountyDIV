@@ -53,6 +53,7 @@
     width: auto !important;
     padding: 4px 4px !important;
     letter-spacing: normal !important;
+    display: inline-block;
 }
 
 .DIVform-float-left-text {
@@ -62,6 +63,7 @@
     text-align: right;
     margin-right: 20px;
     width: 40%;
+    white-space: normal;
 }
 
 .DIVform-float-left-result {
@@ -74,7 +76,7 @@
 }
 
 #accordion .ui-accordion-header {
-    line-height: 44px;
+    line-height: 44px !important;
     font-size: 18px;
     font-weight: bold;
     background-color: #003b5b;
@@ -165,6 +167,8 @@
 }
 
 .DIVform-warning-icon {
+    position: relative;
+    top: -2px;
     height: 100%;
     width: auto;
     max-height: 30px;
@@ -185,6 +189,37 @@
     line-height: 1em;
     font-weight: bold;
     font-size: 16px;
+}
+
+.DIVform-record-box {
+    white-space: nowrap;
+}
+
+.DIVform-edit-box {
+    text-align: left;
+    width: 50%;
+    white-space: nowrap;
+}
+
+.DIVform-editable-text {   
+    width: 50% !important;
+    text-align: right;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #F0F0F0 !important;
+    margin-right: 5px !important;
+}
+
+.DIVform-edit {
+    max-height: 20px;
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.DIVform-edit:hover {
+    cursor: pointer;
 }
 
 /* Corrects wordpress theme incompatibility */
