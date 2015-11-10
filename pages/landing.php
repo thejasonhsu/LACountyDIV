@@ -1056,7 +1056,7 @@
 
 
 
-        <div class="g-recaptcha" data-sitekey="6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9" style="padding-bottom:3px"></div>
+        <div class="g-recaptcha" data-sitekey="<?php echo PUBLIC_KEY; ?>" style="padding-bottom:3px"></div>
         <p>You must verify that you are a person.</p>
         <input type="submit" style="background-color:#357ad0; border-color:#357ad0" value="Login" />
         <br />

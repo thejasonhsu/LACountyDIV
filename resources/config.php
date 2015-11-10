@@ -18,7 +18,9 @@
 	define( "TEMPLATE_PATH", "pages/" ); // Path in relation to top-level folder, cms
 	define( "LIBRARY_PATH", "resources/library" );
 	define( "RESOURCE_PATH", "resources/");
+
 	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
+	define( "PUBLIC_KEY", "6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9");
 
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );
