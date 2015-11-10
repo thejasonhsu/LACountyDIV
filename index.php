@@ -47,7 +47,7 @@
 			return;
 		}
 
-		$response = file_get_contents( "https://www.google.com/recaptcha/api/siteverify?secret=6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
+		$response = file_get_contents( "https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
 		$response = json_decode( $response );
 
 		if( $response->success == false ) {
