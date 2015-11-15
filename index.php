@@ -181,7 +181,8 @@
 
 	function submit() {
 		// TODO: Call function which will send information to the database
-		logout();
+		//logout();
+		require( TEMPLATE_PATH . "thankyou.php");
 	}
 
 	function landingpage() {

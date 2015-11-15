@@ -224,6 +224,43 @@
     cursor: pointer;
 }
 
+.DIVform-thankyou-box {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.DIVform-form-summary {
+    width: 800px;
+    margin: auto;
+}
+
+.DIVform-summary-box {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    margin: 10px 0px 10px 0px;
+}
+
+.DIVform-summary-box-header {
+    height: 44px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 2px 2px 0px 0px;
+    padding: 2px 0px 0px 15px;
+}
+
+.DIVform-summary-box-header p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.DIVform-summary-box-body {
+    padding: 15px 15px 15px 15px;
+}
+
 /* Corrects wordpress theme incompatibility */
 .datepick-month-year {
     -webkit-appearance: menulist;
