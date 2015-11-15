@@ -1110,6 +1110,59 @@ jQuery(document).ready(function () {
     <!-- USC DIV project styles -->
     <link rel="stylesheet" id="DIVform_styles" href="css/DIVform_styles.css">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getParentData() {
+            var parent = window.opener.document;
+
+            // Fill necessary fields by getting their values from the parent window
+            document.getElementById('PropertyInfo_lblPropertyAddress').innerHTML = parent.getElementById('PropertyInfo_lblPropertyAddress').innerHTML;
+
+            document.getElementById('PropertyInfo_lblAIN').innerHTML = parent.getElementById('PropertyInfo_lblAIN').innerHTML;     
+
+            document.getElementById('ownerName').innerHTML = parent.getElementById('ownerName').innerHTML;
+
+            document.getElementById('ownerTelephone').innerHTML = parent.getElementById('ownerTelephone').innerHTML;
+
+            document.getElementById('ownerEmail').innerHTML = parent.getElementById('ownerEmail').innerHTML;
+
+            document.getElementById('ownerConfirmEmail').innerHTML = parent.getElementById('ownerConfirmEmail').innerHTML;
+
+            document.getElementById('lblMailStreet').innerHTML = parent.getElementById('lblMailStreet').innerHTML;
+
+            document.getElementById('lblMailCity').innerHTML = parent.getElementById('lblMailCity').innerHTML;
+
+            document.getElementById('lblMailState').innerHTML = parent.getElementById('lblMailState').innerHTML;
+
+            document.getElementById('lblMailZip').innerHTML = parent.getElementById('lblMailZip').innerHTML;
+
+            document.getElementById('propertyAssessedValue').innerHTML = parent.getElementById('propertyAssessedValue').innerHTML;
+
+            document.getElementById('userAssessedValue').innerHTML = parent.getElementById('userAssessedValue').innerHTML;
+
+            document.getElementById('propertyType').innerHTML = parent.getElementById('propertyType').innerHTML;
+
+            document.getElementById('recordSQFT').innerHTML = parent.getElementById('recordSQFT').innerHTML;
+
+            document.getElementById('recordBedrooms').innerHTML = parent.getElementById('recordBedrooms').innerHTML;
+
+            document.getElementById('recordBedrooms').innerHTML = parent.getElementById('recordBedrooms').innerHTML;
+
+            document.getElementById('recordBathrooms').innerHTML = parent.getElementById('recordBathrooms').innerHTML;
+
+            document.getElementById('approxSqFootage').innerHTML = parent.getElementById('approxSqFootage').innerHTML;
+
+            document.getElementById('numBedrooms').innerHTML = parent.getElementById('numBedrooms').innerHTML;
+
+            document.getElementById('numBathrooms').innerHTML = parent.getElementById('numBathrooms').innerHTML;
+
+            document.getElementById('additionalInfo').innerHTML = parent.getElementById('additionalInfo').innerHTML;
+        }
+    </script>
+    <script type="text/javascript">
+        $( document ).ready(getParentData);
+    </script>
+
 </head>
 <body>
 	<div class="DIVform-form-summary">
@@ -1121,10 +1174,10 @@ jQuery(document).ready(function () {
 	        <div class="DIVform-summary-box-body">
 	            <div style="font-size:18px;">
 	                <strong>Property Address:</strong>
-	                <span id="PropertyInfo_lblPropertyAddress"><?php if ( isset( $userResponse['propertyAddress'] ) ) { echo $userResponse['propertyAddress']; } ?></span>
+	                <span id="PropertyInfo_lblPropertyAddress"></span>
 	                <br />
 	                <strong>AIN:</strong>
-	                <span id="PropertyInfo_lblAIN"><?php if ( isset( $userResponse['ainWithDashes'] ) ) { echo $userResponse['ainWithDashes']; } ?></span>
+	                <span id="PropertyInfo_lblAIN"></span>
 	            </div>
 	        </div>
 	    </div>
@@ -1135,20 +1188,20 @@ jQuery(document).ready(function () {
 	        </div>
 	        <div class="DIVform-summary-box-body">
 	            <div class="DIVform-float-left-text"> Owner Name: </div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['ownerName'] ) ) { echo $userResponse['ownerName']; } ?> </div>
+	            <div id="ownerName" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <div class="DIVform-float-left-text"> Daytime Telephone: </div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['telephone'] ) ) { echo $userResponse['telephone']; } ?> </div>
+	            <div id="ownerTelephone" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <br /><br />
 	            <strong>Results will be sent to this email address:</strong>
 	            <br />
 	            <div style="clear:both"></div>
 	            <div class="DIVform-float-left-text"> Email address: </div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['email'] ) ) { echo $userResponse['email']; } ?> </div>
+	            <div id="ownerEmail" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <div class="DIVform-float-left-text"> Confirm email address: </div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['confirmEmail'] ) ) { echo $userResponse['confirmEmail']; } ?> </div>
+	            <div id="ownerConfirmEmail" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	        </div>
 	    </div>
@@ -1166,10 +1219,10 @@ jQuery(document).ready(function () {
 	                </strong>
 	            </div>
 	            <div class="DIVform-float-left-text" style="text-align:left; line-height:1.5">
-	                <span id="lblMailStreet"><?php if ( isset( $userResponse['mailingStreet'] ) ) { echo $userResponse['mailingStreet']; } ?></span><br />
-	                <span id="lblMailCity"><?php if ( isset( $userResponse['mailingCity'] ) ) { echo $userResponse['mailingCity']; } ?></span><br />
-	                <span id="lblMailState"><?php if ( isset( $userResponse['mailingState'] ) ) { echo $userResponse['mailingState']; } ?></span><br />
-	                <span id="lblMailZip"><?php if ( isset( $userResponse['mailingZip'] ) ) { echo $userResponse['mailingZip']; } ?></span><br />
+	                <span id="lblMailStreet"></span><br />
+	                <span id="lblMailCity"></span><br />
+	                <span id="lblMailState"></span><br />
+	                <span id="lblMailZip"></span><br />
 	            </div>
 	            <div style="clear:both"></div>
 	        </div>
@@ -1180,32 +1233,13 @@ jQuery(document).ready(function () {
 	        </div>
 	        <div class="DIVform-summary-box-body">
 	            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></div>
+	            <div id="propertyAssessedValue" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
+	            <div id="userAssessedValue" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
-	            <div class="DIVform-float-left-text DIVform-float-left-result"> <?php
-	                if ( isset( $userResponse['propertyType'] ) ) {
-	                    $chosen = $userResponse['propertyType'];
-	                    if ( strcmp( $chosen, "SFR" ) == 0 ) {
-	                        echo "House/Condo/Townhome";
-	                    }
-	                    else if ( strcmp( $chosen, "R-I" ) == 0 ) {
-	                        echo "Apartment/Multi-Unit";
-	                    }
-	                    else if ( strcmp( $chosen, "C/I" ) == 0 ) {
-	                        echo "Commercial/Industrial";
-	                    }
-	                    else if ( strcmp( $chosen, "VAC" ) == 0 ) {
-	                        echo "Vacant Lot";
-	                    }
-	                    else if ( strcmp( $chosen, "OTH" ) == 0 ) {
-	                        echo "Other";
-	                    }
-	                } 
-	            ?> </div>
+	            <div id="propertyType" class="DIVform-float-left-text DIVform-float-left-result"></div>
 	            <div style="clear:both"></div>
 	            <br />
 	            <br />
@@ -1226,29 +1260,17 @@ jQuery(document).ready(function () {
 	                    <td style="text-align:right; border:none">
 	                        <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
 	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['recordSQFT'] ) ) { echo $userResponse['recordSQFT']; } ?>
-	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['recordBedrooms'] ) ) { echo $userResponse['recordBedrooms']; } ?>
-	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['recordBathrooms'] ) ) { echo $userResponse['recordBathrooms']; } ?>
-	                    </td>
+	                    <td id="recordSQFT" style="font-weight:bold; border:none"></td>
+	                    <td id="recordBedrooms" style="font-weight:bold; border:none"></td>
+	                    <td id="recordBathrooms" style="font-weight:bold; border:none"></td>
 	                </tr>
 	                <tr>
 	                    <td style="text-align:right; border:none">
 	                        Please make any necessary corrections in the corresponding boxes:
 	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
-	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
-	                    </td>
-	                    <td style="font-weight:bold; border:none">
-	                        <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
-	                    </td>
+	                    <td id="approxSqFootage" style="font-weight:bold; border:none"></td>
+	                    <td id="numBedrooms" style="font-weight:bold; border:none"></td>
+	                    <td id="numBathrooms" style="font-weight:bold; border:none"></td>
 	                </tr>
 	            </table>
 	        </div>
@@ -1328,7 +1350,7 @@ jQuery(document).ready(function () {
 	        </div>
 	        <div class="DIVform-summary-box-body">
 	            <strong>Your Response:</strong><br/>
-	            <?php if ( isset( $userResponse['additionalInfo'] ) ) { echo $userResponse['additionalInfo']; } ?>
+	            <span id="additionalInfo"></span>
 	        </div>
 	    </div>
 	</div>
