@@ -1109,6 +1109,7 @@ jQuery(document).ready(function () {
     
     <!-- USC DIV project styles -->
     <link rel="stylesheet" id="DIVform_styles" href="css/DIVform_styles.css">
+
 </head>
 <body>
 	<div class="DIVform-form-summary">

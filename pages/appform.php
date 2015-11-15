@@ -1657,7 +1657,7 @@ jQuery(document).ready(function () {
                                                 </div>
                                                 <div class="DIVform-comparable-content" style="width:55%">
                                                     Property Description:
-                                                    <textarea name="Comp2Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"></textarea>
+                                                    <textarea name="Comp2Description" class="DIVform-form-field" style="width:100% !important; min-height:0px; margin-top:-2px"><?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['comp2Description']; } ?></textarea>
                                                 </div>
                                             </div>
                                         </div>

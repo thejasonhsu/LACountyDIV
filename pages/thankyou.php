@@ -1124,6 +1124,15 @@ jQuery(document).ready(function () {
             $("#accordion").accordion();
         })
     </script>
+
+    <!-- Javascript for opening printer-friendly version -->
+    <!--<script type="text/javascript">
+        function openPrinterFriendlyWindow() {
+            printerFriendlyWindow = window.open( 'pages/printableSummary.php','_blank','width=800,height=1000' );
+            printerFriendlyWindow.document.getElementById( "PropertyInfo_lblPropertyAddress" ) = <?php if ( isset( $userResponse['propertyAddress'] ) ) { echo $userResponse['propertyAddress']; } ?>;
+        }
+    </script>-->
+
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1337,6 +1346,7 @@ jQuery(document).ready(function () {
                                     Notification of the result will be sent to the email address you provided. 
                                  </p>
                                  <p>
+                                    <!--<input type="button" onclick="openPrinterFriendlyWindow();">Click here for a printer-friendly summary of your application.</input>-->
                                     <a href="javascript:window.open('pages/printableSummary.php','_blank','width=800,height=1000')">Click here for a printer-friendly summary of your application.</a>
                                 </p>
                             </div>

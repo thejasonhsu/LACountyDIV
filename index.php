@@ -182,9 +182,12 @@
 	function submit() {
 		$dbEntry = new DatabaseEntry( $_SESSION['propertyInfo']->getInfo(), $_SESSION['userFormResponse'] );
 		$successfulEntry = $dbEntry->addToDatabase();
+
+		$userResponse = $_SESSION['userFormResponse'];
+
 		//logout();
 
-		require( TEMPLATE_PATH . "thankyou.php");
+		require( TEMPLATE_PATH . "thankyou.php" );
 	}
 
 	function landingpage() {
