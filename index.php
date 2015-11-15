@@ -180,8 +180,10 @@
 	}
 
 	function submit() {
-		// TODO: Call function which will send information to the database
+		$dbEntry = new DatabaseEntry( $_SESSION['propertyInfo']->getInfo(), $_SESSION['userFormResponse'] );
+		$successfulEntry = $dbEntry->addToDatabase();
 		//logout();
+
 		require( TEMPLATE_PATH . "thankyou.php");
 	}
 
