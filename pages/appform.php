@@ -1439,11 +1439,11 @@ jQuery(document).ready(function () {
                                             <div class="DIVform-float-left-text" style="text-align:left; line-height:1.5">
                                                 <span id="lblMailStreet">
                                                     <?php
-                                                        if ( isset( $dbResults['MailHouseNo'] ) ) { echo $dbResults['MailHouseNo'] . " "; }
-                                                        if ( isset( $dbResults['MailFraction'] ) ) { echo $dbResults['MailFraction'] . " "; }
-                                                        if ( isset( $dbResults['MailDirection'] ) ) { echo $dbResults['MailDirection'] . " "; }
-                                                        if ( isset( $dbResults['MailUnit'] ) ) { echo $dbResults['MailUnit'] . " "; }
-                                                        if ( isset( $dbResults['MailStreet'] ) ) { echo $dbResults['MailStreet']; }
+                                                        if ( isset( $dbResults['MailHouseNo'] ) && !empty( $dbResults['MailHouseNo'] ) ) { echo $dbResults['MailHouseNo'] . " "; }
+                                                        if ( isset( $dbResults['MailFraction'] ) && !empty( $dbResults['MailFraction'] ) ) { echo $dbResults['MailFraction'] . " "; }
+                                                        if ( isset( $dbResults['MailDirection'] ) && !empty( $dbResults['MailDirection'] ) ) { echo $dbResults['MailDirection'] . " "; }
+                                                        if ( isset( $dbResults['MailUnit'] ) && !empty( $dbResults['MailUnit'] ) ) { echo $dbResults['MailUnit'] . " "; }
+                                                        if ( isset( $dbResults['MailStreet'] ) && !empty( $dbResults['MailStreet'] ) ) { echo $dbResults['MailStreet']; }
                                                     ?>
                                                 </span><br />
                                                 <span id="lblMailCity">

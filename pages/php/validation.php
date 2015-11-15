@@ -1,7 +1,5 @@
 <?php
 
-
-
 function validatePhoneNumber($phoneNum)
 {
     if(strlen($phoneNum) == 10 && is_numeric($phoneNum)){
@@ -101,11 +99,6 @@ function validateSaleDate($date)
     	return false;
     }
 }
-
-
-
-
-
 
 
 ?>
