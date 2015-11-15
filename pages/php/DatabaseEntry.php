@@ -1,4 +1,5 @@
 <?php
+	require( "pages/php/validation.php" );
 
 	class DatabaseEntry
 	{
@@ -31,7 +32,7 @@
 							<AssessedValue>{$dbr['RollLandImpValue']}</AssessedValue>
 							<SitusStreet>{$dbr['SitusStreet']}</SitusStreet>
 							<SitusCity>{$dbr['SitusCity']}</SitusCity>
-							<SitusZip>{$dbr['SitusZIP']}</SitusZip>
+							<SitusZip>{$dbr['SitusZip']}</SitusZip>
 							<SQFTmain>{$ufr['approxSqFootage']}</SQFTmain>
 							<Bedrooms>{$ufr['numBedrooms']}</Bedrooms>
 							<Bathrooms>{$ufr['numBathrooms']}</Bathrooms>

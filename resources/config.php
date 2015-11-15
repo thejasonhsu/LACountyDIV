@@ -25,7 +25,6 @@
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );
 	require( "pages/php/DatabaseEntry.php" );
-	require( "resources/library/validation.php" );
 
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";
