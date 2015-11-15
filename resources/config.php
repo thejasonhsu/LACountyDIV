@@ -15,7 +15,7 @@
 	
 	define( "DIV_FILING_APP_TABLE", "tbian_LACounty.DIVFilingApplicaton" ); // DIVFilingApplication.sql
 
-	define( "TEMPLATE_PATH", "pages/" ); // Path in relation to top-level folder, cms
+	define( "TEMPLATE_PATH", "pages/" );
 	define( "LIBRARY_PATH", "resources/library" );
 	define( "RESOURCE_PATH", "resources/");
 
@@ -24,6 +24,8 @@
 
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );
+	require( "pages/php/DatabaseEntry.php" );
+	require( "resources/library/validation.php" );
 
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";

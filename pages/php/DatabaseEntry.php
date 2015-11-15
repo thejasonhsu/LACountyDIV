@@ -1,9 +1,12 @@
 <?php
-	require( "resources/library/validation.php" );
 
 	class DatabaseEntry
 	{
-		$ain; $applicationXML; $dateTimeAdded; $dbResults, $userFormResponse;
+		private $ain;
+		private $applicationXML;
+		private $dateTimeAdded;
+		private $dbResults;
+		private $userFormResponse;
 
 		public function __construct( $dbr, $ufr ) {
 			$this->dbResults = $dbr;
@@ -28,7 +31,7 @@
 							<AssessedValue>{$dbr['RollLandImpValue']}</AssessedValue>
 							<SitusStreet>{$dbr['SitusStreet']}</SitusStreet>
 							<SitusCity>{$dbr['SitusCity']}</SitusCity>
-							<SitusZip>{$dbr['SitusZip']}</SitusZip>
+							<SitusZip>{$dbr['SitusZIP']}</SitusZip>
 							<SQFTmain>{$ufr['approxSqFootage']}</SQFTmain>
 							<Bedrooms>{$ufr['numBedrooms']}</Bedrooms>
 							<Bathrooms>{$ufr['numBathrooms']}</Bathrooms>
@@ -82,12 +85,16 @@
 						</UserInput>
 					</Application>
 				</OnlineFiling>";
+
+				// DEBUG
+				echo "applicationXML = " . $this->applicationXML;
+				echo "<p></p>";
 			}
 		}
 
 		public function addToDatabase() {
 			// TODO: Do we check if the AIN already exists in the table?
-			if ( !empty( $this->ain ) && validData() ) {
+			if ( !empty( $this->ain ) && $this->validData() ) {
 				$this->dateTimeAdded = date("Y-m-d H:i:s");
 
 				$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -98,6 +105,23 @@
 				$statement->bindValue( ":dateTimeAdded", $this->dateTimeAdded, PDO::INT );
 				$statement->execute();
 				$connection = null;
+
+
+
+				// DEBUG
+				$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+				$sql = "SELECT * FROM " . DIV_FILING_APP_TABLE . " WHERE AIN = :ain";
+				$statement = $connection->prepare( $sql );
+				$statement->bindValue( ":ain", $this->ain, PDO::PARAM_INT );
+				$statement->execute();
+				$debugResults = array();
+				$debugResults = $statement->fetch();
+				$connection = null;
+				echo "Database debugging result: ";
+				echo $debugResults;
+
+
+
 				return true;
 			}
 

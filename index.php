@@ -181,7 +181,10 @@
 
 	function submit() {
 		// TODO: Call function which will send information to the database
-		logout();
+		$dbEntry = new DatabaseEntry( $_SESSION['propertyInfo']->getInfo(), $_SESSION['userFormResponse'] );
+		$successfulEntry = $dbEntry->addToDatabase();
+
+		//logout();
 	}
 
 	function landingpage() {
