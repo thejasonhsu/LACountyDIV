@@ -3,7 +3,7 @@
 
 	class DatabaseEntry
 	{
-		$ain; $applicationXML; $dateTimeAdded; $dateTimeUpdated; $processDate; $emailNotify, $dbResults, $userFormResponse;
+		$ain; $applicationXML; $dateTimeAdded; $dbResults, $userFormResponse;
 
 		public function __construct( $dbr, $ufr ) {
 			$this->dbResults = $dbr;
@@ -12,7 +12,7 @@
 			$this->ain = isset( $dbr['AIN'] ) ? $dbr['AIN'] : "";
 			
 			if ( !empty($this->ain) ) {
-				$applicationXML = 
+				$this->applicationXML = 
 				"<OnlineFiling>
 					<Application>
 						<FilingStatus></FilingStatus>
@@ -88,6 +88,8 @@
 		public function addToDatabase() {
 			// TODO: Do we check if the AIN already exists in the table?
 			if ( !empty( $this->ain ) && validData() ) {
+				$this->dateTimeAdded = date("Y-m-d H:i:s");
+
 				$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 				$sql = "INSERT INTO " . DIV_FILING_APP_TABLE . " ( AIN, ApplicationXML, DateTimeAdded ) VALUES ( :ain, :applicationXML, :dateTimeAdded )";
 				$statement = $connection->prepare ( $sql );
