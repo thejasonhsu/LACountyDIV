@@ -10,10 +10,16 @@
 		private $userFormResponse;
 
 		public function __construct( $dbr, $ufr ) {
+			$this->ain = isset( $dbr['AIN'] ) ? $dbr['AIN'] : "";
+
+			// Take () and - out of telephone
+			$ufr['telephone'] = str_replace( "-", "", $ufr['telephone'] );
+			$ufr['telephone'] = str_replace( "(", "", $ufr['telephone'] );
+			$ufr['telephone'] = str_replace( ")", "", $ufr['telephone'] );
+			$ufr['telephone'] = str_replace( " ", "", $ufr['telephone'] );
+
 			$this->dbResults = $dbr;
 			$this->userFormResponse = $ufr;
-
-			$this->ain = isset( $dbr['AIN'] ) ? $dbr['AIN'] : "";
 			
 			if ( !empty($this->ain) ) {
 				$this->applicationXML = 
@@ -103,7 +109,7 @@
 				$statement = $connection->prepare ( $sql );
 				$statement->bindValue( ":ain", $this->ain, PDO::PARAM_STR );
 				$statement->bindValue( ":applicationXML", $this->applicationXML, PDO::PARAM_STR );
-				$statement->bindValue( ":dateTimeAdded", $this->dateTimeAdded, PDO::INT );
+				$statement->bindValue( ":dateTimeAdded", $this->dateTimeAdded, PDO::PARAM_INT );
 				$statement->execute();
 				$connection = null;
 
@@ -119,7 +125,7 @@
 				$debugResults = $statement->fetch();
 				$connection = null;
 				echo "Database debugging result: ";
-				echo $debugResults;
+				print_r($debugResults);
 
 
 
@@ -131,42 +137,55 @@
 
 		public function validData() {
 			if ( !validateAIN( $this->dbResults['AIN'] ) ) {
+				echo "<p>AIN invalid</p>";
 				return false;
 			}
 			if ( !validatePhoneNumber( $this->userFormResponse['telephone'] ) ) {
+				echo "<p>telephone invalid</p>";
 				return false;
 			}
 			if ( !validateOpinionOfVal( $this->userFormResponse['opinionOfValue'] ) ) {
+				echo "<p>opinionOfValue invalid</p>";
 				return false;
 			}
 			if ( !validateSquareFootage( $this->userFormResponse['approxSqFootage'] ) ) {
+				echo "<p>approxSqFootage invalid</p>";
 				return false;
 			}
 			if ( !validateBedroomNumber( $this->userFormResponse['numBedrooms'] ) ) {
+				echo "<p>numBedrooms invalid</p>";
 				return false;
 			}
 			if ( !validateBathroomNumber( $this->userFormResponse['numBathrooms'] ) ) {
+				echo "<p>numBathrooms invalid</p>";
 				return false;
 			}
 			if ( !validateZipCode( $this->userFormResponse['comp1Zip'] ) ) {
+				echo "<p>comp1Zip invalid</p>";
 				return false;
 			}
 			if ( !validateZipCode( $this->userFormResponse['comp2Zip'] ) ) {
+				echo "<p>comp2Zip invalid</p>";
 				return false;
 			}
 			if ( !validateZipCode( $this->userFormResponse['mailingZip'] ) ) {
+				echo "<p>mailingZip invalid</p>";
 				return false;
 			}
 			if ( !validateSalePrice( $this->userFormResponse['comp1SalePrice'] ) ) {
+				echo "<p>comp1SalePrice invalid</p>";
 				return false;
 			}
 			if ( !validateSalePrice( $this->userFormResponse['comp2SalePrice'] ) ) {
+				echo "<p>comp2SalePrice invalid</p>";
 				return false;
 			}
 			if ( !validateSaleDate( $this->userFormResponse['comp1SaleDate'] ) ) {
+				echo "<p>comp1SaleDate invalid</p>";
 				return false;
 			}
 			if ( !validateSaleDate( $this->userFormResponse['comp2SaleDate'] ) ) {
+				echo "<p>comp2SaleDate invalid</p>";
 				return false;
 			}
 			return true;

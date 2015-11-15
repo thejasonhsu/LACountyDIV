@@ -3,90 +3,100 @@
 function validatePhoneNumber($phoneNum)
 {
     if(strlen($phoneNum) == 10 && is_numeric($phoneNum)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateAIN($ain)
 {
     if(strlen($ain) == 10 && is_numeric($ain)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function confirmEmail($email1, $email2){
-	//check to see if user typed in the same two emails for confirmation
-	if($email1 == $email2){
-		return true;
-	}
-	else{
-		return false;
-	}
+    //check to see if user typed in the same two emails for confirmation
+    if($email1 == $email2){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 function validateOpinionOfVal($opinion)
 {
-    if(strlen($opinion) <= 9 && is_numeric($ain)){
-    	return true;
+    if(strlen($opinion) <= 9 && is_numeric($opinion)){
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateSquareFootage($sqFt)
 {
     if(strlen($sqFt) <= 9 && is_numeric($sqFt)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateBedroomNumber($numBed)
 {
     if(strlen($numBed) <= 9 && is_numeric($numBed)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateBathroomNumber($numBath)
 {
     if(strlen($numBath) <= 9 && is_numeric($numBath)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateZipCode($zip)
 {
     if(strlen($zip) == 5 && is_numeric($zip)){
-    	return true;
-    } 
+        return true;
+    }
+    elseif(strlen($zip) == 10){
+        $count = 0;
+        $zip = str_replace( "-", "", $zip, $count);
+        if ($count == 1 && is_numeric($zip)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     else{
-    	return false;
+        return false;
     }
 }
 
 function validateSalePrice($price)
 {
     if(strlen($price) <= 9 && is_numeric($price)){
-    	return true;
+        return true;
     } 
     else{
-    	return false;
+        return false;
     }
 }
 
@@ -139,7 +149,7 @@ function validateSaleDate($date)
         return true;
     }
     else{
-    	return false;
+        return false;
     }
 }
 

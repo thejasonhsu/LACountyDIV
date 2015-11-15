@@ -187,7 +187,7 @@
 
 		//logout();
 
-		require( TEMPLATE_PATH . "thankyou.php" );
+		//require( TEMPLATE_PATH . "thankyou.php" );
 	}
 
 	function landingpage() {
