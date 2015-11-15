@@ -94,9 +94,52 @@ function validateSalePrice($price)
 
 function validateSaleDate($date)
 {
-    if(strlen($date) == 9 && is_numeric($date)){
-    	return true;
-    } 
+    list($month, $day, $year) = explode('/', $date);
+    if (is_numeric($year) && is_numeric($month) && is_numeric($day)){
+        if($month > 12 || $month < 1){
+            return false;
+        }
+        if($day < 1){
+            return false;
+        }
+        if($month == 1 && $day > 31){
+            return false;
+        }
+         if($month == 2 && $day > 28){
+            return false;
+        }
+         if($month == 3 && $day > 31){
+            return false;
+        }
+         if($month == 4 && $day > 30){
+            return false;
+        }
+         if($month == 5 && $day > 31){
+            return false;
+        }
+         if($month == 6 && $day > 30){
+            return false;
+        }
+         if($month == 7 && $day > 31){
+            return false;
+        }
+         if($month == 8 && $day > 31){
+            return false;
+        }
+         if($month == 9 && $day > 30){
+            return false;
+        }
+         if($month == 10 && $day > 31){
+            return false;
+        }
+         if($month == 11 && $day > 30){
+            return false;
+        }
+         if($month == 12 && $day > 31){
+            return false;
+        }
+        return true;
+    }
     else{
     	return false;
     }
