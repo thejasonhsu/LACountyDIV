@@ -32,7 +32,7 @@
 							<AssessedValue>{$dbr['RollLandImpValue']}</AssessedValue>
 							<SitusStreet>{$dbr['SitusStreet']}</SitusStreet>
 							<SitusCity>{$dbr['SitusCity']}</SitusCity>
-							<SitusZip>{$dbr['SitusZip']}</SitusZip>
+							<SitusZip>{$dbr['SitusZIP']}</SitusZip>
 							<SQFTmain>{$ufr['approxSqFootage']}</SQFTmain>
 							<Bedrooms>{$ufr['numBedrooms']}</Bedrooms>
 							<Bathrooms>{$ufr['numBathrooms']}</Bathrooms>
