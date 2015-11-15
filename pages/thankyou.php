@@ -1115,24 +1115,6 @@ jQuery(document).ready(function () {
     <!-- USC DIV project styles -->
     <link rel="stylesheet" id="DIVform_styles" href="pages/css/DIVform_styles.css">
 
-    <!-- JQuery and JQuery UI scripts for Accordion -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
-    <script>
-        /* jQueryUI Accordion */
-        $(function () {
-            $("#accordion").accordion();
-        })
-    </script>
-
-    <!-- Javascript for opening printer-friendly version -->
-    <!--<script type="text/javascript">
-        function openPrinterFriendlyWindow() {
-            printerFriendlyWindow = window.open( 'pages/printableSummary.php','_blank','width=800,height=1000' );
-            printerFriendlyWindow.document.getElementById( "PropertyInfo_lblPropertyAddress" ) = <?php if ( isset( $userResponse['propertyAddress'] ) ) { echo $userResponse['propertyAddress']; } ?>;
-        }
-    </script>-->
-
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1373,20 +1355,20 @@ jQuery(document).ready(function () {
                                     </div>
                                     <div class="DIVform-content-box-body">
                                         <div class="DIVform-float-left-text"> Owner Name: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['ownerName'] ) ) { echo $userResponse['ownerName']; } ?> </div>
+                                        <div id="ownerName" class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['ownerName'] ) ) { echo $userResponse['ownerName']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text"> Daytime Telephone: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['telephone'] ) ) { echo $userResponse['telephone']; } ?> </div>
+                                        <div id="ownerTelephone" class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['telephone'] ) ) { echo $userResponse['telephone']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <br /><br />
                                         <strong>Results will be sent to this email address:</strong>
                                         <br />
                                         <div style="clear:both"></div>
-                                        <div class="DIVform-float-left-text"> Email address: </div>
+                                        <div id="ownerEmail" class="DIVform-float-left-text"> Email address: </div>
                                         <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['email'] ) ) { echo $userResponse['email']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text"> Confirm email address: </div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['confirmEmail'] ) ) { echo $userResponse['confirmEmail']; } ?> </div>
+                                        <div id="ownerConfirmEmail" class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['confirmEmail'] ) ) { echo $userResponse['confirmEmail']; } ?> </div>
                                         <div style="clear:both"></div>
                                     </div>
                                 </div>
@@ -1417,14 +1399,14 @@ jQuery(document).ready(function () {
                                         <p>Your Property Information</p>
                                     </div>
                                     <div class="DIVform-content-box-body">
-                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
+                                        <div id="propertyAssessedValue" class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
                                         <div class="DIVform-float-left-text DIVform-float-left-result"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
+                                        <div id="userAssessedValue" class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"> <?php
+                                        <div id="propertyType" class="DIVform-float-left-text DIVform-float-left-result"> <?php
                                             if ( isset( $userResponse['propertyType'] ) ) {
                                                 $chosen = $userResponse['propertyType'];
                                                 if ( strcmp( $chosen, "SFR" ) == 0 ) {
@@ -1464,13 +1446,13 @@ jQuery(document).ready(function () {
                                                 <td style="text-align:right; border:none">
                                                     <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="recordSQFT" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordSQFT'] ) ) { echo $userResponse['recordSQFT']; } ?>
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="recordBedrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordBedrooms'] ) ) { echo $userResponse['recordBedrooms']; } ?>
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="recordBathrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordBathrooms'] ) ) { echo $userResponse['recordBathrooms']; } ?>
                                                 </td>
                                             </tr>
@@ -1478,13 +1460,13 @@ jQuery(document).ready(function () {
                                                 <td style="text-align:right; border:none">
                                                     Please make any necessary corrections in the corresponding boxes:
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="approxSqFootage" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="numBedrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
                                                 </td>
-                                                <td style="font-weight:bold; border:none">
+                                                <td id="numBathrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
                                                 </td>
                                             </tr>
@@ -1566,7 +1548,7 @@ jQuery(document).ready(function () {
                                     </div>
                                     <div class="DIVform-content-box-body">
                                         <strong>Your Response:</strong><br/>
-                                        <?php if ( isset( $userResponse['additionalInfo'] ) ) { echo $userResponse['additionalInfo']; } ?>
+                                        <span id="additionalInfo"><?php if ( isset( $userResponse['additionalInfo'] ) ) { echo $userResponse['additionalInfo']; } ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -1576,9 +1558,6 @@ jQuery(document).ready(function () {
 
 
         </div>
-
-        <!--end faq-->
-        <!--    <div class="wpb_tour_next_prev_nav vc_clearfix"> <span class="wpb_prev_slide"><a href="#prev" title="Previous tab">Previous tab</a></span> <span class="wpb_next_slide"><a href="#next" title="Next tab">Next tab</a></span></div>  -->
 
     </div>
     </div>
