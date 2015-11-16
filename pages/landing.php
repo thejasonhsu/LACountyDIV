@@ -100,11 +100,12 @@
 
 
 
-<script src="resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="resources/library/jquery.maskedinput.js" type="text/javascript"></script>
-<script src="pages/js/mask.js" type="text/javascript"></script>
 
 
+<script src="resources/library/jquery-1.9.0.min.js" type="text/javascript"></script>
+
+<script src="resources/library/jquery.mask.min.js" type="text/javascript"></script>
+<script  src="pages/js/mask.js" type="text/javascript"></script>
 
 
 
@@ -1039,7 +1040,7 @@
 			</div>
 <form action="index.php?action=login" method="post">		
 		<div id="line_1038" >
-		AIN: <input name="AIN" type="text" maxlength="20" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   "/>
+		AIN: <input name="AIN" type="text" maxlength="20" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   " onkeypress='validate(event)'/>
 		<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
 		 </div> 
     <div id="line_1042"></div>
