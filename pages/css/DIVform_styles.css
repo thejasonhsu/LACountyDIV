@@ -270,6 +270,14 @@
     display: -webkit-inline-flex;
 }
 
+#help-text ul {
+    list-style-type: none;
+}
+
+#help-text li {
+    margin-bottom: 20px;
+}
+
 /* Corrects wordpress theme incompatibility */
 .datepick-month-year {
     -webkit-appearance: menulist;
