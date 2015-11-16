@@ -222,6 +222,9 @@
 		$parameters = $statement->fetch();
 		$connection = null;
 
+		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
+		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
+
 		if ( LANDING_DEBUG ) {
 			$temp = ($success) ? 'true' : 'false';
 			echo "Retrieving the information was a success: " . $temp;

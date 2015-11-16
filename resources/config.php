@@ -23,7 +23,7 @@
 	define( "PUBLIC_KEY", "6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9");
 
 	define( "DEBUG", false );
-	define( "LANDING_DEBUG", true );
+	define( "LANDING_DEBUG", false );
 
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );

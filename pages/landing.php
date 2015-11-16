@@ -973,7 +973,7 @@
 		<br/> 
 			<div class="wpb_wrapper" style="width:100%; float:center; background-color:white; ">
                 <p>Click here to read the FAQs: <a href="#faq_link">Frequently Asked Questions</a></p>
-				<p>If you believe that your property value warrants review due to a decline in market value, you may file an application for Decline-in-Value Review.  <span sstyle="font-weight:bolder; "> Applications are accepted from July 2, 2015 through November 30, 2015.</span></p>
+				<p>If you believe that your property value warrants review due to a decline in market value, you may file an application for Decline-in-Value Review.  <span sstyle="font-weight:bolder; "> Applications are accepted from <?php if ( isset( $parameters['Prop8Application_FileDateBegin'] ) ) { echo $parameters['Prop8Application_FileDateBegin']; } ?> through <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?>.</span></p>
 
 			</div> 
 			<br/> 
@@ -1070,10 +1070,10 @@
 		<div id="line_1066" > 
         &nbsp;
 		<p>  By entering the information above, you can: </p> 
-<li>View your 2015 assessed value or the results of any 2015 
+<li>View your <?php echo $year ?> assessed value or the results of any <?php echo $year ?> 
 decline-in-value review  </li>
 
-<li> File a 2015 Decline-in-Value Review Application online</li> 
+<li> File a <?php echo $year ?> Decline-in-Value Review Application online</li> 
 <li> Review an existing application</li> 
 <li> You will be able to review and print the information you provide 
 at the conclusion of this session</li> 
