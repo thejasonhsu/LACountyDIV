@@ -22,7 +22,7 @@
 	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
 	define( "PUBLIC_KEY", "6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9");
 
-	define( "DEBUG", true );
+	define( "DEBUG", false );
 
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );

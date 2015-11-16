@@ -112,10 +112,9 @@
 	function logout() {
 		session_unset();
 		session_destroy();
-		//session_write_close();
 		setcookie(session_name(),'',0,'/');
-		//session_regenerate_id(true);
-		header( "Location: index.php" );
+		landingpage();
+	  	exit;
 	}
 
 	function form($ain, $ainWithDashes) {
@@ -197,7 +196,12 @@
 			echo "successfulEntry = " . $temp;
 		}
 		else {
-			require( TEMPLATE_PATH . "thankyou.php" );
+			if ($successfulEntry) {
+				require( TEMPLATE_PATH . "thankyou.php" );
+			}
+			else {
+				require( TEMPLATE_PATH . "error.php" );
+			}
 		}
 	}
 
