@@ -211,28 +211,8 @@
 		$year = intval( $year );
 
 		if ( LANDING_DEBUG ) {
-			echo $year . " ";
+			echo "The year is : " . $year . " ";
 		}
-
-		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "INSERT INTO " . DIV_PARAMETER_DATES_TABLE . " ( RollYYYY, LienDate, Proactive_PurchaseDateBegin, Proactive_PurchaseDateEnd, Prop8Application_FileDateBegin, Prop8Application_FileDateEnd, AABS_FileDateBegin, AABS_FileDateEnd, PriorAssessmentYear, QualificationsWillBeAvailable_when, ResultsWillBeAvailable_when, ResultsAreNowAvailableOnline_YesNo ) VALUES ( :rollyyyy, :liendate, :ppdb, :ppde, :p8afdb, :p8afde, :aabsfdb, :aabsfde, :pay, :qwbaw, :rwbaw, :ranao )";
-		$statement = $connection->prepare ( $sql );
-		$statement->bindValue( ":rollyyyy", "2015", PDO::PARAM_INT );
-		$statement->bindValue( ":liendate", "1/1/2015", PDO::PARAM_STR );
-		$statement->bindValue( ":ppdb", "2015-1-1 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":ppde", "2015-1-1 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":p8afdb", "2015-7-2 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":p8afde", "2015-11-30 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":aabsfdb", "2015-7-2 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":aabsfde", "2015-11-30 00:00:00", PDO::PARAM_INT );
-		$statement->bindValue( ":pay", 2014, PDO::PARAM_INT );
-		$statement->bindValue( ":qwbaw", "N/A", PDO::PARAM_STR );
-		$statement->bindValue( ":rwbaw", "in August 2015", PDO::PARAM_STR );
-		$statement->bindValue( ":ranao", "Y", PDO::PARAM_STR );
-		$success = $statement->execute();
-		$connection = null;
-		$temp = ($success) ? 'true' : 'false';
-		echo "insertion result = " . $temp;
 
 		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		$sql = "SELECT * FROM " . DIV_PARAMETER_DATES_TABLE . " WHERE RollYYYY = :rollyyyy";
@@ -244,7 +224,7 @@
 
 		if ( LANDING_DEBUG ) {
 			$temp = ($success) ? 'true' : 'false';
-			echo $temp;
+			echo "Retrieving the information was a success: " . $temp;
 			
 			print "<pre>";
 			print_r( $parameters );
