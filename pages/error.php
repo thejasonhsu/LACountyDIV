@@ -1328,7 +1328,7 @@ jQuery(document).ready(function () {
                                     Your application has NOT been filed. An application for this property has already been filed.
                                 </p>
                                 <p>
-                                    To view the status of this property, please <a href="">click here</a>.
+                                    To view the status of this property, please <a href="http://assessor.lacounty.gov/decline-in-value-review/">click here</a>.
                                 </p>
                             </div>
                         </div>

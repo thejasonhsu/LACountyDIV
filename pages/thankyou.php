@@ -1323,7 +1323,7 @@ jQuery(document).ready(function () {
                             <!-- TODO -->
                             <div class="DIVform-thankyou-box">
                                  <p>
-                                    Thank you. Your <span>2015</span> decline-in-value online application has been submitted.</p>
+                                    Thank you. Your <span><?php if ( isset( $propertyInfo['RollYYYY'] ) ) { echo $propertyInfo['RollYYYY']; } ?></span> decline-in-value online application has been submitted.</p>
                                  <p>
                                     Notification of the result will be sent to the email address you provided. 
                                  </p>

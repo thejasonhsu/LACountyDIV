@@ -122,6 +122,8 @@
 		$dbResults = $propInfo->getInfo();
 		$_SESSION['propertyInfo'] = $propInfo;
 
+		$parameters = $_SESSION['parameters'];
+
 		require( TEMPLATE_PATH . "appform.php" );
 	}
 
@@ -174,6 +176,8 @@
 	function edit() {
 		$propInfo = $_SESSION['propertyInfo'];
 		$dbResults = $propInfo->getInfo();
+
+		$parameters = $_SESSION['parameters'];
 		
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -185,7 +189,7 @@
 		// End session
 		session_unset();
 		session_destroy();
-		setcookie(session_name(),'',0,'/');
+		setcookie( session_name(),'',0,'/' );
 
 		$dbEntry = new DatabaseEntry( $propertyInfo, $userResponse );
 		$successfulEntry = $dbEntry->addToDatabase();
@@ -224,6 +228,9 @@
 
 		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
 		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
+		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
+
+		$_SESSION['parameters'] = $parameters;
 
 		if ( LANDING_DEBUG ) {
 			$temp = ($success) ? 'true' : 'false';
