@@ -1117,6 +1117,16 @@ jQuery(document).ready(function () {
 
     <script src="../resources/library/jquery.mask.min.js" type="text/javascript"></script>
     <script src="js/mask.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script type="text/javascript">
+        /* JQuery ui dialog */
+        function showDialog() {
+            $( "#dialog" ).dialog();
+        }
+    </script>
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1337,7 +1347,7 @@ jQuery(document).ready(function () {
                                     Your property will automatically qualify for a <span>2015</span> decline-in-value review if a temporary decline-in-value reassesment was granted for the <span>2014</span> assessment year.
                                 </p>
                                 <p>
-                                    While you may check and monitor the status of a decline-in-value review, the details of this review can be obtained by contacting your <a href="http://assessor.lacounty.gov/locate-a-district-office/">District Office</a>. <a href="">Click here</a> for more information on temporary decline-in-value reassessments.
+                                    While you may check and monitor the status of a decline-in-value review, the details of this review can be obtained by contacting your <a href="http://assessor.lacounty.gov/locate-a-district-office/">District Office</a>. <a href="http://assessor.co.la.ca.us/extranet/list/newslist.aspx?newsid=78">Click here</a> for more information on temporary decline-in-value reassessments.
                                 </p>
                                 <div class="DIVform-content-box">
                                     <div class="DIVform-content-box-header">
@@ -1357,8 +1367,15 @@ jQuery(document).ready(function () {
                                         If you do not know the AIN, <a href="http://assessor.lacounty.gov/extranet/datamaps/pais.aspx" target="_blank">click here</a> to locate the property using the assessor’s maps by entering the cross streets nearest your property.
                                     </div>
                                 </div>
-
-                                
+                                <div id="dialog" title="What is a Decline-in-Value Reassessment?" style="display:none; font-size:12px">
+                                    <p>A Decline-in-Value reassessment is a temporary reduction in a property's assessed value.</p>
+                                    <br/>
+                                    <p>In 1978, California’s Proposition 13 established the base year value for property tax assessment. It also caps the growth of a properties assessed value at no more than two percent a year unless the market value of a property falls below the base year value.</p>
+                                    <br/>
+                                    <p>Also passed in 1978, Proposition 8 is a constitutional amendment that allows a temporary reduction in assessed value when a property suffers a “decline-in-value.” A decline-in-value occurs when the current market value of your property is less than the current assessed value as of January 1.1As a result of the decline in value, many property owners benefited from Proposition 8.</p>
+                                    <br/>
+                                    <p><a href="http://assessor.lacounty.gov/decline-in-value/" target="_blank">Click here</a> for more information about Decline-in-Value.</p>
+                                </div>                           
                             </div>
                         </div>
                 </div>
