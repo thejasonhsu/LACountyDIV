@@ -144,47 +144,47 @@
 				echo "<p>telephone invalid</p>";
 				return false;
 			}
-			if ( !validateOpinionOfVal( $this->userFormResponse['opinionOfValue'] ) ) {
+			if ( !empty( $this->userFormResponse['opinionOfValue'] ) && !validateOpinionOfVal( $this->userFormResponse['opinionOfValue'] ) ) {
 				echo "<p>opinionOfValue invalid</p>";
 				return false;
 			}
-			if ( !validateSquareFootage( $this->userFormResponse['approxSqFootage'] ) ) {
+			if ( !empty( $this->userFormResponse['approxSqFootage'] ) && !validateSquareFootage( $this->userFormResponse['approxSqFootage'] ) ) {
 				echo "<p>approxSqFootage invalid</p>";
 				return false;
 			}
-			if ( !validateBedroomNumber( $this->userFormResponse['numBedrooms'] ) ) {
+			if ( !empty( $this->userFormResponse['numBedrooms'] ) && !validateBedroomNumber( $this->userFormResponse['numBedrooms'] ) ) {
 				echo "<p>numBedrooms invalid</p>";
 				return false;
 			}
-			if ( !validateBathroomNumber( $this->userFormResponse['numBathrooms'] ) ) {
+			if ( !empty( $this->userFormResponse['numBathrooms'] ) && !validateBathroomNumber( $this->userFormResponse['numBathrooms'] ) ) {
 				echo "<p>numBathrooms invalid</p>";
 				return false;
 			}
-			if ( !validateZipCode( $this->userFormResponse['comp1Zip'] ) ) {
+			if ( !empty( $this->userFormResponse['comp1Zip'] ) && !validateZipCode( $this->userFormResponse['comp1Zip'] ) ) {
 				echo "<p>comp1Zip invalid</p>";
 				return false;
 			}
-			if ( !validateZipCode( $this->userFormResponse['comp2Zip'] ) ) {
+			if ( !empty( $this->userFormResponse['comp2Zip'] ) && !validateZipCode( $this->userFormResponse['comp2Zip'] ) ) {
 				echo "<p>comp2Zip invalid</p>";
 				return false;
 			}
-			if ( !validateZipCode( $this->userFormResponse['mailingZip'] ) ) {
+			if ( !empty( $this->userFormResponse['mailingZip'] ) && !validateZipCode( $this->userFormResponse['mailingZip'] ) ) {
 				echo "<p>mailingZip invalid</p>";
 				return false;
 			}
-			if ( !validateSalePrice( $this->userFormResponse['comp1SalePrice'] ) ) {
+			if ( !empty( $this->userFormResponse['comp1SalePrice'] ) && !validateSalePrice( $this->userFormResponse['comp1SalePrice'] ) ) {
 				echo "<p>comp1SalePrice invalid</p>";
 				return false;
 			}
-			if ( !validateSalePrice( $this->userFormResponse['comp2SalePrice'] ) ) {
+			if ( !empty( $this->userFormResponse['comp2SalePrice'] ) && !validateSalePrice( $this->userFormResponse['comp2SalePrice'] ) ) {
 				echo "<p>comp2SalePrice invalid</p>";
 				return false;
 			}
-			if ( !validateSaleDate( $this->userFormResponse['comp1SaleDate'] ) ) {
+			if ( !empty( $this->userFormResponse['comp1SaleDate'] ) && !validateSaleDate( $this->userFormResponse['comp1SaleDate'] ) ) {
 				echo "<p>comp1SaleDate invalid</p>";
 				return false;
 			}
-			if ( !validateSaleDate( $this->userFormResponse['comp2SaleDate'] ) ) {
+			if ( !empty( $this->userFormResponse['comp2SaleDate'] ) && !validateSaleDate( $this->userFormResponse['comp2SaleDate'] ) ) {
 				echo "<p>comp2SaleDate invalid</p>";
 				return false;
 			}
