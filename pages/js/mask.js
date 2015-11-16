@@ -6,8 +6,8 @@
     $("#AIN").mask("9999-999-999", {placeholder:" "});
     $("#ain1").mask("9999-999-999", {placeholder:" "});
     $("#ain2").mask("9999-999-999", {placeholder:" "});
-    $("#Comp1SaleDate").mask("99/99/9999",{placeholder:"  /  /    "});
-    $("#Comp2SaleDate").mask("99/99/9999",{placeholder:"  /  /    "});
+    $("#Comp1SaleDate").mask("99/99/9999",{placeholder:" "});
+    $("#Comp2SaleDate").mask("99/99/9999",{placeholder:" "});
     $("#phone").mask("(999) 999-9999", {placeholder:" "});
   });
 }(jQuery));
