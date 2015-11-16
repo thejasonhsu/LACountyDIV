@@ -110,7 +110,7 @@
 				$statement->bindValue( ":ain", $this->ain, PDO::PARAM_STR );
 				$statement->bindValue( ":applicationXML", $this->applicationXML, PDO::PARAM_STR );
 				$statement->bindValue( ":dateTimeAdded", $this->dateTimeAdded, PDO::PARAM_INT );
-				$statement->execute();
+				$success = $statement->execute();
 				$connection = null;
 
 
@@ -125,11 +125,17 @@
 				$debugResults = $statement->fetch();
 				$connection = null;
 				echo "Database debugging result: ";
+
+				print "<pre>";
 				print_r($debugResults);
+				print "</pre>";
 
-
-
-				return true;
+				if ($success) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 
 			return false;

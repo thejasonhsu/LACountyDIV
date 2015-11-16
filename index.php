@@ -183,6 +183,10 @@
 		$dbEntry = new DatabaseEntry( $_SESSION['propertyInfo']->getInfo(), $_SESSION['userFormResponse'] );
 		$successfulEntry = $dbEntry->addToDatabase();
 
+		$temp = ($successfulEntry) ? 'true' : 'false';
+		echo "<p></p>";
+		echo "successfulEntry = " . $temp;
+
 		$userResponse = $_SESSION['userFormResponse'];
 
 		//logout();
