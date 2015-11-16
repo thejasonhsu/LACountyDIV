@@ -93,9 +93,11 @@
 					</Application>
 				</OnlineFiling>";
 
-				// DEBUG
-				echo "applicationXML = " . $this->applicationXML;
-				echo "<p></p>";
+				if (DEBUG) {
+					// DEBUG
+					echo "applicationXML = " . $this->applicationXML;
+					echo "<p></p>";
+				}
 			}
 		}
 
@@ -113,22 +115,22 @@
 				$success = $statement->execute();
 				$connection = null;
 
+				if (DEBUG) {
+					// DEBUG
+					$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+					$sql = "SELECT * FROM " . DIV_FILING_APP_TABLE . " WHERE AIN = :ain";
+					$statement = $connection->prepare( $sql );
+					$statement->bindValue( ":ain", $this->ain, PDO::PARAM_INT );
+					$statement->execute();
+					$debugResults = array();
+					$debugResults = $statement->fetch();
+					$connection = null;
+					echo "Database debugging result: ";
 
-
-				// DEBUG
-				$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-				$sql = "SELECT * FROM " . DIV_FILING_APP_TABLE . " WHERE AIN = :ain";
-				$statement = $connection->prepare( $sql );
-				$statement->bindValue( ":ain", $this->ain, PDO::PARAM_INT );
-				$statement->execute();
-				$debugResults = array();
-				$debugResults = $statement->fetch();
-				$connection = null;
-				echo "Database debugging result: ";
-
-				print "<pre>";
-				print_r($debugResults);
-				print "</pre>";
+					print "<pre>";
+					print_r($debugResults);
+					print "</pre>";
+				}
 
 				if ($success) {
 					return true;
@@ -143,55 +145,55 @@
 
 		public function validData() {
 			if ( !validateAIN( $this->dbResults['AIN'] ) ) {
-				echo "<p>AIN invalid</p>";
+				if (DEBUG) { echo "<p>AIN invalid</p>"; }
 				return false;
 			}
 			if ( !validatePhoneNumber( $this->userFormResponse['telephone'] ) ) {
-				echo "<p>telephone invalid</p>";
+				if (DEBUG) { echo "<p>telephone invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['opinionOfValue'] ) && !validateOpinionOfVal( $this->userFormResponse['opinionOfValue'] ) ) {
-				echo "<p>opinionOfValue invalid</p>";
+				if (DEBUG) { echo "<p>opinionOfValue invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['approxSqFootage'] ) && !validateSquareFootage( $this->userFormResponse['approxSqFootage'] ) ) {
-				echo "<p>approxSqFootage invalid</p>";
+				if (DEBUG) { echo "<p>approxSqFootage invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['numBedrooms'] ) && !validateBedroomNumber( $this->userFormResponse['numBedrooms'] ) ) {
-				echo "<p>numBedrooms invalid</p>";
+				if (DEBUG) { echo "<p>numBedrooms invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['numBathrooms'] ) && !validateBathroomNumber( $this->userFormResponse['numBathrooms'] ) ) {
-				echo "<p>numBathrooms invalid</p>";
+				if (DEBUG) { echo "<p>numBathrooms invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp1Zip'] ) && !validateZipCode( $this->userFormResponse['comp1Zip'] ) ) {
-				echo "<p>comp1Zip invalid</p>";
+				if (DEBUG) { echo "<p>comp1Zip invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp2Zip'] ) && !validateZipCode( $this->userFormResponse['comp2Zip'] ) ) {
-				echo "<p>comp2Zip invalid</p>";
+				if (DEBUG) { echo "<p>comp2Zip invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['mailingZip'] ) && !validateZipCode( $this->userFormResponse['mailingZip'] ) ) {
-				echo "<p>mailingZip invalid</p>";
+				if (DEBUG) { echo "<p>mailingZip invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp1SalePrice'] ) && !validateSalePrice( $this->userFormResponse['comp1SalePrice'] ) ) {
-				echo "<p>comp1SalePrice invalid</p>";
+				if (DEBUG) { echo "<p>comp1SalePrice invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp2SalePrice'] ) && !validateSalePrice( $this->userFormResponse['comp2SalePrice'] ) ) {
-				echo "<p>comp2SalePrice invalid</p>";
+				if (DEBUG) { echo "<p>comp2SalePrice invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp1SaleDate'] ) && !validateSaleDate( $this->userFormResponse['comp1SaleDate'] ) ) {
-				echo "<p>comp1SaleDate invalid</p>";
+				if (DEBUG) { echo "<p>comp1SaleDate invalid</p>"; }
 				return false;
 			}
 			if ( !empty( $this->userFormResponse['comp2SaleDate'] ) && !validateSaleDate( $this->userFormResponse['comp2SaleDate'] ) ) {
-				echo "<p>comp2SaleDate invalid</p>";
+				if (DEBUG) { echo "<p>comp2SaleDate invalid</p>"; }
 				return false;
 			}
 			return true;

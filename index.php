@@ -180,18 +180,25 @@
 	}
 
 	function submit() {
-		$dbEntry = new DatabaseEntry( $_SESSION['propertyInfo']->getInfo(), $_SESSION['userFormResponse'] );
+		$userResponse = $_SESSION['userFormResponse'];
+		$propertyInfo = $_SESSION['propertyInfo']->getInfo();
+
+		// End session
+		session_unset();
+		session_destroy();
+		setcookie(session_name(),'',0,'/');
+
+		$dbEntry = new DatabaseEntry( $propertyInfo, $userResponse );
 		$successfulEntry = $dbEntry->addToDatabase();
 
-		$temp = ($successfulEntry) ? 'true' : 'false';
-		echo "<p></p>";
-		echo "successfulEntry = " . $temp;
-
-		$userResponse = $_SESSION['userFormResponse'];
-
-		//logout();
-
-		//require( TEMPLATE_PATH . "thankyou.php" );
+		if (DEBUG) {
+			$temp = ($successfulEntry) ? 'true' : 'false';
+			echo "<p></p>";
+			echo "successfulEntry = " . $temp;
+		}
+		else {
+			require( TEMPLATE_PATH . "thankyou.php" );
+		}
 	}
 
 	function landingpage() {

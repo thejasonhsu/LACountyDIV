@@ -22,6 +22,8 @@
 	define( "SECRET_KEY", "6Lfw-g0TAAAAAAYutYJAJ_J60xeoieYQSdHoULHt");
 	define( "PUBLIC_KEY", "6Lfw-g0TAAAAABDWhGdHei3Bamv8_BIgvNZ9j7_9");
 
+	define( "DEBUG", true );
+
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );
 	require( "pages/php/DatabaseEntry.php" );
