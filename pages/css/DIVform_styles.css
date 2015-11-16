@@ -264,6 +264,12 @@
     padding: 15px 15px 15px 15px;
 }
 
+#DIVform-review-AIN-box {
+    white-space: nowrap;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+
 /* Corrects wordpress theme incompatibility */
 .datepick-month-year {
     -webkit-appearance: menulist;
