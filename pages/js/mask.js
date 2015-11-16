@@ -1,7 +1,6 @@
 //function to mask inputs
 (function($) {
   $(document).ready(function(){
-    $.mask.definitions['~']='[+-]';
     $("#zip1").mask("99999" , {placeholder:" "});
     $("#zip2").mask("99999" , {placeholder:" "});
     $("#AIN").mask("9999-999-999", {placeholder:" "});
