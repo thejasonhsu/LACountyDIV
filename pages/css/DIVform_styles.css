@@ -242,7 +242,9 @@
 }
 
 .DIVform-summary-box-header {
+    display: table;
     height: 44px;
+    width: 100%;
     color: black;
     font-size: 18px;
     font-weight: bold;
@@ -250,6 +252,7 @@
     border-bottom: 1px solid #dddddd;
     border-radius: 2px 2px 0px 0px;
     padding: 2px 0px 0px 15px;
+    vertical-align: middle;
 }
 
 .DIVform-summary-box-header p {
