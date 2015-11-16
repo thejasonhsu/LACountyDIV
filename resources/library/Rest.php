@@ -3,7 +3,7 @@
 class Rest
 {
 	public static function restValidate( $loginData ) {
-		$testLoginPairs = array (
+		/*$testLoginPairs = array (
 							"2004001003" => "1003",
 							"2004001004" => "1004",
 							"2004001019" => "1019",
@@ -27,7 +27,9 @@ class Rest
 		}
 		else {
 			return "fail";
-		}
+		}*/
+
+		return "success";
 	}
 }
 

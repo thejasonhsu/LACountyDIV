@@ -87,7 +87,7 @@
     
     <script src="resources/library/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="resources/library/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="resources/library/jquery.mask.min.js" type="text/javascript"></script>
     <script src="pages/js/mask.js" type="text/javascript"></script>
 
 
