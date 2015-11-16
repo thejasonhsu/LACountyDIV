@@ -275,7 +275,8 @@
 }
 
 #help-text li {
-    margin-bottom: 20px;
+    padding: 10px 0 10px 0;
+    border-bottom:1px solid #dddddd;
 }
 
 /* Corrects wordpress theme incompatibility */
