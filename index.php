@@ -5,7 +5,7 @@
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 	$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-	if ( $action != "login" && $action != "logout" && !$username ) {
+	if ( $action != "login" && $action != "logout" && !$username && $action != "reviewLanding" && $action != "reviewLogin" ) {
 	  landingpage();
 	  exit;
 	}
@@ -29,6 +29,10 @@
 		case 'logout':
 			logout();
 			break;
+		case 'reviewLanding':
+			reviewLanding();
+		case 'reviewLogin':
+			reviewLogin();
 		default:
 			landingpage();
 	}
@@ -242,6 +246,41 @@
 		}
 		else {
 			require( TEMPLATE_PATH . "landing.php" );
+		}
+	}
+
+	function reviewLanding() {
+		$year = date( "Y" );
+		$year = intval( $year );
+
+		require( TEMPLATE_PATH . "decline-in-value-review.php" );
+	}
+
+	function reviewLogin() {
+		$ain = $_POST['AIN'];
+		$ainWithDashes = $ain;
+		$ain = $ain = str_replace( "-", "", $ain );
+
+		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		$sql = "SELECT * FROM " . DIV_PARCEL_STATUS_TABLE . " WHERE AIN = :ain";
+		$statement = $connection->prepare( $sql );
+		$statement->bindValue( ":ain", $ain, PDO::PARAM_INT );
+		$success = $statement->execute();
+		$dbResults = array();
+		$dbResults = $statement->fetch();
+		$connection = null;
+
+		// End session
+		session_unset();
+		session_destroy();
+		setcookie(session_name(),'',0,'/');
+
+		if ($success) {
+			require( TEMPLATE_PATH . "review-status.php" );
+		}
+		else {
+			// Show error
+			require( TEMPLATE_PATH . "decline-in-value-review.php" );
 		}
 	}
 ?>

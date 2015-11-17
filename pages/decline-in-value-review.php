@@ -1341,10 +1341,10 @@ jQuery(document).ready(function () {
                                     <br clear="both" />
                                 </div>
                                 <p>
-                                    By entering your Assessor Identification Number, or AIN, below, you can check the status of your <span>2015</span> decline-in-value review.
+                                    By entering your Assessor Identification Number, or AIN, below, you can check the status of your <span><?php if ( isset( $year ) ) { echo $year; } ?></span> decline-in-value review.
                                 </p>
                                 <p>
-                                    Your property will automatically qualify for a <span>2015</span> decline-in-value review if a temporary decline-in-value reassesment was granted for the <span>2014</span> assessment year.
+                                    Your property will automatically qualify for a <span><?php if ( isset( $year ) ) { echo $year; } ?></span> decline-in-value review if a temporary decline-in-value reassesment was granted for the <span><?php if ( isset( $year ) ) { echo ($year - 1); } ?></span> assessment year.
                                 </p>
                                 <p>
                                     While you may check and monitor the status of a decline-in-value review, the details of this review can be obtained by contacting your <a href="http://assessor.lacounty.gov/locate-a-district-office/">District Office</a>. <a href="http://assessor.co.la.ca.us/extranet/list/newslist.aspx?newsid=78">Click here</a> for more information on temporary decline-in-value reassessments.
@@ -1359,8 +1359,10 @@ jQuery(document).ready(function () {
                                             <div class="DIVform-float-left-text" style="width:auto; font-weight:bold">
                                                 AIN:
                                             </div>
-                                            <input type="text" name="AIN" class="DIVform-form-field" id="AIN" style="float:left; margin-right:10px; height:32px" placeholder=" " onkeypress='validate(event)' value=""/>
-                                            <form action = "index.php?action=submit" method="post"><input class="DIVform-button" type="submit" value="Go" style="height:32px; width:60px !important; padding:8px !important"></form>
+                                            <form action = "index.php?action=reviewLogin" method="post">
+                                                <input class="DIVform-button" type="submit" value="Go" style="height:32px; width:60px !important; padding:8px !important">
+                                                <input type="text" name="AIN" class="DIVform-form-field" id="AIN" style="float:left; margin-right:10px; height:32px" placeholder=" " onkeypress='validate(event)' value=""/>
+                                            </form>
                                             <div style="clear:both"></div>
                                         </div>
                                         </div>
