@@ -1113,7 +1113,7 @@ jQuery(document).ready(function () {
     <script type='text/javascript' src='http://assessor.lacounty.gov/wp-content/plugins/js_composer/assets/lib/jquery-ui-tabs-rotate/jquery-ui-tabs-rotate.js?ver=4.3.5'></script>
     
     <!-- USC DIV project styles -->
-    <link rel="stylesheet" id="DIVform_styles" href="css/DIVform_styles.css">
+    <link rel="stylesheet" id="DIVform_styles" href="pages/css/DIVform_styles.css">
 
     <script src="../resources/library/jquery.mask.min.js" type="text/javascript"></script>
     <script src="js/mask.js" type="text/javascript"></script>
