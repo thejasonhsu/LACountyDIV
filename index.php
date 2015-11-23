@@ -126,7 +126,13 @@
 		$dbResults = $propInfo->getInfo();
 		$_SESSION['propertyInfo'] = $propInfo;
 
-		$parameters = $_SESSION['parameters'];
+		$parameters;
+		if ( array_key_exists( 'parameters', $_SESSION ) ) {
+			$parameters = $_SESSION['parameters'];
+		}
+		else {
+			$parameters = getParameters();
+		}
 
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -181,7 +187,13 @@
 		$propInfo = $_SESSION['propertyInfo'];
 		$dbResults = $propInfo->getInfo();
 
-		$parameters = $_SESSION['parameters'];
+		$parameters;
+		if ( array_key_exists( 'parameters', $_SESSION ) ) {
+			$parameters = $_SESSION['parameters'];
+		}
+		else {
+			$parameters = getParameters();
+		}
 		
 		require( TEMPLATE_PATH . "appform.php" );
 	}
@@ -214,27 +226,10 @@
 	}
 
 	function landingpage() {
-		$parameters = array();
 		$year = date( "Y" );
 		$year = intval( $year );
 
-		if ( LANDING_DEBUG ) {
-			echo "The year is : " . $year . " ";
-		}
-
-		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "SELECT * FROM " . DIV_PARAMETER_DATES_TABLE . " WHERE RollYYYY = :rollyyyy";
-		$statement = $connection->prepare( $sql );
-		$statement->bindValue( ":rollyyyy", $year, PDO::PARAM_INT );
-		$success = $statement->execute();
-		$parameters = $statement->fetch();
-		$connection = null;
-
-		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
-		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
-		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
-
-		$_SESSION['parameters'] = $parameters;
+		$_SESSION['parameters'] = getParameters();
 
 		if ( LANDING_DEBUG ) {
 			$temp = ($success) ? 'true' : 'false';
@@ -282,5 +277,25 @@
 			// Show error
 			require( TEMPLATE_PATH . "decline-in-value-review.php" );
 		}
+	}
+
+	function getParameters() {
+		$parameters = array();
+		$year = date( "Y" );
+		$year = intval( $year );
+
+		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		$sql = "SELECT * FROM " . DIV_PARAMETER_DATES_TABLE . " WHERE RollYYYY = :rollyyyy";
+		$statement = $connection->prepare( $sql );
+		$statement->bindValue( ":rollyyyy", $year, PDO::PARAM_INT );
+		$success = $statement->execute();
+		$parameters = $statement->fetch();
+		$connection = null;
+
+		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
+		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
+		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
+
+		return $parameters;
 	}
 ?>
