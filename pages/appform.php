@@ -1383,7 +1383,7 @@ jQuery(document).ready(function () {
                                             <div style="width:15%; float:right">
                                                 <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
                                                     <script type="text/javascript" src="pages/js/pais.js"></script>
-                                                    <a id="DIVform-pais-icon" href="javascript:window.location.href=showMap(2005020045)">
+                                                    <a id="DIVform-pais-icon" href="javascript:window.location.href=showMap(<?php if ( isset( $ain ) ) { echo $ain; } ?>)">
                                                         &nbsp;
                                                     </a>
                                                 </div>
