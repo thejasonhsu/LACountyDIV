@@ -1383,12 +1383,12 @@ jQuery(document).ready(function () {
                                             <div style="width:15%; float:right">
                                                 <div style="width:80px; text-align:center; margin-left:2px; align-content:center; margin-left: auto; margin-right: auto">
                                                     <script type="text/javascript" src="pages/js/pais.js"></script>
-                                                    <a id="DIVform-pais-icon" href="javascript:window.location.href=showMap(<?php if ( isset( $ain ) ) { echo $ain; } ?>)">
+                                                    <a id="DIVform-pais-icon" href="javascript:window.open(showMap(<?php if ( isset( $ain ) ) { echo $ain; } ?>), '_blank')">
                                                         &nbsp;
                                                     </a>
                                                 </div>
                                                 <div style="width:100%; float:right; text-align:center">
-                                                    <a style="font-size: 12px; line-height:1" href="javascript:window.location.href=showMap(2005020045)">
+                                                    <a style="font-size: 12px; line-height:1" href="javascript:javascript:window.open(showMap(<?php if ( isset( $ain ) ) { echo $ain; } ?>), '_blank')">
                                                         <p>Click here to view recent sales information around your property</p>
                                                     </a>
                                                 </div>
