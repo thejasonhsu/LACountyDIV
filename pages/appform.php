@@ -1129,6 +1129,16 @@ jQuery(document).ready(function () {
     <link rel="stylesheet" type="text/css" href="pages/css/smoothness.datepick.css"> 
     <script type="text/javascript" src="pages/js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="pages/js/jquery.datepick.js"></script>
+    <script type="text/javascript" src="pages/js/DIVform.utilities.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var nums = document.getElementsByClassName("formatted-number");
+            for(var i = 0; i < nums.length; i++) {
+                nums[i].innerHTML = commaSeparatedValue(nums[i].innerHTML);
+            }
+        });
+    </script>
 
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
@@ -1371,7 +1381,7 @@ jQuery(document).ready(function () {
                                         </div>
                                         <div style="overflow:hidden; margin:20px 0px 0px 0px">
                                             <div style="padding:0px 20px 0px 0px; text-align:center; float:left; display:inline-block">
-                                                <div style="font-size:36px; font-weight:bold; padding-top:10px"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div><br />
+                                                <div style="font-size:36px; font-weight:bold; padding-top:10px">$<span class="formatted-number" id="lblAssessedValue1"><?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div><br />
                                                 <span style="font-size:12px">Projected <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span> Assessed Value</span>
                                             </div>
                                             This is your projected assessed value for <span id="lblAssessedYear"><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span>. Your <span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY'] . "-" . ( intval( $dbResults['RollYYYY'] )+1 ); } ?></span> taxes will be based on this value. If you believe the market value of your property as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?> is less than the value shown, please complete the online form below (or <strong><a href="http://ezforms.assessor.lacounty.gov/Form/Fill/15" target="_blank">click here to file by mail</a></strong>).
@@ -1410,7 +1420,7 @@ jQuery(document).ready(function () {
                                             <input type="text" name="Telephone" class="DIVform-form-field" id="phone" placeholder="(  )   -    " onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['telephone']; } ?>"/>
                                             <div style="clear:both"></div>
                                             <br /><br />
-                                            <strong>To be notified of results by email, please enter your email address:</strong>
+                                            <strong>Please enter your email address. Notification of the results will be sent to this email address.</strong>
                                             <br />
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text"> Email address: </div>
@@ -1471,7 +1481,7 @@ jQuery(document).ready(function () {
                                         <h3><a id="property-info" href="#">Your Property Information<img class="DIVform-warning-icon" id="warning-icon2" src="pages/img/warning.png" /></a></h3>
                                         <div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?>:</strong></div>
-                                            <div class="DIVform-float-left-text" style="text-align:left"><span id="lblAssessedValue1">$<?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
+                                            <div class="DIVform-float-left-text" style="text-align:left">$<span class="formatted-number" id="lblAssessedValue2"><?php if ( isset( $dbResults['RollLandImpValue'] ) ) { echo $dbResults['RollLandImpValue']; } ?></span></div>
                                             <div style="clear:both"></div>
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?>: </strong></div>
                                             <input type="text" name="OpinionOfValue" class="DIVform-form-field" id="userinput-value" maxlength ="9" onkeypress='validate(event)' value="<?php if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { $userResponse = $_SESSION['userFormResponse']; echo $userResponse['opinionOfValue']; } ?>"/>
@@ -1561,13 +1571,13 @@ jQuery(document).ready(function () {
                                                     <td style="text-align:right; border:none">
                                                         <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                     </td>
-                                                    <td id="lblSQFTmain" style="font-weight:bold; border:none">
+                                                    <td class="formatted-number" id="lblSQFTmain" style="font-weight:bold; border:none">
                                                         <?php if ( isset( $dbResults['SQFTmain'] ) ) { echo $dbResults['SQFTmain']; } ?>
                                                     </td>
-                                                    <td id="lblBedrooms" style="font-weight:bold; border:none">
+                                                    <td class="formatted-number" id="lblBedrooms" style="font-weight:bold; border:none">
                                                         <?php if ( isset( $dbResults['Bedrooms'] ) ) { echo $dbResults['Bedrooms']; } ?>
                                                     </td>
-                                                    <td id="lblBathrooms" style="font-weight:bold; border:none">
+                                                    <td class="formatted-number" id="lblBathrooms" style="font-weight:bold; border:none">
                                                         <?php if ( isset( $dbResults['Bathrooms'] ) ) { echo $dbResults['Bathrooms']; } ?>
                                                     </td>
                                                 </tr>
