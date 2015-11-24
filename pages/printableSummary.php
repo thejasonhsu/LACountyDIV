@@ -1136,9 +1136,9 @@ jQuery(document).ready(function () {
 
             document.getElementById('lblMailZip').innerHTML = parent.getElementById('lblMailZip').innerHTML;
 
-            document.getElementById('propertyAssessedValue').innerHTML = parent.getElementById('propertyAssessedValue').innerHTML;
+            document.getElementById('propertyAssessedValue').innerHTML = "$" + parent.getElementById('propertyAssessedValue').innerHTML;
 
-            document.getElementById('userAssessedValue').innerHTML = parent.getElementById('userAssessedValue').innerHTML;
+            document.getElementById('userAssessedValue').innerHTML = "$" + parent.getElementById('userAssessedValue').innerHTML;
 
             document.getElementById('propertyType').innerHTML = parent.getElementById('propertyType').innerHTML;
 

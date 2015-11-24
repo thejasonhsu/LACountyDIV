@@ -1115,6 +1115,16 @@ jQuery(document).ready(function () {
     <!-- USC DIV project styles -->
     <link rel="stylesheet" id="DIVform_styles" href="pages/css/DIVform_styles.css">
 
+    <script type="text/javascript" src="pages/js/DIVform.utilities.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var nums = document.getElementsByClassName("formatted-number");
+            for(var i = 0; i < nums.length; i++) {
+                nums[i].innerHTML = commaSeparatedValue(nums[i].innerHTML);
+            }
+        });
+    </script>
+
 </head>
 <body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
@@ -1399,11 +1409,11 @@ jQuery(document).ready(function () {
                                         <p>Your Property Information</p>
                                     </div>
                                     <div class="DIVform-content-box-body">
-                                        <div id="propertyAssessedValue" class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
-                                        <div class="DIVform-float-left-text DIVform-float-left-result"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></div>
+                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span>2015</span>:</strong></div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result">$<span id="propertyAssessedValue" class="formatted-number"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></span></div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span>2015</span>: </strong></div>
-                                        <div id="userAssessedValue" class="DIVform-float-left-text DIVform-float-left-result"> <?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?> </div>
+                                        <div class="DIVform-float-left-text DIVform-float-left-result"> $<span id="userAssessedValue" class="formatted-number"><?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?></span> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
                                         <div id="propertyType" class="DIVform-float-left-text DIVform-float-left-result"> <?php
@@ -1446,13 +1456,13 @@ jQuery(document).ready(function () {
                                                 <td style="text-align:right; border:none">
                                                     <div id="table-col" style="display:block">Assessor records indicate the following characteristics for your property:</div>
                                                 </td>
-                                                <td id="recordSQFT" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="recordSQFT" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordSQFT'] ) ) { echo $userResponse['recordSQFT']; } ?>
                                                 </td>
-                                                <td id="recordBedrooms" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="recordBedrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordBedrooms'] ) ) { echo $userResponse['recordBedrooms']; } ?>
                                                 </td>
-                                                <td id="recordBathrooms" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="recordBathrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['recordBathrooms'] ) ) { echo $userResponse['recordBathrooms']; } ?>
                                                 </td>
                                             </tr>
@@ -1460,13 +1470,13 @@ jQuery(document).ready(function () {
                                                 <td style="text-align:right; border:none">
                                                     Please make any necessary corrections in the corresponding boxes:
                                                 </td>
-                                                <td id="approxSqFootage" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="approxSqFootage" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['approxSqFootage'] ) ) { echo $userResponse['approxSqFootage']; } ?>
                                                 </td>
-                                                <td id="numBedrooms" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="numBedrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['numBedrooms'] ) ) { echo $userResponse['numBedrooms']; } ?>
                                                 </td>
-                                                <td id="numBathrooms" style="font-weight:bold; border:none">
+                                                <td class="formatted-number" id="numBathrooms" style="font-weight:bold; border:none">
                                                     <?php if ( isset( $userResponse['numBathrooms'] ) ) { echo $userResponse['numBathrooms']; } ?>
                                                 </td>
                                             </tr>
@@ -1500,7 +1510,7 @@ jQuery(document).ready(function () {
                                                 <?php if ( isset( $userResponse['comp1AIN'] ) ) { echo $userResponse['comp1AIN']; } ?><br/>
                                                 <Br/>
                                                 <?php if ( isset( $userResponse['comp1SaleDate'] ) ) { echo $userResponse['comp1SaleDate']; } ?><br/>
-                                                <?php if ( isset( $userResponse['comp1SalePrice'] ) ) { echo $userResponse['comp1SalePrice']; } ?><br/>
+                                                <?php if( !empty($userResponse['comp1SalePrice']) ) { echo "$";} ?><span class="formatted-number"><?php if ( isset( $userResponse['comp1SalePrice'] ) ) { echo $userResponse['comp1SalePrice']; } ?></span><br/>
                                                 <br/>
                                             </div>
                                             <div style="clear:both"></div>
@@ -1531,7 +1541,7 @@ jQuery(document).ready(function () {
                                                 <?php if ( isset( $userResponse['comp2AIN'] ) ) { echo $userResponse['comp2AIN']; } ?><br/>
                                                 <Br/>
                                                 <?php if ( isset( $userResponse['comp2SaleDate'] ) ) { echo $userResponse['comp2SaleDate']; } ?><br/>
-                                                <?php if ( isset( $userResponse['comp2SalePrice'] ) ) { echo $userResponse['comp2SalePrice']; } ?><br/>
+                                                <?php if( !empty($userResponse['comp2SalePrice']) ) { echo "$";} ?><span class="formatted-number"><?php if ( isset( $userResponse['comp2SalePrice'] ) ) { echo $userResponse['comp2SalePrice']; } ?></span><br/>
                                                 <br/>
                                             </div>
                                             <div style="clear:both"></div>
