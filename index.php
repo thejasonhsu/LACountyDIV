@@ -70,6 +70,8 @@
 				$ain = $_POST['AIN'];
 				$pin = $_POST['PIN'];
 
+				// TODO: Clear session variables and reset pin
+
 				$ainWithDashes = $ain;
 
 				// Remove dashes from AIN
@@ -254,48 +256,21 @@
 	function reviewLogin() {
 		$ain = $_POST['AIN'];
 		$ainWithDashes = $ain;
-		$ain = $ain = str_replace( "-", "", $ain );
+		$ain = str_replace( "-", "", $ain );
 
-		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "SELECT * FROM " . DIV_PARCEL_STATUS_TABLE . " WHERE AIN = :ain";
-		$statement = $connection->prepare( $sql );
-		$statement->bindValue( ":ain", $ain, PDO::PARAM_INT );
-		$success = $statement->execute();
-		$dbResults = array();
-		$dbResults = $statement->fetch();
-		$connection = null;
+		$informationString = getStatusView($ain);
 
 		// End session
 		session_unset();
 		session_destroy();
 		setcookie(session_name(),'',0,'/');
 
-		if ($success) {
-			require( TEMPLATE_PATH . "review-status.php" );
-		}
-		else {
-			// Show error
+		if ( strcmp( $informationString, "Error" ) ) ) {
+			// Show error - no property results
 			require( TEMPLATE_PATH . "decline-in-value-review.php" );
 		}
-	}
-
-	function getParameters() {
-		$parameters = array();
-		$year = date( "Y" );
-		$year = intval( $year );
-
-		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "SELECT * FROM " . DIV_PARAMETER_DATES_TABLE . " WHERE RollYYYY = :rollyyyy";
-		$statement = $connection->prepare( $sql );
-		$statement->bindValue( ":rollyyyy", $year, PDO::PARAM_INT );
-		$success = $statement->execute();
-		$parameters = $statement->fetch();
-		$connection = null;
-
-		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
-		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
-		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
-
-		return $parameters;
+		else {
+			require( TEMPLATE_PATH . "review-status.php" );
+		}
 	}
 ?>

@@ -24,10 +24,12 @@
 
 	define( "DEBUG", false );
 	define( "LANDING_DEBUG", false );
+	define( "REVIEW_DEBUG", true );
 
 	require( "resources/library/Rest.php" );
 	require( "pages/php/PropertyInfo.php" );
 	require( "pages/php/DatabaseEntry.php" );
+	require( "pages/php/ReviewStatusInfo.php" );
 
 	function handleException( $exception ) {
 		echo "Sorry, a problem occurred. Please try later.";

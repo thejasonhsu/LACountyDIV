@@ -1416,6 +1416,8 @@ jQuery(document).ready(function () {
                                         <p><span>2015</span> Assessor Initiated Review </p>
                                     </div>
                                     <div class="DIVform-content-box-body">
+                                        <?php echo $informationString; ?>
+                                    <!--start
                                         <p id="assessment-text">We will review your property for a <span>2015</span> decline-in-value to reflect the lower of its market value or Proposition 13 Value as of <span>January 1, 2015</span>. Your <span>2015-16</span> annual taxes will be based on the results of that review. Those results will be available online here in August <span>2015</span>. (<a href="http://assessor.co.la.ca.us/extranet/list/faqList.aspx?faqID=86">What is a Proposition 13 Value?</a>)</p>
                                         <p id="disqualified-text" style="display:none">
                                             Your property does not automatically qualify for a 2015 decline-in-value review.
@@ -1461,6 +1463,7 @@ jQuery(document).ready(function () {
                                                 </li>
                                             </ul>
                                         </div>
+                                    end-->
                                     </div>
                                 </div>
                                 <div>
