@@ -31,8 +31,10 @@
 			break;
 		case 'reviewLanding':
 			reviewLanding();
+			break;
 		case 'reviewLogin':
 			reviewLogin();
+			break;
 		default:
 			landingpage();
 	}
@@ -258,14 +260,14 @@
 		$ainWithDashes = $ain;
 		$ain = str_replace( "-", "", $ain );
 
-		$informationString = getStatusView($ain);
-
 		// End session
 		session_unset();
 		session_destroy();
 		setcookie(session_name(),'',0,'/');
 
-		if ( strcmp( $informationString, "Error" ) ) ) {
+		$informationString = getStatusView($ain);
+
+		if ( strcmp( $informationString, "Error" ) == 0 ) {
 			// Show error - no property results
 			require( TEMPLATE_PATH . "decline-in-value-review.php" );
 		}
@@ -273,4 +275,25 @@
 			require( TEMPLATE_PATH . "review-status.php" );
 		}
 	}
+
+	function getParameters() {
+		$parameters = array();
+		$year = date( "Y" );
+		$year = intval( $year );
+
+		$connection = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		$sql = "SELECT * FROM " . DIV_PARAMETER_DATES_TABLE . " WHERE RollYYYY = :rollyyyy";
+		$statement = $connection->prepare( $sql );
+		$statement->bindValue( ":rollyyyy", $year, PDO::PARAM_INT );
+		$success = $statement->execute();
+		$parameters = $statement->fetch();
+		$connection = null;
+
+		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
+		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
+		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
+
+		return $parameters;
+	}
+
 ?>
