@@ -1040,7 +1040,7 @@
 			</div>
 <form action="index.php?action=login" method="post">		
 		<div id="line_1038" >
-		AIN: <input name="AIN" type="text" id="AIN" Value="" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   " onkeypress='validate(event)'/>
+		AIN: <input name="AIN" type="text" id="AIN" Value="<?php if ( array_key_exists( 'AIN', $_POST ) ) { if ( isset( $_POST['AIN'] ) ) { echo $_POST['AIN']; } } ?>" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   " onkeypress='validate(event)'/>
 		<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
 		 </div> 
     <div id="line_1042"></div>

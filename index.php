@@ -40,6 +40,12 @@
 	}
 
 	function login() {
+		$loginError = NULL;
+		$validMatch = false;
+		$ain; $pin; $ainWithDashes;
+
+		$ain = $_POST['AIN'];
+		$pin = $_POST['PIN'];
 
 		// Check captcha response
 		$captcha = false;
@@ -63,10 +69,6 @@
 		}
 
 		// Check that valid AIN and PIN were given
-		$loginError = NULL;
-		$validMatch = false;
-		$ain; $pin; $ainWithDashes;
-
 		if ( isset( $_POST['AIN'] ) && isset( $_POST['PIN'] ) ) {
 
 				$ain = $_POST['AIN'];
@@ -230,6 +232,10 @@
 	}
 
 	function landingpage() {
+		session_unset();
+		session_destroy();
+		setcookie(session_name(),'',0,'/');
+
 		$year = date( "Y" );
 		$year = intval( $year );
 
