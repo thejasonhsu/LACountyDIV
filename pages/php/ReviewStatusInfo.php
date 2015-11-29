@@ -1,5 +1,5 @@
 <?php
-	function getStatusView($ain) {
+	function getStatusView($dbResults) {
 		$year = date( "Y" );
 		$year = intval( $year );
 		$month = date( "n" );
@@ -12,8 +12,6 @@
 			$CurrentRollYYYY = $year;
 		}
 		$RollPrepYYYY = $CurrentRollYYYY + 1;
-
-		$dbResults = getStatusParcel($ain);
 
 		if ( empty( $dbResults ) ) {
 			return "Error";

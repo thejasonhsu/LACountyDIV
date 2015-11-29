@@ -1489,9 +1489,15 @@ jQuery(document).ready(function () {
                                             <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>
                                             <select name="PropertyType" class="DIVform-form-field">
                                                 <?php
-                                                    if ( array_key_exists( 'userFormResponse', $_SESSION ) ) { 
-                                                        $userResponse = $_SESSION['userFormResponse'];
-                                                        $chosen = $userResponse['propertyType'];
+                                                    if ( array_key_exists( 'userFormResponse', $_SESSION ) || isset( $dbResults['UseType'] ) ) {
+                                                        $chosen;
+                                                        if ( isset( $dbResults['UseType'] ) ) {
+                                                            $chosen = $dbResults['UseType'];
+                                                        }
+                                                        else {
+                                                            $userResponse = $_SESSION['userFormResponse'];
+                                                            $chosen = $userResponse['propertyType'];
+                                                        }
 
                                                         if ( strcmp( $chosen, "SFR" ) == 0 ) {
                                                 ?>

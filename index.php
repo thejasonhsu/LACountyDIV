@@ -233,7 +233,9 @@
 
 	function landingpage() {
 		session_unset();
-		session_destroy();
+		if ( session_id() ) {
+			session_destroy();
+		}
 		setcookie(session_name(),'',0,'/');
 
 		$year = date( "Y" );
@@ -266,12 +268,19 @@
 		$ainWithDashes = $ain;
 		$ain = str_replace( "-", "", $ain );
 
+		$year = date( "Y" );
+		$year = intval( $year );
+
 		// End session
 		session_unset();
 		session_destroy();
 		setcookie(session_name(),'',0,'/');
 
-		$informationString = getStatusView($ain);
+		$dbResults = getStatusParcel($ain);
+		$informationString = getStatusView($dbResults);
+
+		$propInfo = new PropertyInfo( $ain );
+		$address = $propInfo->getPropertyAddress();
 
 		if ( strcmp( $informationString, "Error" ) == 0 ) {
 			// Show error - no property results
