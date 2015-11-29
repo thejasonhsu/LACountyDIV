@@ -1409,10 +1409,10 @@ jQuery(document).ready(function () {
                                         <p>Your Property Information</p>
                                     </div>
                                     <div class="DIVform-content-box-body">
-                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of January 1, <span><?php if ( isset( $userResponse['RollYYYY'] ) ) { echo $userResponse['RollYYYY']; } ?></span>:</strong></div>
+                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Assessed Value as of <span><?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?></span>:</strong></div>
                                         <div class="DIVform-float-left-text DIVform-float-left-result">$<span id="propertyAssessedValue" class="formatted-number"><?php if ( isset( $userResponse['propertyAssessment'] ) ) { echo $userResponse['propertyAssessment']; } ?></span></div>
                                         <div style="clear:both"></div>
-                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of January 1, <span><?php if ( isset( $userResponse['RollYYYY'] ) ) { echo $userResponse['RollYYYY']; } ?></span>: </strong></div>
+                                        <div class="DIVform-float-left-text" style="width:50%"> <strong>Your Opinion of Value as of <span><?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?></span>: </strong></div>
                                         <div class="DIVform-float-left-text DIVform-float-left-result"> $<span id="userAssessedValue" class="formatted-number"><?php if ( isset( $userResponse['opinionOfValue'] ) ) { echo $userResponse['opinionOfValue']; } ?></span> </div>
                                         <div style="clear:both"></div>
                                         <div class="DIVform-float-left-text" style="width:50%"> <strong>Property Type: </strong></div>

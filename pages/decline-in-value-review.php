@@ -1374,7 +1374,7 @@ jQuery(document).ready(function () {
                                     <br/>
                                     <p>In 1978, California’s Proposition 13 established the base year value for property tax assessment. It also caps the growth of a properties assessed value at no more than two percent a year unless the market value of a property falls below the base year value.</p>
                                     <br/>
-                                    <p>Also passed in 1978, Proposition 8 is a constitutional amendment that allows a temporary reduction in assessed value when a property suffers a “decline-in-value.” A decline-in-value occurs when the current market value of your property is less than the current assessed value as of January 1.1As a result of the decline in value, many property owners benefited from Proposition 8.</p>
+                                    <p>Also passed in 1978, Proposition 8 is a constitutional amendment that allows a temporary reduction in assessed value when a property suffers a “decline-in-value.” A decline-in-value occurs when the current market value of your property is less than the current assessed value as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?>. As a result of the decline in value, many property owners benefited from Proposition 8.</p>
                                     <br/>
                                     <p><a href="http://assessor.lacounty.gov/decline-in-value/" target="_blank">Click here</a> for more information about Decline-in-Value.</p>
                                 </div>                           

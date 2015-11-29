@@ -186,6 +186,14 @@
 
 		$_SESSION['userFormResponse'] = $userResponse;
 
+		$parameters;
+		if ( array_key_exists( 'parameters', $_SESSION ) ) {
+			$parameters = $_SESSION['parameters'];
+		}
+		else {
+			$parameters = getParameters();
+		}
+
 		require( TEMPLATE_PATH . "confirmation.php" );
 	}
 
@@ -216,6 +224,8 @@
 		$dbEntry = new DatabaseEntry( $propertyInfo, $userResponse );
 		$successfulEntry = $dbEntry->addToDatabase();
 
+		$parameters = getParameters();
+
 		if (DEBUG) {
 			$temp = ($successfulEntry) ? 'true' : 'false';
 			echo "<p></p>";
@@ -241,7 +251,8 @@
 		$year = date( "Y" );
 		$year = intval( $year );
 
-		$_SESSION['parameters'] = getParameters();
+		$parameters = getParameters();
+		$_SESSION['parameters'] = $parameters;
 
 		if ( LANDING_DEBUG ) {
 			$temp = ($success) ? 'true' : 'false';
@@ -259,6 +270,8 @@
 	function reviewLanding() {
 		$year = date( "Y" );
 		$year = intval( $year );
+
+		$parameters = getParameters();
 
 		require( TEMPLATE_PATH . "decline-in-value-review.php" );
 	}
@@ -282,6 +295,8 @@
 		$propInfo = new PropertyInfo( $ain );
 		$address = $propInfo->getPropertyAddress();
 
+		$parameters = getParameters();
+
 		if ( strcmp( $informationString, "Error" ) == 0 ) {
 			// Show error - no property results
 			require( TEMPLATE_PATH . "decline-in-value-review.php" );
@@ -304,8 +319,11 @@
 		$parameters = $statement->fetch();
 		$connection = null;
 
+		$temp = $parameters['Prop8Application_FileDateEnd'];
+
 		$parameters['Prop8Application_FileDateBegin'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateBegin'] ) );
-		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $parameters['Prop8Application_FileDateEnd'] ) );
+		$parameters['Prop8Application_FileDateEnd'] = date( "F j, Y", strtotime( $temp ) );
+		$parameters['Prop8App_FileDateEnd_WithoutYr'] = date( "F j", strtotime( $temp ) );
 		$parameters['LienDate'] = date( "F j, Y", strtotime( $parameters['LienDate'] ) );
 
 		return $parameters;
