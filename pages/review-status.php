@@ -1403,14 +1403,14 @@ jQuery(document).ready(function () {
                                         </div>
                                     </div>
                                 </div>
-                                <!-- DEBUG -->
+                                <!-- DEBUG
                                 Debug mode: click each number to see the different views possible.
                                 <a href="javascript:showText(1)">1</a>
                                 <a href="javascript:showText(2)">2</a>
                                 <a href="javascript:showText(3)">3</a>
                                 <a href="javascript:showText(4)">4</a>
                                 <br/>
-                                <!-- END_DEBUG-->
+                                END_DEBUG-->
                                 <div class="DIVform-content-box">
                                     <div class="DIVform-content-box-header">
                                         <p><span><?php if ( isset( $dbResults['RollYYYY'] ) ) { echo $dbResults['RollYYYY']; } ?></span> Assessor Initiated Review </p>

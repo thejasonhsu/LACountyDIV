@@ -47,6 +47,17 @@
 		$ain = $_POST['AIN'];
 		$pin = $_POST['PIN'];
 
+		$parameters;
+		if ( array_key_exists( 'parameters', $_SESSION ) ) {
+			$parameters = $_SESSION['parameters'];
+		}
+		else {
+			$parameters = getParameters();
+		}
+
+		$year = date( "Y" );
+		$year = intval( $year );
+
 		// Check captcha response
 		$captcha = false;
 		if ( isset( $_POST['g-recaptcha-response'] ) ) {
