@@ -511,7 +511,7 @@
 				select,
 				textarea{
 					background-color:rgba(255,255,255,1);
-					border-color:rgba(35,35,35,1) !important;
+					border-color:rgba(35,35,35,1);
 				}
 				#request-a-rate input:not([type=submit]):not([type=file]):hover,
 				#request-a-rate textarea:hover,
@@ -771,9 +771,12 @@
 								st += "</style>";
 							jQuery("head").append(st);
 						});
-					});</script><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1425247051083{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 20px !important;padding-bottom: 30px !important;background-color: #f4f4f4 !important;}.vc_custom_1435728956004{background-color: #f4f4f4 !important;}.vc_custom_1435728330092{margin-bottom: 0px !important;}</style></head>
+					});</script><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1425247051083{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 20px !important;padding-bottom: 30px !important;background-color: #f4f4f4 !important;}.vc_custom_1435728956004{background-color: #f4f4f4 !important;}.vc_custom_1435728330092{margin-bottom: 0px !important;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="pages/css/DIVform_styles.css">
+</head>
 
-	<body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
+<body class="page page-id-2760 page-template-default mme mega_main_extensions-1-0-0 _masterslider _msp_version_2.9.7 ozy-page-model-full ozy-page-model-has-sidebar ozy-classic no-page-title wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
 
 		
 							<div id="header" class="header-v1">
@@ -926,7 +929,7 @@
 				<li class="widget"><h3>EXCLUSIONS &amp; TAX RELIEF</h3><div class="menu-tax-relief-container"><ul id="menu-tax-relief" class="menu"><li id="menu-item-3693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3693"><a href="http://assessor.lacounty.gov/exclusions-tax-relief/">General Information</a></li>
 	<li id="menu-item-3689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3689"><a href="http://assessor.lacounty.gov/homeowners-exemption/">Homeowners</a></li>
 	<li id="menu-item-3324" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2760 current_page_item active menu-item-3324"><a href="http://assessor.lacounty.gov/decline-in-value/">Decline-in-Value</a></li>
-    <li id="menu-item-4250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4250"><a href="http://assessor.lacounty.gov/decline-in-value-reassessments/">Decline in Value Notice</a></li>
+	<li id="menu-item-4250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4250"><a href="http://assessor.lacounty.gov/decline-in-value-reassessments/">Decline in Value Notice</a></li>
 	<li id="menu-item-3326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3326"><a href="http://assessor.lacounty.gov/proposition-58-and-proposition-193/">Grandparent/Parent/Child Transfers</a></li>
 	<li id="menu-item-3327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3327"><a href="http://assessor.lacounty.gov/propositions-60-and-90/">Seniors</a></li>
 	<li id="menu-item-3325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3325"><a href="http://assessor.lacounty.gov/proposition-110/">Disabled</a></li>
@@ -957,9 +960,9 @@
 			</div> 	
 		</div> 
 	</div></div>
-    <h3 class="ozy-divider-cap-left wpb_content_element">Decline-in-Value</h3>
-    <div class="ozy-content-divider " style="border-top-style:solid;border-top-width:2px;border-top-color:#34ccff;width:40px;max-width:40px;float:left;"></div>      
-    <div class="vc_empty_space"  style="height: 10px" ><span class="vc_empty_space_inner"></span></div>
+	<h3 class="ozy-divider-cap-left wpb_content_element">Decline-in-Value</h3>
+	<div class="ozy-content-divider " style="border-top-style:solid;border-top-width:2px;border-top-color:#34ccff;width:40px;max-width:40px;float:left;"></div>      
+	<div class="vc_empty_space"  style="height: 10px" ><span class="vc_empty_space_inner"></span></div>
 
 
 	<!--<div class="vc_row wpb_row vc_row-fluid"  ><div class="parallax-wrapper">
@@ -972,7 +975,7 @@
 		<div class="wpb_text_column wpb_content_element " style="background-color:green; width:100%; float:center; "> --> 
 		<br/> 
 			<div class="wpb_wrapper" style="width:100%; float:center; background-color:white; ">
-                <p>Click here to read the FAQs: <a href="#faq_link">Frequently Asked Questions</a></p>
+				<p>Click here to read the FAQs: <a href="#faq_link">Frequently Asked Questions</a></p>
 				<p>If you believe that your property value warrants review due to a decline in market value, you may file an application for Decline-in-Value Review.  <span sstyle="font-weight:bolder; "> Applications are accepted from <?php if ( isset( $parameters['Prop8Application_FileDateBegin'] ) ) { echo $parameters['Prop8Application_FileDateBegin']; } ?> through <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?>.</span></p>
 
 			</div> 
@@ -994,30 +997,27 @@
 	<div class="upb_no_bg" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="false" data-rtl="false"  data-custom-vc-row=""  data-vc="4.3.5"  data-theme-support=""    ></div>
 	
 	<div style="text-align:center"><a id ="about_decline_in_value" class="ubtn-link ubtn-left tooltip-560306fdf3267"  href = "http://assessor.lacounty.gov/decline-in-value-reassessments/" target=''><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">About My Decline-in-Value Notice</span></button></a>
-    <a class="ubtn-link ubtn-left tooltip-560306fdf33b6"  href = "index.php?action=reviewLanding" target=''><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">My Decline-in-Value Review Status</span></button></a>
+	<a class="ubtn-link ubtn-left tooltip-560306fdf33b6"  href = "index.php?action=reviewLanding" target=''><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">My Decline-in-Value Review Status</span></button></a>
 	<a class="ubtn-link ubtn-left tooltip-560306fe13d65"  href = "http://assessor.lacounty.gov/wp-content/uploads/2015/02/E-23.pdf" target=' _blank'><button type="button" class="ubtn ubtn-small ubtn-no-hover-bg  none  ubtn-left  " data-hover="#ffffff" data-border-color="#357ad0" data-hover-bg="#ccb86f" data-border-hover="#ccb86f" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow="5" style="font-weight:normal;font-size:13px;border-radius:50px;border-width:2px;border-color:#357ad0;border-style:solid;background: #357ad0;color: #ffffff;"><span class="ubtn-hover"></span><span class="ubtn-data ubtn-text">Decline-in-Value Printable Brochure</span></button></a> 
 	</div>			
 				<br/>
 				
-	<div class="vc_row wpb_row vc_row-fluid"  ><div class="parallax-wrapper">
-	
-
-		<div class="vc_col-sm-6 wpb_column vc_column_container vc_custom_1435728956004" id="line_1021">
-		
-			<div class="wpb_wrapper" id="line_1023"  >
-				<div class="vc_empty_space"  style="height: 10px" ><span class="vc_empty_space_inner"></span></div>
-
-
+	<div class="vc_row wpb_row vc_row-fluid"  >
+	<div class="parallax-wrapper">
+	<div class="vc_col-sm-6 wpb_column vc_column_container vc_custom_1435728956004" id="line_1021">
 		<div  id="line_1027">
 
 			<div class="wpb_text_column wpb_content_element  vc_custom_1435728330092" style=" ">
-                <div class="wpb_wrapper">
-                    <h3>Sign in to File Online</h3>
-                    <p>
-                        Please enter the 10-digit Assessor's Identification Number (AIN) and the Property Identification Number (PIN) that appears on your Annual Property Tax Bill, then click on "Login".
-                    </p>
-                </div>
-            </div> 
+				<div class="wpb_wrapper">
+					<h3>Sign in to File Online</h3>
+					<p>
+						Please enter the 10-digit Assessor's Identification Number (AIN) and the Property Identification Number (PIN) that appears on your Annual Property Tax Bill, then click on "Login".
+					</p>
+					<p>
+						<a href="http://lacountypropertytax.com/portal/bills/annualbill.aspx" target="_blank"> <strong>Where do I find my AIN and PIN?  (See items #2 and #6 on the sample form.)</strong></a>
+					</p>
+				</div>
+			</div> 
 			<script type="text/javascript"> 
 				function not_show_error(){
 					document.getElementById("error_message_div").style.display="none"; 
@@ -1038,58 +1038,42 @@
 					}
 				?>
 			</div>
-<form action="index.php?action=login" method="post">		
-		<div id="line_1038" >
-		AIN: <input name="AIN" type="text" id="AIN" Value="<?php if ( array_key_exists( 'AIN', $_POST ) ) { if ( isset( $_POST['AIN'] ) ) { echo $_POST['AIN']; } } ?>" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px; " placeholder="    -   -   " onkeypress='validate(event)'/>
-		<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
-		 </div> 
-    <div id="line_1042"></div>
-		 <div  id="line_1043" >  
-		 PIN: <input name="PIN" type="password" maxlength="20" id="PIN" Value="" id="input_pin" style="border-color:DarkGray;border-width:1px;border-style:Solid;width:200px;" />
-                    
-                    <span controltovalidate="PIN" errormessage="PIN Required" display="Dynamic" id="rqvalPIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">PIN Required</span>
-					
-					</div> 
-
-        <br />
-        <a href="http://lacountypropertytax.com/portal/bills/annualbill.aspx" target="_blank"> Where do I find my AIN and PIN?  (See items #2 and #6 on the sample form.) </a>
-        <br />
-
-
-
-        <div class="g-recaptcha" data-sitekey="<?php echo PUBLIC_KEY; ?>" style="padding-bottom:3px"></div>
-        <p>You must verify that you are a person.</p>
-        <input type="submit" style="background-color:#357ad0; border-color:#357ad0" value="Login" />
-        <br />
-</form> 
-					
-					
-					
-					
-		</div> 
-		<div id="line_1066" > 
-        &nbsp;
-		<p>  By entering the information above, you can: </p> 
-<li>View your <?php echo $year ?> assessed value or the results of any <?php echo $year ?> 
-decline-in-value review  </li>
-
-<li> File a <?php echo $year ?> Decline-in-Value Review Application online</li> 
-<li> Review an existing application</li> 
-<li> You will be able to review and print the information you provide 
-at the conclusion of this session</li> 
-<br/> 
-<p style="font-weight:bolder; "> Print and Mail Your Decline-in-Value Application : </p> 
-		<br/> 
-		<a href="http://assessor.lacounty.gov/decline-in-value-forms/"  >English </a> 
-		&nbsp; &nbsp; &nbsp; &nbsp; 
-		<a href="http://assessor.lacounty.gov/decline-in-value-forms/" > Español </a> 
-		
-		</div> 
+			<form style="margin-bottom:0" action="index.php?action=login" method="post">		
+				<div id="line_1038" >
+					AIN:&nbsp; <input name="AIN" type="text" id="AIN" class="DIVform-form-field" Value="" style="width:200px; " placeholder="    -   -   " onkeypress='validate(event)'/>
+					<span controltovalidate="AIN" errormessage="AIN Required" display="Dynamic" id="rqvalAIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">AIN Required</span>
+				</div> 
+				<div  id="line_1043" >  
+					PIN:&nbsp; <input name="PIN" type="password" maxlength="20" id="PIN" class="DIVform-form-field" Value="" id="input_pin" style="width:200px;" />
+								
+					<span controltovalidate="PIN" errormessage="PIN Required" display="Dynamic" id="rqvalPIN" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">PIN Required</span>	
+				</div>
+				<div style="clear:both"></div>
+				For your security, please check the box below next to "I'm not a robot":
+				<br/>
+				<div class="g-recaptcha" data-sitekey="<?php echo PUBLIC_KEY; ?>" style="padding-bottom:3px"></div>
+				<br/>
+				<input type="submit" style="background-color:#357ad0; border-color:#357ad0" value="Login" />
+				<br />
+			</form>
+			<p><strong>By entering the information above, you can:</strong></p>
+			<ul>
+				<li>View your <?php echo $year ?> assessed value or the results of any <?php echo $year ?> decline-in-value review  </li>
+				<li> File a <?php echo $year ?> Decline-in-Value Review Application online</li> 
+				<li> Review an existing application</li> 
+				<li> You will be able to review and print the information you provide at the conclusion of this session</li> 
+			</ul>
+			<br/> 
+			<p style="font-weight:bold; ">Or, print and mail your decline-in-value application:</p>
+			<a href="http://assessor.lacounty.gov/decline-in-value-forms/"  >English </a> 
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+			<a href="http://assessor.lacounty.gov/decline-in-value-forms/" > Español </a> 
+	</div> 
 		
 		
 
-			</div>   
-		</div>
+	</div>   
+	</div>
 		
 	</div>
 	</div>
@@ -1102,7 +1086,7 @@ at the conclusion of this session</li>
 		<div class="wpb_text_column wpb_content_element ">
 			<div class="wpb_wrapper">
 				<p>California’s Proposition 13 established the base year value for property tax assessment. It also caps the growth of a property’s assessed value at no more than two percent a year unless the market value of a property falls below the base year value.<br />
-	In 1978, California voters passed Proposition 8, a constitutional amendment that allows a temporary reduction in assessed value when a property suffers a “decline-in-value.” A decline-in-value occurs when the current market value of your property is less than the current assessed value as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?>.<br />
+	In 1978, California voters passed Proposition 8, a constitutional amendment that allows a temporary reduction in assessed value when a property suffers a “decline-in-value.” A decline-in-value occurs when the current market value of your property is less than the current assessed value as of January 1.<br />
 	Over the past several years, the Office of the Assessor has proactively reviewed hundreds of thousands of properties that may have declined in value due to the housing market downturn and the recession. In 2013, the Office the Assessor processed 365,000 Decline-in-Value reductions.<br />
 	However, now that property values are rising, property owners that experienced a reduction in property taxes could see their property tax bill go up by more than two percent. Taxpayers are encouraged to review this website for more information about Decline-in-Value and how property value is assessed.</p>
 
@@ -1121,7 +1105,7 @@ at the conclusion of this session</li>
 	
 	</div><!-- Row Backgrounds -->
 	
-	<!---- possible end for the paragraph-->  
+	<!-- possible end for the paragraph-->  
 	<div id="new_menu_bar" style="width:100% height:100px; background-color:gray; "> 
 	</div> 
 	<div class="upb_no_bg" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="false" data-rtl="false"  data-custom-vc-row=""  data-vc="4.3.5"  data-theme-support=""    ></div>
@@ -1138,14 +1122,14 @@ at the conclusion of this session</li>
 				<li><a href="#FAQ">Frequently Asked Questions</a></li>
 				</ul>
 
-				<!---the eligibility--div  --> 
+				<!---the eligibility div  --> 
 				<div id="tab-1425524178-1-9" class="wpb_tab ui-tabs-panel wpb_ui-tabs-hide vc_clearfix">
 					
 		<div class="wpb_text_column wpb_content_element ">
 			<div class="wpb_wrapper">
 				<ol>
-	<li>You must demonstrate that on <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?>, the market value of your property was less than its current assessed value.</li>
-	<li>You must file a <em>Decline-in-Value Review Application, form RP-87</em>, with the Assessor between <?php if ( isset( $parameters['Prop8Application_FileDateBegin'] ) ) { echo $parameters['Prop8Application_FileDateBegin']; } ?> and <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?> for the fiscal year beginning on July 1. Applications are valid if postmarked by <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?>. If <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?> falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.</li>
+	<li>You must demonstrate that on January 1, the market value of your property was less than its current assessed value.</li>
+	<li>You must file a <em>Decline-in-Value Review Application, form RP-87</em>, with the Assessor between July 2 and November 30 for the fiscal year beginning on July 1. Applications are valid if postmarked by November 30. If November 30 falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.</li>
 	</ol>
 
 			</div> 
@@ -1160,10 +1144,10 @@ at the conclusion of this session</li>
 		<div class="wpb_text_column wpb_content_element ">
 			<div class="wpb_wrapper">
 				<ol>
-	<li>On your claim form, provide the Assessor with information that supports your opinion that the market value for your property is less than the assessed value. The best supporting documentation is information on sales of comparable properties. You should select two comparable sales that sold as close to <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?> as possible, but no later than March 31. You may query the Assessor’s database for sales in your neighborhood by clicking here. While the submission of comparable sales is helpful for the Assessor in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.</li>
-	<li>An appraiser will review your claim form and the information you provide. Other sales information available to the Assessor may also be considered. If the market value as of <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?> is less than the trended base value2, your assessed value will be lowered to the market value for the fiscal year beginning on July 1. The adjusted value will be reflected on your annual tax bill.<br />
+	<li>On your claim form, provide the Assessor with information that supports your opinion that the market value for your property is less than the assessed value. The best supporting documentation is information on sales of comparable properties. You should select two comparable sales that sold as close to January 1 as possible, but no later than March 31. You may query the Assessor’s database for sales in your neighborhood by clicking here. While the submission of comparable sales is helpful for the Assessor in determining the market value of your property, applications submitted without comparable sales will be accepted and processed.</li>
+	<li>An appraiser will review your claim form and the information you provide. Other sales information available to the Assessor may also be considered. If the market value as of January 1 is less than the trended base value2, your assessed value will be lowered to the market value for the fiscal year beginning on July 1. The adjusted value will be reflected on your annual tax bill.<br />
 	If the current market value is higher than the trended base value, no change in assessed value will be made.</li>
-	<li>If you disagree with the Assessor’s findings, you may file an appeal with the Assessment Appeals Board. You must file your appeal between <?php if ( isset( $parameters['Prop8Application_FileDateBegin'] ) ) { echo $parameters['Prop8Application_FileDateBegin']; } ?> and <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?> for your annual tax bill. If <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?> falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.<br />
+	<li>If you disagree with the Assessor’s findings, you may file an appeal with the Assessment Appeals Board. You must file your appeal between July 2 and November 30 for your annual tax bill. If November 30 falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.<br />
 	Example<br />
 	A property was purchased for $500,000. During a three-year period, the real estate market declined and recovered. The property owner filed for a decline-in-value reassessment. The following table shows the trended base value of the property, the market value of the property, and the assessed value of the property. Assuming a 2% Annual C.P.I.:</li>
 	</ol>
@@ -1233,7 +1217,7 @@ at the conclusion of this session</li>
 	<p>Under Proposition 13, base year values may not be increased more than two percent a year unless there is a change in ownership or new construction.</p>
 	<p>However, if a property declined in value and was assessed under Proposition 8, if the value of a property rises, the taxable value can increase by more than two percent a year up to the annually adjusted base year value. When a property is assessed under Proposition 8, the Office of the Assessor is required to assess the property value every year.</p>
 	</div>
-	<h4 class="wpb_toggle">How do I get a Decline-In-Value assessment?</h4><div class="wpb_toggle_content"><p>You must file a Decline-in-Value Review Application, form RP-87, with the Office of the Assessor between <?php if ( isset( $parameters['Prop8Application_FileDateBegin'] ) ) { echo $parameters['Prop8Application_FileDateBegin']; } ?> and <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?>. Applications are valid if postmarked by <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?>. If <?php if ( isset( $parameters['Prop8Application_FileDateEnd'] ) ) { echo $parameters['Prop8Application_FileDateEnd']; } ?> falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.</p>
+	<h4 class="wpb_toggle">How do I get a Decline-In-Value assessment?</h4><div class="wpb_toggle_content"><p>You must file a Decline-in-Value Review Application, form RP-87, with the Office of the Assessor between July 2 and November 30. Applications are valid if postmarked by November 30. If November 30 falls on a Saturday, Sunday, or a legal holiday, an application is valid if either filed or postmarked by the next business day.</p>
 	<p>On your claim form, provide the Assessor with information that supports your opinion that the market value for your property is less than the assessed value. The best supporting documentation is information on sales of comparable properties.</p>
 	</div>
 	<h4 class="wpb_toggle">Do properties other than single family residences qualify?</h4><div class="wpb_toggle_content"><p>Yes. All real property qualifies.</p>
@@ -1242,7 +1226,7 @@ at the conclusion of this session</li>
 	</div>
 	<h4 class="wpb_toggle">Where can I find comparable sales information?</h4><div class="wpb_toggle_content"><p>A good place to start is online. The Assessor’s website offers sales information for properties that have sold within the last two years. The same information is available from any Assessor District Office. Also, many websites offer sales information free of charge. A local real estate agent or title agent can also be a valuable source of information.</p>
 	</div>
-	<h4 class="wpb_toggle">If my assessed value is reduced, how long will it last?</h4><div class="wpb_toggle_content"><p>Decline-in-value reassessments are not permanent, but last at least one year. The assessed value may decrease or increase depending on the market value of your property on <?php if ( isset( $parameters['LienDate'] ) ) { echo $parameters['LienDate']; } ?> of each subsequent year. Your assessed value will never increase more than the trended base value. It is important to remember, however, that base year values suspended by decline-in-value reassessment values continue to increase by an annual inflation factor of no more than two percent per year.</p>
+	<h4 class="wpb_toggle">If my assessed value is reduced, how long will it last?</h4><div class="wpb_toggle_content"><p>Decline-in-value reassessments are not permanent, but last at least one year. The assessed value may decrease or increase depending on the market value of your property on January 1 of each subsequent year. Your assessed value will never increase more than the trended base value. It is important to remember, however, that base year values suspended by decline-in-value reassessment values continue to increase by an annual inflation factor of no more than two percent per year.</p>
 	</div>
 </ol> 
 			</div> 
