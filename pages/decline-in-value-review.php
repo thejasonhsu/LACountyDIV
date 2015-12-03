@@ -1360,8 +1360,8 @@ jQuery(document).ready(function () {
                                                 AIN:
                                             </div>
                                             <form action = "index.php?action=reviewLogin" method="post">
-                                                <input class="DIVform-button" type="submit" value="Go" style="height:32px; width:60px !important; padding:8px !important">
                                                 <input type="text" name="AIN" class="DIVform-form-field" id="AIN" style="float:left; margin-right:10px; height:32px" placeholder=" " onkeypress='validate(event)' value=""/>
+                                                <input class="DIVform-button" type="submit" value="Go" style="height:32px; width:60px !important; padding:8px !important">
                                             </form>
                                             <div style="clear:both"></div>
                                         </div>
